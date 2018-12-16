@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="leetcode,算法,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Longest Palindromic Substring（最大回文字符串）1、题目描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="keywords" content="leetcode,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 5(Longest Palindromic Substring)">
+<meta property="og:url" content="http://yoursite.com/2018/12/16/leetcode5/index.html">
+<meta property="og:site_name" content="旋哥的博客">
+<meta property="og:description" content="Longest Palindromic Substring（最大回文字符串）1、题目描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-b06223eb24a131ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-44e9106328ae82e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-5a2478690d1f1ed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-e4091aede50210c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-12-16T07:40:39.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode 5(Longest Palindromic Substring)">
+<meta name="twitter:description" content="Longest Palindromic Substring（最大回文字符串）1、题目描述：Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2514354-b06223eb24a131ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/16/leetcode5/">
+
+
+
+
+
+  <title>LeetCode 5(Longest Palindromic Substring) | 旋哥的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旋哥的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/leetcode5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="you xuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旋哥的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LeetCode 5(Longest Palindromic Substring)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T15:45:19+08:00">
+                2018-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Longest-Palindromic-Substring（最大回文字符串）"><a href="#Longest-Palindromic-Substring（最大回文字符串）" class="headerlink" title="Longest Palindromic Substring（最大回文字符串）"></a>Longest Palindromic Substring（最大回文字符串）</h3><h4 id="1、题目描述："><a href="#1、题目描述：" class="headerlink" title="1、题目描述："></a>1、题目描述：</h4><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br><a id="more"></a></p>
+<p>Example 1:</p>
+<p>Input: “babad”<br>Output: “bab”<br>Note: “aba” is also a valid answer.<br>Example 2:</p>
+<p>Input: “cbbd”<br>Output: “bb”</p>
+<p>给出一个字符串<strong>s</strong>，找出长度最大的回文子串，<strong>s</strong>的最大长度小于1000。</p>
+<h4 id="2、摘要："><a href="#2、摘要：" class="headerlink" title="2、摘要："></a>2、摘要：</h4><p>下面介绍了几种方法实现：回文，动态规划和字符串操作。回文的定义：<strong>一个字符串从两个方向读，它的内容是相同的。</strong>例如：<strong>S = “aba”</strong>是回文字符串，而<strong>S = “abc”</strong>不是回文字符串。</p>
+<h4 id="3、解决方法："><a href="#3、解决方法：" class="headerlink" title="3、解决方法："></a>3、解决方法：</h4><h6 id="方法1：Brute-Force-暴力破解"><a href="#方法1：Brute-Force-暴力破解" class="headerlink" title="方法1：Brute Force(暴力破解)"></a>方法1：Brute Force(暴力破解)</h6><p>很明显，暴力破解就是找到所有子串验证它是否是回文字符串。</p>
+<p>Java实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       String ss = <span class="keyword">new</span> StringBuilder(s).reverse().toString();</span><br><span class="line">       <span class="keyword">if</span> (ss.equals(s)) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> longestLength = <span class="number">0</span>;</span><br><span class="line">       String longestSubString = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= s.length(); j++) &#123;</span><br><span class="line">               String subString = s.substring(i,j);</span><br><span class="line"></span><br><span class="line">               <span class="keyword">if</span> (isPalindrome(subString) &amp;&amp; subString.length()&gt;longestLength)&#123;</span><br><span class="line">                   longestLength = subString.length();</span><br><span class="line">                   longestSubString = subString;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> longestSubString;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：<br>&emsp;&emsp;两个for循环中嵌套了一个判断回文的过程，回文判断我使用的是StringBuilder的reverse()方法，时间复杂度一共是O(n^3)。比较不理想，提交上去会出现时间超时。</p>
+<p>空间复杂度：两个变量，复杂度为O(1)。</p>
+<p>######方法2：Longest Common Substring(最长的公共子串)<br>&emsp;&emsp;一些人可能会想出一个最快的方法，倒序字符串<strong>s</strong>，然后与原字符串对比，然后找出最长的公共子串，这个子串一定就是最长的回文子串。<br>&emsp;&emsp;从表面上看这个方法是正确的，但是仔细想来并不是完全正确，例如<strong>S = “abacdfgdcaba”</strong>,他和倒序的公共最长字符为 <strong>“abacd”</strong>，然而这个并不是回文字符串。导致出现这个情况的原因是原字符串中存在一个非回文倒序副本。如果要排除这个影响，就要在候选字符串中 检查子串的索引是否与反向子串的原始索引相同，相同就保留，不同就舍弃。</p>
+<p>&emsp;&emsp;首先实现寻找最长的公共子串，具体步骤参考：<br><a href="https://blog.csdn.net/u010397369/article/details/38979077" target="_blank" rel="noopener">https://blog.csdn.net/u010397369/article/details/38979077</a><br>&emsp;&emsp;具体实现思路就是把两个字符串组成一个二维数组 ，如果两个对应字符相等，就执行 <strong>temp[ i ][ j ] = temp[ i - 1 ][ j - 1] + 1</strong>。因为i-1或者j-1会越界，所以可以单独处理。temp[ i ][ j ] 保存的就是公共子串的长度。</p>
+<p>Java实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome_2</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (s.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String ss = <span class="keyword">new</span> StringBuilder(s).reverse().toString();  <span class="comment">//倒序</span></span><br><span class="line">        <span class="keyword">int</span> longestlength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxEnd = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[][] temp = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()][ss.length()];</span><br><span class="line">        <span class="keyword">char</span>[] s_char = s.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] ss_char = ss.toCharArray();</span><br><span class="line">        <span class="comment">//原字符串做列,倒序后的子串作为行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss_char.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s_char.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s_char[i] == ss_char[j]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                        temp[i][j] = <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        temp[i][j] = temp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (temp[i][j] &gt; longestlength) &#123;</span><br><span class="line">                    longestlength = temp[i][j];</span><br><span class="line">                    maxEnd = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(maxEnd - longestlength + <span class="number">1</span>, maxEnd + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;以上算法只能实现寻找最长的公共子串，如果<strong>s=”abc435cba”</strong>，公共子串为”abc”，但是这个不是回文字符串。为了解决这个问题，我们还要对比子串在倒序后的字符串的位置和原字符串的位置是否对应。<br>&emsp;&emsp;举个例子，如果<strong>s=”caba”,s’ = “abac”</strong>，他们的最长回文串为<strong>“aba”</strong>,<strong>“aba”</strong>在原字符串中的位置为 <strong>1  2  3</strong> ，在s’中的位置为 <strong>0 1 2</strong>，所以 <strong>aba</strong> 就是我们需要找的。当然我们不需要每个字符都判断，我们只需要判断末尾字符就可以。<br>如图：<br><img src="https://upload-images.jianshu.io/upload_images/2514354-b06223eb24a131ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>&emsp;&emsp;<code>i</code>所指的字符a在原字符串中的位置为<code>beforeRev  = length - i- 1 = 0</code>，<code>beforeRev</code>就是在<code>j</code>中为第一个字符位置，且  <code>beforeRev + temp[i][j] - 1 =2</code>代表<code>j</code>中最后一个字符的位置，如果位置与<code>j</code>相等，aba就是要找的。我们可以写出如下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动态规划 (获取最长回文串) 需要和原字符对比位置</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome_3</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (s.length() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">         <span class="keyword">return</span> s;</span><br><span class="line">     &#125;</span><br><span class="line">     String ss = <span class="keyword">new</span> StringBuilder(s).reverse().toString();  <span class="comment">//倒序</span></span><br><span class="line">     <span class="keyword">int</span> longestlength = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">int</span> maxEnd = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">int</span>[][] temp = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()][ss.length()];</span><br><span class="line">     <span class="keyword">char</span>[] s_char = s.toCharArray();</span><br><span class="line">     <span class="keyword">char</span>[] ss_char = ss.toCharArray();</span><br><span class="line">     <span class="comment">//原字符串做列,倒序后的子串作为行</span></span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ss_char.length; i++) &#123;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s_char.length; j++) &#123;</span><br><span class="line">             <span class="keyword">if</span> (s_char[i] == ss_char[j]) &#123;</span><br><span class="line">                 <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                     temp[i][j] = <span class="number">1</span>;</span><br><span class="line">                 &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                     temp[i][j] = temp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">if</span> (temp[i][j] &gt; longestlength) &#123;</span><br><span class="line"></span><br><span class="line">                 <span class="comment">/*******************增加的部分***********************/</span></span><br><span class="line">                 <span class="keyword">int</span> beforeRev = s.length() - i - <span class="number">1</span>;</span><br><span class="line">                 <span class="keyword">if</span> (beforeRev + temp[i][j] - <span class="number">1</span> == j) &#123;</span><br><span class="line">                     longestlength = temp[i][j];</span><br><span class="line">                     maxEnd = i;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> s.substring(maxEnd - longestlength + <span class="number">1</span>, maxEnd + <span class="number">1</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行时间：<br><img src="https://upload-images.jianshu.io/upload_images/2514354-44e9106328ae82e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>时间复杂度：两个嵌套循环，O(n^2)<br>空间复杂度：一个二维数组，O(n^2)</p>
+<p>&emsp;&emsp;仔细观察可以发现，我们判断字符相等的只用到了temp[i][j]，一行用过之后就弃置不用了。所以我们可以把空间复杂度优化到O(n)，只需要把一个一维数组重新赋值即可，因为正序赋值有可能覆盖改后面需要使用的数据<br>比如a[3] = a[2]+1时，计算a[4]的时候a[3]的值就不是原来的了。所以我们需要从后往前计算，代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome_4</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (s.equals(<span class="string">""</span>)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String ss = <span class="keyword">new</span> StringBuilder(s).reverse().toString();  <span class="comment">//倒序</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> longestlength = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> maxEnd = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span>[] s_char = s.toCharArray();</span><br><span class="line">    <span class="keyword">char</span>[] ss_char = ss.toCharArray();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s_char.length; i++) &#123;    <span class="comment">//初始化第一行</span></span><br><span class="line">        temp[i] = (s_char[<span class="number">0</span>] == ss_char[i]) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s_char.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = ss.length() - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (s_char[i] == ss_char[j]) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                    temp[j] = <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    temp[j] = temp[j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (temp[j] &gt; longestlength) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">/*******************增加的部分***********************/</span></span><br><span class="line">                    <span class="keyword">int</span> beforeRev = s.length() - j - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span> (beforeRev + temp[j] - <span class="number">1</span> == i) &#123;</span><br><span class="line">                        longestlength = temp[j];</span><br><span class="line">                        maxEnd = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                temp[j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(maxEnd - longestlength + <span class="number">1</span>, maxEnd + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行时间：<br><img src="https://upload-images.jianshu.io/upload_images/2514354-5a2478690d1f1ed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>时间复杂度：两个嵌套循环，O(n^2)<br>空间复杂度：一个一维数组，O(n)</p>
+<h6 id="方法3：扩展中心"><a href="#方法3：扩展中心" class="headerlink" title="方法3：扩展中心"></a>方法3：扩展中心</h6><p>&emsp;&emsp;我们观察到一个回文串是从一个中心到两边的镜像。所以，回文串可以从一个字符(奇数)或两个字符(偶数)的为中心拓展，它的中心总共有<strong>2n-1</strong>个。以<strong>i</strong>为中心左边为<strong>left</strong>，右边为<strong>right</strong>，先令<strong>left=right=i</strong>，满足<strong>left &gt;= 0 &amp;&amp; right &lt; s.length() &amp;&amp; s.charAt(left) == s.charAt(right)</strong>时，<strong>left–;right++;</strong>向外拓展，直到结束。回文的长度就是<strong>right - left - 1</strong>。实现如下:<br>Java实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法 扩展中心</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">expandAroundCenter</span><span class="params">(String s, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (left &gt;= <span class="number">0</span> &amp;&amp; right &lt; s.length() &amp;&amp; s.charAt(left) == s.charAt(right)) &#123;</span><br><span class="line">        left--;</span><br><span class="line">        right++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> right - left - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome_6</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() &lt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>, end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = expandAroundCenter(s, i, i); <span class="comment">//奇数</span></span><br><span class="line">        <span class="keyword">int</span> len2 = expandAroundCenter(s, i, i + <span class="number">1</span>);<span class="comment">//偶数</span></span><br><span class="line">        <span class="keyword">int</span> len = Math.max(len1, len2);</span><br><span class="line">        <span class="keyword">if</span> (len &gt; end - start) &#123; </span><br><span class="line">              <span class="comment">//重新计算start 和end</span></span><br><span class="line">            start = i - (len - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            end = i + len / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start, end + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行时间如下：<br><img src="https://upload-images.jianshu.io/upload_images/2514354-e4091aede50210c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>&emsp;&emsp;因为只识别回文序列，过滤掉了很大部分情况，虽然时间复杂度为o(n^2)，但是执行效率更高。<br>时间复杂度：两个嵌套循环，最坏的情况下，O(n^2)<br>空间复杂度：O(1)</p>
+<p>参考：<br><a href="https://leetcode.com/problems/longest-palindromic-substring/solution/[](https://leetcode.com/problems/longest-palindromic-substring/solution/)" target="_blank" rel="noopener">https://leetcode.com/problems/longest-palindromic-substring/solution/[](https://leetcode.com/problems/longest-palindromic-substring/solution/)</a><br><a href="http://windliang.cc/2018/08/05/leetCode-5-Longest-Palindromic-Substring/" target="_blank" rel="noopener">http://windliang.cc/2018/08/05/leetCode-5-Longest-Palindromic-Substring/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/16/leetcode4/" rel="next" title="LeetCode 4(Median of Two Sorted Arrays)">
+                <i class="fa fa-chevron-left"></i> LeetCode 4(Median of Two Sorted Arrays)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/16/leetcode6/" rel="prev" title="LeetCode 6(ZigZag Conversion)">
+                LeetCode 6(ZigZag Conversion) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/image/avatar.jpg" alt="you xuan">
+            
+              <p class="site-author-name" itemprop="name">you xuan</p>
+              <p class="site-description motion-element" itemprop="description">计算机学起来挺轻松，就是头冷。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ThinkingXuan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1454739828@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/ec9e8bda5fbb" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/q1454739828" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest-Palindromic-Substring（最大回文字符串）"><span class="nav-number">1.</span> <span class="nav-text">Longest Palindromic Substring（最大回文字符串）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、题目描述："><span class="nav-number">1.1.</span> <span class="nav-text">1、题目描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、摘要："><span class="nav-number">1.2.</span> <span class="nav-text">2、摘要：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、解决方法："><span class="nav-number">1.3.</span> <span class="nav-text">3、解决方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法1：Brute-Force-暴力破解"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">方法1：Brute Force(暴力破解)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#方法3：扩展中心"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">方法3：扩展中心</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">you xuan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

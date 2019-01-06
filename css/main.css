@@ -1950,7 +1950,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9ac7ff;
+  background: #ff3b59;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3249,4 +3249,7 @@ pre .javascript .function {
 }
 #instantclick {
   display: none;
+}
+img.img-topic {
+  width: 100%;
 }

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[包天宇为什么那么牛逼！]]></title>
+    <url>%2F2019%2F01%2F12%2F2019%E5%B9%B41%E6%9C%8812%E6%97%A5151225%2F</url>
+    <content type="text"><![CDATA[包天宇为什么那么牛逼！]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 6(ZigZag Conversion)]]></title>
     <url>%2F2018%2F12%2F16%2Fleetcode6%2F</url>
     <content type="text"><![CDATA[ZigZag Conversion（ZigZag转换）1、题目描述：The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)P &emsp;&emsp; &emsp;A &emsp;&emsp;&emsp;H &emsp; &emsp; &emsp;NA &emsp;P &emsp; L&emsp; S&emsp; I&emsp; &emsp;I &emsp; GY &emsp;&emsp;&emsp; I &emsp;&emsp;&emsp; RAnd then read line by line: “PAHNAPLSIIGYIR” Write the code that will take a string and make this conversion given a number of rows: string convert(string s, int numRows);Example 1: Input: s = “PAYPALISHIRING”, numRows = 3Output: “PAHNAPLSIIGYIR” &emsp; &emsp;给出一个指定字符串和numRows，把字符串按倒Z的形式排列，行数为numRows，按行排列返回字符串。 2、解决方法1：按行分类(Java实现)&emsp; &emsp;仔细观察这个Z型的图形，它是由nomRows行子串构成。所以可以遍历整个字符串把字符依次添加到指定行字符串上，方向为先下后上。 123456789101112131415161718192021222324252627282930313233343536373839public String convert(String s, int numRows) &#123; //numRows为1，直接返回s if (numRows==1)&#123; return s; &#125; //构建Math.min(numRows, s.length())个字符串(字符串的长度小于numRows，集合长度取s.length)， // 放在集合中。也可以使用字符串数组实现。 //使用StringBuilder可以使字符串拼接更快。 List&lt;StringBuilder&gt; rows = new ArrayList&lt;&gt;(); for (int i = 0; i &lt; Math.min(numRows, s.length()); i++) &#123; StringBuilder stringBuilder = new StringBuilder(); rows.add(stringBuilder); &#125; int curRow = 0; //当前行 boolean dir = false; //当前方向 true向下 false向上 for (char c : s.toCharArray()) &#123; rows.get(curRow).append(c); //第一行或最后一行时，换方向 if (curRow ==0 || curRow ==numRows -1 )&#123; dir = ! dir; &#125; //换行 curRow += dir ? 1 : -1; &#125; //拼接字符串集合 StringBuilder str = new StringBuilder(); for (StringBuilder sb : rows) &#123; str.append(sb); &#125; return str.toString(); &#125; 运行耗时：53ms 时间复杂度：O(n) 遍历字符串的长度为len(s)。空间复杂度：O(n) 存储了len(s)的字符。 解决方法2：按行访问(C语言实现)原理：找到每一行中的字符在字符串中的出现位置。 如图： &emsp; &emsp;仔细观察第一行中P和A中间距中间相隔3个子串，实际下标相差4。在图上看的话其实是相差一列加一条对角线，所以第一行的字符位置可以表示为k*(2 * numRows - 2) ，k为字符在一行字符串中所处的位置。最后一行的字符位置可以用第一行加numRows-1表示，所以可以表示为k*(2 * numRows - 2) - numRows -1。中间的字符包含两个部分，分别是 k*(numRows -2) + i 和 （k+1)*(numRows -2) - i。1234567891011121314151617181920212223242526char *convert_2(char *s, int numRows) &#123; if (numRows == 1) &#123; return s; &#125; int length = strlen(s); int cycleLen = 2 * numRows - 2; //长度比原字符串多1，有个'\0' char *ret = (char *) malloc(sizeof(char) * (length + 1)); int index = 0; for (int i = 0; i &lt; numRows; ++i) &#123; for (int j = 0; j + i &lt; length; j += cycleLen) &#123; //第一行、最后一行和中间行的列部分 ret[index++] = s[j + i]; //中间行字符串的对角线部分 if (i != 0 &amp;&amp; i != numRows - 1 &amp;&amp; j + cycleLen - i &lt; length) &#123; ret[index++] = s[j + cycleLen - i]; &#125; &#125; &#125; ret[index] = '\0'; return ret;&#125; 运行耗时：12ms时间复杂度：O(n) 把所有字符的下标遍历了一遍。空间复杂度：O(n) 分配指针len(s)+1个空间。]]></content>

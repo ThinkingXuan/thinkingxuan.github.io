@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[漫谈数据结构——1、概述]]></title>
+    <url>%2F2019%2F01%2F16%2FdataStructure1%2F</url>
+    <content type="text"><![CDATA[1、为什么要学习数据结构？&emsp; &emsp;数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。 &emsp; &emsp;本教程主要介绍数据结构的常见用法，为了兼容更多人群，所有以C语言为主要的编程语言。如果您C语言基础不过关，请自行Google。其次，语言只是描述程序的一种形式，万变不离其中，掌握一种也就很容易掌握另外一种。 2、什么是数据结构？维基百科给出了定义: 数据结构（英语：data structure）是计算机中存储、组织数据的方式。无论是大数据时代的海量数据的存储，还是简单用户信息或者学生信息的存储，其数据存储的底层都要以某种更方便、更快捷且更省内存空间的方式进行，这种存储方式就是数据结构。如下图，就是一个简单的数据结构，他描述一个基础的学生信息，由id,name,sex,class组成。 id name sex class 001 张三 男 1班 002 李四 男 2班 003 王五 男 3班 2.1、基本术语 数据 &emsp; &emsp;计算机中存储的的最小单位 数据元素 &emsp; &emsp; 也叫元素或记录，及为上表中的一行。 数据对象 &emsp; &emsp; 数据元素的集合 3、数据结构的分类3.1、逻辑结构 描述元素之间的逻辑关系，与数据的存储位置无关。他包括集合、线性结构，树形结构和图形结构。 1、集合&emsp; &emsp; 类似于数学中的集合，一个数据存在于集合中，数据之间没有什么关系。 2、线性结构&emsp; &emsp; 与元素具有一对一的关系，在内存中逐个排列。它分为顺序存储和链式存储，顺序存储相当于高级语言的数组，在内存中排列是连续的。链式存储使用链表维护元素，在内存中排列是不连续的。 3、树形结构&emsp; &emsp; 使用树来维护元素的多个层次关系（对二叉树不了解请点击链接），除根结点外，一个节点只有一个父结点，可以根据一个节点寻找它的子结点或者父结点。 4、图形结构&emsp;&emsp;使用图)来维护元素的多个层次关系（图不了解请点击链接），一个图中的结点可以有多个父结点和子结点。 3.2、存储结构1、顺序存储结构&emsp;&emsp;使用顺序表来存储数据，数据存储在是连续的内存单元上。 优点：查询效率高，可以使用元素的下标直接找到某一个元素。因为其存储结构是紧密的，所以提高了空间利用率。 缺点：插入和删除一个元素的效率低，插入或者删除一个元素，要把这个元素的右边所有元素右移或者左移1个单位，随着数据量的增大，插入和删除的效率也会随之下降。且存储空间大小在定义时已经明确指定，操作元素是会出现“溢出”或者浪费空间的情况。 2、链式存储结构&emsp;&emsp;使用链表来存储数据，数据存储在是不连续的内存单元上。 优点：插入和删除效率很高，不会造成空间的浪费。 缺点：无法随机访问，内存单元一部分用来存储元素之间的逻辑关系，造成空间利用率低。 3、索引存储结构&emsp;&emsp;除建立存储结点信息外，还建立附加的索引表来标识结点的地址。索引表由若干索引项组成 &emsp;&emsp;特点：索引存储结构是用结点的索引号来确定结点存储地址，其优点是检索速度快，缺点是增加了附加的索引表,会占用较多的存储空间。 4、散列存储结构&emsp;&emsp;散列存储，又称hash存储，是一种力图将数据元素的存储位置与关键码之间建立确定对应关系的查找技术。 &emsp;&emsp;散列法存储的基本思想是：由节点的关键码值决定节点的存储地址。散列技术除了可以用于查找外，还可以用于存储。 &emsp;&emsp;特点：散列是数组存储方式的一种发展，相比数组，散列的数据访问速度要高于数组，因为可以依据存储数据的部分内容找到数据在数组中的存储位置，进而能够快速实现数据的访问，理想的散列访问速度是非常迅速的。 4、算法程序 = 数据结构 + 算法 算法是数据结构的灵魂，一个数据结构设计的再好，如果没有算法，如同失去了灵魂，它的存在就毫无意义。 4.1 什么是算法&emsp;&emsp;算法是解决某个特定问题的具体步骤。 &emsp;&emsp;描述算法的方法：伪代码法，N-S结构化流程图和流程图， 具体方法请自行百度。 4.2 算法的特性 确定性 可行性 有穷性 零个或者多个输入 一个或者多个输出 正确性 可读性 健壮性 高效率和低存储 4.3 算法的复杂度&emsp;&emsp;用来表示算法执行消耗的计算机资源，主要从时间和空间两个方面考虑。 1、时间复杂度&emsp;&emsp;描述算法的执行时间(次数)，常用O(n)表示。推导方法: n为常数，用1代替。 n为未知数，系数为1，只保留最高阶项。 n为未知数，系数不为1，只保留最高阶项且最高阶项除去系数。 例子如下：123int a = 1;int b = 2;int sum = a + b; 共执行$f（n）= 3$ 次，所以 时间复杂度为O(1)。 1234567void fun()&#123; int i,sum; //执行一次 for(i=0;i&lt;n;i++)&#123; sum += i; //执行n次 &#125; printf("%d\n",sum); //执行一次&#125; 共执行$f（n）= n+3 $次，所以 时间复杂度为O(n)。 123456void fun()&#123; int i = 1; while(i &lt; n)&#123; i * = 2; &#125;&#125; 共执行$ 2^f = n $, 即 $ f = {log_2{n}}$，所以复杂度为O(logn)。 2、空间复杂度&emsp;&emsp;算法运行所占空间的大小，常用O(n)表示。 4、算法和数据结构&emsp;&emsp;算法通常是决定程序效率的关键，但是一切算法最终都要在相应的数据结构上实现，许多算法的精髓就是在于选择了合适的数据结构作为基础。在程序设计中，不但要注重算法设计，也要正确选择数据结构，这样往往能够事半功倍。 具体参考如下:LeetCode1 使用散列存储，极大的提高了算法效率。]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 6(ZigZag Conversion)]]></title>
     <url>%2F2018%2F12%2F16%2Fleetcode6%2F</url>
     <content type="text"><![CDATA[ZigZag Conversion（ZigZag转换）1、题目描述：The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)P &emsp;&emsp; &emsp;A &emsp;&emsp;&emsp;H &emsp; &emsp; &emsp;NA &emsp;P &emsp; L&emsp; S&emsp; I&emsp; &emsp;I &emsp; GY &emsp;&emsp;&emsp; I &emsp;&emsp;&emsp; RAnd then read line by line: “PAHNAPLSIIGYIR” Write the code that will take a string and make this conversion given a number of rows: string convert(string s, int numRows);Example 1: Input: s = “PAYPALISHIRING”, numRows = 3Output: “PAHNAPLSIIGYIR” &emsp; &emsp;给出一个指定字符串和numRows，把字符串按倒Z的形式排列，行数为numRows，按行排列返回字符串。 2、解决方法1：按行分类(Java实现)&emsp; &emsp;仔细观察这个Z型的图形，它是由nomRows行子串构成。所以可以遍历整个字符串把字符依次添加到指定行字符串上，方向为先下后上。 123456789101112131415161718192021222324252627282930313233343536373839public String convert(String s, int numRows) &#123; //numRows为1，直接返回s if (numRows==1)&#123; return s; &#125; //构建Math.min(numRows, s.length())个字符串(字符串的长度小于numRows，集合长度取s.length)， // 放在集合中。也可以使用字符串数组实现。 //使用StringBuilder可以使字符串拼接更快。 List&lt;StringBuilder&gt; rows = new ArrayList&lt;&gt;(); for (int i = 0; i &lt; Math.min(numRows, s.length()); i++) &#123; StringBuilder stringBuilder = new StringBuilder(); rows.add(stringBuilder); &#125; int curRow = 0; //当前行 boolean dir = false; //当前方向 true向下 false向上 for (char c : s.toCharArray()) &#123; rows.get(curRow).append(c); //第一行或最后一行时，换方向 if (curRow ==0 || curRow ==numRows -1 )&#123; dir = ! dir; &#125; //换行 curRow += dir ? 1 : -1; &#125; //拼接字符串集合 StringBuilder str = new StringBuilder(); for (StringBuilder sb : rows) &#123; str.append(sb); &#125; return str.toString(); &#125; 运行耗时：53ms 时间复杂度：O(n) 遍历字符串的长度为len(s)。空间复杂度：O(n) 存储了len(s)的字符。 解决方法2：按行访问(C语言实现)原理：找到每一行中的字符在字符串中的出现位置。 如图： &emsp; &emsp;仔细观察第一行中P和A中间距中间相隔3个子串，实际下标相差4。在图上看的话其实是相差一列加一条对角线，所以第一行的字符位置可以表示为k*(2 * numRows - 2) ，k为字符在一行字符串中所处的位置。最后一行的字符位置可以用第一行加numRows-1表示，所以可以表示为k*(2 * numRows - 2) - numRows -1。中间的字符包含两个部分，分别是 k*(numRows -2) + i 和 （k+1)*(numRows -2) - i。1234567891011121314151617181920212223242526char *convert_2(char *s, int numRows) &#123; if (numRows == 1) &#123; return s; &#125; int length = strlen(s); int cycleLen = 2 * numRows - 2; //长度比原字符串多1，有个'\0' char *ret = (char *) malloc(sizeof(char) * (length + 1)); int index = 0; for (int i = 0; i &lt; numRows; ++i) &#123; for (int j = 0; j + i &lt; length; j += cycleLen) &#123; //第一行、最后一行和中间行的列部分 ret[index++] = s[j + i]; //中间行字符串的对角线部分 if (i != 0 &amp;&amp; i != numRows - 1 &amp;&amp; j + cycleLen - i &lt; length) &#123; ret[index++] = s[j + cycleLen - i]; &#125; &#125; &#125; ret[index] = '\0'; return ret;&#125; 运行耗时：12ms时间复杂度：O(n) 把所有字符的下标遍历了一遍。空间复杂度：O(n) 分配指针len(s)+1个空间。]]></content>
@@ -8,8 +20,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +44,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +56,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +68,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
         <tag>算法</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>

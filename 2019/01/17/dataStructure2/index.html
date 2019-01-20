@@ -84,7 +84,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/17/1685a0a82dd38a8b?w=500&amp;h=120&amp;f=png&amp;s=2788">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/17/1685a0b2c4475862?w=464&amp;h=122&amp;f=png&amp;s=2897">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/17/1685a41249220d20?w=463&amp;h=197&amp;f=png&amp;s=5904">
-<meta property="og:updated_time" content="2019-01-17T11:49:13.603Z">
+<meta property="og:updated_time" content="2019-01-20T15:14:42.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈数据结构(二)——线性表1">
 <meta name="twitter:description" content="1、线性表的定义和特征1.1 定义&amp;emsp;&amp;emsp;线性表是具有相同类型元素组成的一个线性序列。元素的个数即为元素的长度，元素为0时称为空表。如下： (A,B,C,D,E,F,G)&amp;emsp;&amp;emsp;这就表示一个线性表。">
@@ -450,6 +450,9 @@
 <p>2.1.8 测试代码<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"init:\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> capacity = <span class="number">100</span>;</span><br><span class="line">	HSeqList *<span class="built_in">list</span> = createSeqList(capacity);</span><br><span class="line">	<span class="keyword">int</span> s = getCapacity(<span class="built_in">list</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Capacity = %d\n"</span>,s);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"addData:\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) {</span><br><span class="line">		addData(<span class="built_in">list</span>,i);</span><br><span class="line">	}</span><br><span class="line">	print(<span class="built_in">list</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"insert:\n"</span>);</span><br><span class="line">	insert(<span class="built_in">list</span>,<span class="number">100</span>,<span class="number">3</span>);</span><br><span class="line">	print(<span class="built_in">list</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"delete:\n"</span>);</span><br><span class="line">	<span class="keyword">delete</span>(<span class="built_in">list</span>,<span class="number">3</span>);</span><br><span class="line">	print(<span class="built_in">list</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"getData:\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"index %d is %d\n"</span>,<span class="number">0</span>,getData(<span class="built_in">list</span>,<span class="number">0</span>));</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"clear:\n"</span>);</span><br><span class="line">	clear(<span class="built_in">list</span>);</span><br><span class="line">	print(<span class="built_in">list</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>输出结果：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/1/17/1685a41249220d20?w=463&amp;h=197&amp;f=png&amp;s=5904" alt="输入结果"></p>
+<blockquote>
+<p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
+</blockquote>
 
       
     </div>
@@ -664,7 +667,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

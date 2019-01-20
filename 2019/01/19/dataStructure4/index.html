@@ -71,23 +71,23 @@
 
 
 
-<meta name="description" content="作者个人博客   https://www.you3xuan.top/ 查看原文。 源码地址: https://github.com/ThinkingXuan/DataStructure 如果对您有帮助，随手一个Star吧。  1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素">
+<meta name="description" content="1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素的插入叫做入栈。栈满时不能入栈，栈空时不能出栈。 &amp;emsp;&amp;emsp;栈通过一个栈顶指针来执行各种操作，入栈时栈顶指针上移，出栈时栈顶指针下移。如图所示：">
 <meta name="keywords" content="数据结构,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="漫谈数据结构(三)——栈">
 <meta property="og:url" content="https://www.you3xuan.top/2019/01/19/dataStructure4/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="作者个人博客   https://www.you3xuan.top/ 查看原文。 源码地址: https://github.com/ThinkingXuan/DataStructure 如果对您有帮助，随手一个Star吧。  1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素">
+<meta property="og:description" content="1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素的插入叫做入栈。栈满时不能入栈，栈空时不能出栈。 &amp;emsp;&amp;emsp;栈通过一个栈顶指针来执行各种操作，入栈时栈顶指针上移，出栈时栈顶指针下移。如图所示：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16866662a51c78aa?w=635&amp;h=310&amp;f=png&amp;s=230107">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16864931d1ae802f?w=453&amp;h=462&amp;f=png&amp;s=13490">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16864af350f1d0fb?w=462&amp;h=242&amp;f=png&amp;s=1652">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16865cff2e656431?w=444&amp;h=499&amp;f=png&amp;s=19931">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16865dfaa06797f9?w=716&amp;h=329&amp;f=png&amp;s=13507">
-<meta property="og:updated_time" content="2019-01-19T14:04:37.053Z">
+<meta property="og:updated_time" content="2019-01-20T15:12:42.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈数据结构(三)——栈">
-<meta name="twitter:description" content="作者个人博客   https://www.you3xuan.top/ 查看原文。 源码地址: https://github.com/ThinkingXuan/DataStructure 如果对您有帮助，随手一个Star吧。  1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素">
+<meta name="twitter:description" content="1、什么是栈&amp;emsp;&amp;emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素的插入叫做入栈。栈满时不能入栈，栈空时不能出栈。 &amp;emsp;&amp;emsp;栈通过一个栈顶指针来执行各种操作，入栈时栈顶指针上移，出栈时栈顶指针下移。如图所示：">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/1/19/16866662a51c78aa?w=635&amp;h=310&amp;f=png&amp;s=230107">
 
 
@@ -409,9 +409,6 @@
 
       
         <p><img src="https://user-gold-cdn.xitu.io/2019/1/19/16866662a51c78aa?w=635&amp;h=310&amp;f=png&amp;s=230107" alt="图片"></p>
-<blockquote>
-<p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
-</blockquote>
 <h2 id="1、什么是栈"><a href="#1、什么是栈" class="headerlink" title="1、什么是栈"></a>1、什么是栈</h2><p>  栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素的插入叫做入栈。栈满时不能入栈，栈空时不能出栈。</p>
 <p>  栈通过一个栈顶指针来执行各种操作，入栈时栈顶指针上移，出栈时栈顶指针下移。如图所示：<br><a id="more"></a><br><img src="https://user-gold-cdn.xitu.io/2019/1/19/16864931d1ae802f?w=453&amp;h=462&amp;f=png&amp;s=13490" alt="栈"><br>  栈的常见操作：</p>
 <ol>
@@ -443,7 +440,10 @@
 <h4 id="2-1-7-测试"><a href="#2-1-7-测试" class="headerlink" title="2.1.7 测试"></a>2.1.7 测试</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单链表实现栈 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Create Link Stack：\n"</span>); </span><br><span class="line">	LinkStack * <span class="built_in">stack</span> = createLinkStack();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n\n"</span>,<span class="built_in">stack</span>);</span><br><span class="line">	 </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Push Link Stack：\n"</span>); </span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++){</span><br><span class="line">		pushStack(<span class="built_in">stack</span>,i);</span><br><span class="line">	}</span><br><span class="line">	print(<span class="built_in">stack</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Pop Stack：\n"</span>); </span><br><span class="line">	popStack(<span class="built_in">stack</span>);</span><br><span class="line">	print(<span class="built_in">stack</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Get top from stack：\n"</span>); </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,getTopStack(<span class="built_in">stack</span>)-&gt;data);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Destory stack：\n"</span>); </span><br><span class="line">	<span class="keyword">int</span> flag = destoryStack(<span class="built_in">stack</span>);</span><br><span class="line">	print(<span class="built_in">stack</span>);</span><br><span class="line">	<span class="keyword">if</span>(flag){</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Destory Success!\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>输出结果：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/1/19/16865dfaa06797f9?w=716&amp;h=329&amp;f=png&amp;s=13507" alt="输出结果"></p>
-<h2 id="3、栈的应用"><a href="#3、栈的应用" class="headerlink" title="3、栈的应用"></a>3、栈的应用</h2><h3 id="3-1-用栈实现四则运算"><a href="#3-1-用栈实现四则运算" class="headerlink" title="3.1 用栈实现四则运算"></a>3.1 用栈实现四则运算</h3><h3 id="3-2-栈的递归调用"><a href="#3-2-栈的递归调用" class="headerlink" title="3.2 栈的递归调用"></a>3.2 栈的递归调用</h3>
+<h2 id="3、栈的应用"><a href="#3、栈的应用" class="headerlink" title="3、栈的应用"></a>3、栈的应用</h2><h3 id="3-1-用栈实现四则运算"><a href="#3-1-用栈实现四则运算" class="headerlink" title="3.1 用栈实现四则运算"></a>3.1 用栈实现四则运算</h3><h3 id="3-2-栈的递归调用"><a href="#3-2-栈的递归调用" class="headerlink" title="3.2 栈的递归调用"></a>3.2 栈的递归调用</h3><blockquote>
+<p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
+</blockquote>
+
       
     </div>
     
@@ -543,6 +543,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/20/dataStructure5/" rel="prev" title="漫谈数据结构(三)——队列">
+                漫谈数据结构(三)——队列 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -653,7 +657,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

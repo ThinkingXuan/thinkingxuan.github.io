@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="算法,leetcode,">
+  <meta name="keywords" content="算法,蓝桥杯试题,">
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
-<meta name="keywords" content="算法,leetcode">
+<meta name="description" content="1、 A+B问题问题描述输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。">
+<meta name="keywords" content="算法,蓝桥杯试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 1(Two Sum)">
-<meta property="og:url" content="https://www.you3xuan.top/2018/12/16/leetcode1/index.html">
+<meta property="og:title" content="蓝桥杯试题——基础篇">
+<meta property="og:url" content="https://www.you3xuan.top/2019/01/24/lanqiao/basic/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
+<meta property="og:description" content="1、 A+B问题问题描述输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T03:13:08.167Z">
+<meta property="og:updated_time" content="2019-01-24T14:53:31.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 1(Two Sum)">
-<meta name="twitter:description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
+<meta name="twitter:title" content="蓝桥杯试题——基础篇">
+<meta name="twitter:description" content="1、 A+B问题问题描述输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。">
 
 
 
@@ -112,7 +112,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2018/12/16/leetcode1/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/01/24/lanqiao/basic/">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>LeetCode 1(Two Sum) | 旋哥的博客</title>
+  <title>蓝桥杯试题——基础篇 | 旋哥的博客</title>
   
 
 
@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2018/12/16/leetcode1/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/01/24/lanqiao/basic/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -315,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 1(Two Sum)</h1>
+          <h1 class="post-title" itemprop="name headline">蓝桥杯试题——基础篇</h1>
         
 
         <div class="post-meta">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T15:05:06+08:00">
-                2018-12-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T22:51:29+08:00">
+                2019-01-24
               </time>
             
 
@@ -350,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/蓝桥杯/" itemprop="url" rel="index">
+                    <span itemprop="name">蓝桥杯</span>
                   </a>
                 </span>
 
@@ -368,8 +368,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/16/leetcode1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/leetcode1/" itemprop="commentCount"></span>
+                <a href="/2019/01/24/lanqiao/basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/lanqiao/basic/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,21 +402,29 @@
       
 
       
-        <h3 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h3><div class="note info"><p>题目描述 (md partial supported) </p></div>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<a id="more"></a>
-<p>Example:</p>
-<p>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-<blockquote>
-<p>C语言实现</p>
-</blockquote>
-<p>通过最简单的方式，两个下标，先保持一个下标<code>i</code>不动，另一个下标<code>j</code>从第一个下标后一个开始移动，<code>j</code>移动到最后一个后，开始移动第一个下标<code>i</code>。<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//时间复杂度 O(n^2) </span></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">twoSum</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize, <span class="keyword">int</span> target)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">int</span> * indices = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">2</span>*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numsSize;i++){           </span><br><span class="line">        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;numsSize;j++){      </span><br><span class="line">            <span class="keyword">if</span>(nums[i]+nums[j] == target){</span><br><span class="line">                *indices = i;</span><br><span class="line">                *(indices+<span class="number">1</span>)= j;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } </span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> indices;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//测试代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">5</span>] = {<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>};</span><br><span class="line">	<span class="keyword">int</span> *p = twoSum(a,<span class="number">5</span>,<span class="number">9</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++){</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,*(p+i));</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<blockquote>
-<p>Java实现(优化过)</p>
-</blockquote>
-<p>使用<code>Map</code>集合，<code>Map</code>里存储目标值与数组值之差<code>target-num[i]</code> 和 下标 <code>i</code>，然后判断<code>num[i]</code>是否在Map的key中，不在时继续存储，在时就是所找目标值。<br>这种方式时间复杂度为O(n)，执行效率大大提高。<br></p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">One</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        One one = <span class="keyword">new</span> One();</span><br><span class="line">        <span class="keyword">int</span>[] array = one.twoSum(<span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>},<span class="number">10</span>);</span><br><span class="line">        System.out.println(Arrays.toString(array));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) {</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span>(!map.containsKey(nums[i])){</span><br><span class="line">                map.put(target-nums[i],i);</span><br><span class="line">            }<span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]{i,map.get(nums[i])};</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"no exist"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+        <h2 id="1、-A-B问题"><a href="#1、-A-B问题" class="headerlink" title="1、 A+B问题"></a>1、 A+B问题</h2><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>输入A、B，输出A+B。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包括两个整数，由空格分隔，分别表示A、B。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包括一个整数，表示A+B的值。<br><a id="more"></a><br>代码：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="2、序列求和"><a href="#2、序列求和" class="headerlink" title="2、序列求和"></a>2、序列求和</h2><h4 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h4><p>求1+2+3+…+n的值。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包括一个整数n。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包括一个整数，表示1+2+3+…+n的值。</p>
+<h4 id="数据规模与约定"><a href="#数据规模与约定" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 1,000,000,000。</p>
+<p>分析：因为n要求的数据规模很大，所以直接循环累加的方式不能满足要求，所以采用求等差数列前n和公式 $ S(n) = \frac{(a_1 + a_n)*n}{2} $</p>
+<p>代码：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	sum = ((<span class="number">1</span>+n) * n)/<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="3、圆的面积"><a href="#3、圆的面积" class="headerlink" title="3、圆的面积"></a>3、圆的面积</h2><h4 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h4><p>给定圆的半径r，求圆的面积。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含一个整数r，表示圆的半径。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包含一个实数，四舍五入保留小数点后7位，表示圆的面积。</p>
+<h4 id="数据规模与约定-1"><a href="#数据规模与约定-1" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= r &lt;= 10000。</p>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p>本题对精度要求较高，请注意π的值应该取较精确的值。你可以使用常量来表示π，比如PI=3.14159265358979323，也可以使用数学公式来求π，比如PI=atan(1.0)*4。</p>
+<p>代码：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> r;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;r);</span><br><span class="line">	<span class="keyword">double</span> PI=<span class="number">3.14159265358979323</span>;</span><br><span class="line">	<span class="keyword">double</span> c = r * r * PI;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.7lf\n"</span>,c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="4、Fibonacci数列"><a href="#4、Fibonacci数列" class="headerlink" title="4、Fibonacci数列"></a>4、Fibonacci数列</h2><h4 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h4><p>Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。</p>
+<p>当n比较大时，Fn也非常大，现在我们想知道，Fn除以10007的余数是多少。</p>
+<h4 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含一个整数n。</p>
+<h4 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包含一个整数，表示Fn除以10007的余数。</p>
+<h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><p>在本题中，答案是要求Fn除以10007的余数，因此我们只要能算出这个余数即可，而不需要先计算出Fn的准确值，再将计算的结果除以10007取余数，直接计算余数往往比先算出原数再取余简单。</p>
+<h4 id="数据规模与约定-2"><a href="#数据规模与约定-2" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 1,000,000。</p>
+<h3 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h3><p>直接通过Fn=Fn-1+Fn-2 累加 求第Fn个数，然后取余，n增大时，数会变得很大，超过了C语言规定的长度。<br>所以看提示:求取余的结果累加。</p>
+<p>代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">long</span> a,b,n;</span><br><span class="line">	a = <span class="number">1</span>;</span><br><span class="line">	b = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">long</span> sum = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%ld"</span>,&amp;n); </span><br><span class="line">	<span class="keyword">long</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		sum = (a + b)%<span class="number">10007</span>;</span><br><span class="line">		a = b;</span><br><span class="line">		b = sum;</span><br><span class="line">	}	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%ld "</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
 
       
     </div>
@@ -466,7 +474,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2018/12/16/leetcode1/" title="LeetCode 1(Two Sum)">https://www.you3xuan.top/2018/12/16/leetcode1/</a>
+    <a href="https://www.you3xuan.top/2019/01/24/lanqiao/basic/" title="蓝桥杯试题——基础篇">https://www.you3xuan.top/2019/01/24/lanqiao/basic/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -483,7 +491,7 @@
           
             <a href="/tags/算法/" rel="tag"># 算法</a>
           
-            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+            <a href="/tags/蓝桥杯试题/" rel="tag"># 蓝桥杯试题</a>
           
         </div>
       
@@ -508,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/01/24/dataStructure7/" rel="next" title="漫谈数据结构(四)——字符串的模式匹配">
+                <i class="fa fa-chevron-left"></i> 漫谈数据结构(四)——字符串的模式匹配
               </a>
             
           </div>
@@ -517,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/16/leetcode2/" rel="prev" title="LeetCode 2(Add Two Numbers)">
-                LeetCode 2(Add Two Numbers) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -714,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Sum"><span class="nav-text">Two Sum</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-A-B问题"><span class="nav-text">1、 A+B问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-text">输出格式</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2、序列求和"><span class="nav-text">2、序列求和</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-1"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-1"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-1"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定"><span class="nav-text">数据规模与约定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、圆的面积"><span class="nav-text">3、圆的面积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-2"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-2"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-2"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定-1"><span class="nav-text">数据规模与约定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示"><span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Fibonacci数列"><span class="nav-text">4、Fibonacci数列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-3"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-3"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-3"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说明："><span class="nav-text">说明：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定-2"><span class="nav-text">数据规模与约定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析："><span class="nav-text">解析：</span></a></li></div>
             
 
           </div>
@@ -959,6 +963,11 @@
 
 
   
+  
+    
+
+    
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -1314,4 +1323,15 @@
     mc.async = true;
     mc.src = '//embed.widgetpack.com/widget.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->
+  })();;MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });;MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->

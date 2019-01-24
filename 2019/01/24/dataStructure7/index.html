@@ -71,22 +71,22 @@
 
 
 
-<meta name="description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3中方法来讲解这个算法的实现。">
+<meta name="description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
 <meta name="keywords" content="数据结构,算法,字符串处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="漫谈数据结构(四)——字符串的模式匹配">
 <meta property="og:url" content="https://www.you3xuan.top/2019/01/24/dataStructure7/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3中方法来讲解这个算法的实现。">
+<meta property="og:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904">
-<meta property="og:updated_time" content="2019-01-24T09:13:04.686Z">
+<meta property="og:updated_time" content="2019-01-24T11:07:14.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈数据结构(四)——字符串的模式匹配">
-<meta name="twitter:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3中方法来讲解这个算法的实现。">
+<meta name="twitter:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
 
 
@@ -407,7 +407,7 @@
       
 
       
-        <h2 id="1、字符串匹配的用处"><a href="#1、字符串匹配的用处" class="headerlink" title="1、字符串匹配的用处"></a>1、字符串匹配的用处</h2><p>  在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中<code>strstr()</code>方法，Java中的<code>indexOf()</code>方法。本篇文章用3中方法来讲解这个算法的实现。<br><a id="more"></a></p>
+        <h2 id="1、字符串匹配的用处"><a href="#1、字符串匹配的用处" class="headerlink" title="1、字符串匹配的用处"></a>1、字符串匹配的用处</h2><p>  在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中<code>strstr()</code>方法，Java中的<code>indexOf()</code>方法。本篇文章用3种方法来讲解这个算法的实现。<br><a id="more"></a></p>
 <h2 id="2、匹配方法："><a href="#2、匹配方法：" class="headerlink" title="2、匹配方法："></a>2、匹配方法：</h2><h3 id="2-1-朴素的模式匹配："><a href="#2-1-朴素的模式匹配：" class="headerlink" title="2.1 朴素的模式匹配："></a>2.1 朴素的模式匹配：</h3><p>  又称(Brute Force)，其实就是暴力破解的意思。具体思路是同时遍历主串和模式串，先比较<code>s</code>和<code>p</code>的第一个字符，如果相等继续比较第二个字符，如果不相等，<code>s</code>从第二个字符开始比较<code>p</code>的第一个字符。如果相等，继续往下比较，如果不相等，<code>s</code>从第三个字符开始比较<code>p</code>的第一个字符，以此类推，直到模式串第一次匹配完毕终止。</p>
 <p>  用<code>i</code>表示主串s下标，用<code>j</code>表示模式串p下标。字符相等时就<code>i++; j++;</code>,不相等是就 <code>i = i - j + 1; j=0;</code> 如图所示：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997" alt=""><br>  当<code>s[3]!=p[2]</code>时，因为这次比较是从<code>i=1</code>开始比较的，所以<code>i</code>要回溯到<code>i=2 也就是 i = i - j + 1</code>, <code>j</code>要回溯到<code>j = 0</code>。<br>代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//暴力破解法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(i&lt;lens &amp;&amp; j&lt;lenp){</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(s[i]!=p[j]){</span><br><span class="line">			i = i - j + <span class="number">1</span>;      <span class="comment">//主串从下一个位置开始 </span></span><br><span class="line">			j = <span class="number">0</span>;             <span class="comment">//模式串从0开始 </span></span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(j==lenp){    <span class="comment">//匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> i-j; <span class="comment">//j代表p的长度减1 , i为s中搜索的字符个数减1 。i-j为p在s中匹配成功后第一个字符的开始下标</span></span><br><span class="line">	}<span class="keyword">else</span>{ 			<span class="comment">//没有匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>; </span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>

@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,算法,字符串处理,">
+  <meta name="keywords" content="算法,蓝桥杯试题,">
 
 
 
@@ -71,23 +71,18 @@
 
 
 
-<meta name="description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
-<meta name="keywords" content="数据结构,算法,字符串处理">
+<meta name="description" content="1、 回文数问题描述　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。 输出格式　　按从小到大的顺序输出满足条件的四位十进制数。">
+<meta name="keywords" content="算法,蓝桥杯试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="漫谈数据结构(四)——字符串的模式匹配">
-<meta property="og:url" content="https://www.you3xuan.top/2019/01/24/dataStructure7/index.html">
+<meta property="og:title" content="蓝桥杯试题——基础练习6-10">
+<meta property="og:url" content="https://www.you3xuan.top/2019/01/26/lanqiao/basic3/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
+<meta property="og:description" content="1、 回文数问题描述　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。 输出格式　　按从小到大的顺序输出满足条件的四位十进制数。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904">
-<meta property="og:updated_time" content="2019-01-24T11:07:14.268Z">
+<meta property="og:updated_time" content="2019-01-26T14:14:42.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="漫谈数据结构(四)——字符串的模式匹配">
-<meta name="twitter:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
+<meta name="twitter:title" content="蓝桥杯试题——基础练习6-10">
+<meta name="twitter:description" content="1、 回文数问题描述　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。 输出格式　　按从小到大的顺序输出满足条件的四位十进制数。">
 
 
 
@@ -117,7 +112,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2019/01/24/dataStructure7/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/01/26/lanqiao/basic3/">
 
 
 
@@ -134,7 +129,7 @@
 
 
 
-  <title>漫谈数据结构(四)——字符串的模式匹配 | 旋哥的博客</title>
+  <title>蓝桥杯试题——基础练习6-10 | 旋哥的博客</title>
   
 
 
@@ -303,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/01/24/dataStructure7/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/01/26/lanqiao/basic3/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -320,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">漫谈数据结构(四)——字符串的模式匹配</h1>
+          <h1 class="post-title" itemprop="name headline">蓝桥杯试题——基础练习6-10</h1>
         
 
         <div class="post-meta">
@@ -332,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T17:11:19+08:00">
-                2019-01-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-26T22:13:41+08:00">
+                2019-01-26
               </time>
             
 
@@ -355,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/蓝桥杯/" itemprop="url" rel="index">
+                    <span itemprop="name">蓝桥杯</span>
                   </a>
                 </span>
 
@@ -373,8 +368,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/24/dataStructure7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/dataStructure7/" itemprop="commentCount"></span>
+                <a href="/2019/01/26/lanqiao/basic3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/26/lanqiao/basic3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,36 +402,47 @@
       
 
       
-        <h2 id="1、字符串匹配的用处"><a href="#1、字符串匹配的用处" class="headerlink" title="1、字符串匹配的用处"></a>1、字符串匹配的用处</h2><p>  在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中<code>strstr()</code>方法，Java中的<code>indexOf()</code>方法。本篇文章用3种方法来讲解这个算法的实现。<br><a id="more"></a></p>
-<h2 id="2、匹配方法："><a href="#2、匹配方法：" class="headerlink" title="2、匹配方法："></a>2、匹配方法：</h2><h3 id="2-1-朴素的模式匹配："><a href="#2-1-朴素的模式匹配：" class="headerlink" title="2.1 朴素的模式匹配："></a>2.1 朴素的模式匹配：</h3><p>  又称(Brute Force)，其实就是暴力破解的意思。具体思路是同时遍历主串和模式串，先比较<code>s</code>和<code>p</code>的第一个字符，如果相等继续比较第二个字符，如果不相等，<code>s</code>从第二个字符开始比较<code>p</code>的第一个字符。如果相等，继续往下比较，如果不相等，<code>s</code>从第三个字符开始比较<code>p</code>的第一个字符，以此类推，直到模式串第一次匹配完毕终止。</p>
-<p>  用<code>i</code>表示主串s下标，用<code>j</code>表示模式串p下标。字符相等时就<code>i++; j++;</code>,不相等是就 <code>i = i - j + 1; j=0;</code> 如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997" alt=""><br>  当<code>s[3]!=p[2]</code>时，因为这次比较是从<code>i=1</code>开始比较的，所以<code>i</code>要回溯到<code>i=2 也就是 i = i - j + 1</code>, <code>j</code>要回溯到<code>j = 0</code>。<br>代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//暴力破解法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(i&lt;lens &amp;&amp; j&lt;lenp){</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(s[i]!=p[j]){</span><br><span class="line">			i = i - j + <span class="number">1</span>;      <span class="comment">//主串从下一个位置开始 </span></span><br><span class="line">			j = <span class="number">0</span>;             <span class="comment">//模式串从0开始 </span></span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(j==lenp){    <span class="comment">//匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> i-j; <span class="comment">//j代表p的长度减1 , i为s中搜索的字符个数减1 。i-j为p在s中匹配成功后第一个字符的开始下标</span></span><br><span class="line">	}<span class="keyword">else</span>{ 			<span class="comment">//没有匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>; </span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>时间复杂度：O(n*m)</p>
-<h3 id="2-2-动态规划算法："><a href="#2-2-动态规划算法：" class="headerlink" title="2.2 动态规划算法："></a>2.2 动态规划算法：</h3><p>  使用二维数组记录匹配的所有情况，如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725" alt=""><br>  先匹配第一行，第一列。相等记为1，不等记为0。然后往里比较，如果相等，取主对角线的前一位加一,不等记为0。等数组中出现的数字也模式串p的长度相等时，匹配结束。代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动态规划 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dynamicSearch</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> temp[lens][lenp];</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;lens;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;lenp;j++){</span><br><span class="line">			<span class="keyword">if</span>(j==<span class="number">0</span>||i==<span class="number">0</span>){</span><br><span class="line">				<span class="keyword">if</span>(p[j] == s[i]){</span><br><span class="line">					temp[i][j] = <span class="number">1</span>;</span><br><span class="line">				}<span class="keyword">else</span>{</span><br><span class="line">					temp[i][j] = <span class="number">0</span>;</span><br><span class="line">				}</span><br><span class="line">			}<span class="keyword">else</span>{</span><br><span class="line">				<span class="keyword">if</span>(p[j] == s[i]){</span><br><span class="line">					temp[i][j] = temp[i<span class="number">-1</span>][j<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">				}<span class="keyword">else</span>{</span><br><span class="line">					temp[i][j] = <span class="number">0</span>;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(temp[i][j] == lenp){</span><br><span class="line">				<span class="keyword">return</span> i - lenp + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>算法复杂度：O(n*m)</p>
-<h3 id="2-3-KMP算法："><a href="#2-3-KMP算法：" class="headerlink" title="2.3 KMP算法："></a>2.3 KMP算法：</h3><p>  当模式串为<code>p = "abcabd"</code>，主串为<code>s = "abcabgabey"</code>时，如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603" alt=""><br>  当<code>s[5]!=p[5]</code>,如果按照之前的方法，i要回溯到1，p要回溯到0，但是仔细想想，真的有这个必要吗？观察p串，有相同子符<code>ab</code>。推出：</p>
-<p>$p[0] = p[3] 且 p[1] = p[4]$ <br><br>$p[3] = s[3] 且 p[4] = s[4]$ <br><br>$=&gt; p[0] = s[3] 且p[1] = s[4]$ <br></p>
-<p>  所以，<code>i</code>不需要回溯，只需对比<code>p[2]</code> 是否等于 <code>s[5]</code>,这样i直接从0跳到了5，省略了许多不必要的重复步骤。那么问题的关键就是如何确定<code>p</code>匹配失败时<code>j</code>回到哪一个最恰当的位置。仔细观察一下，只有出现重复子串时，才会出现这种情况。如果没有重复子串,j只能取0。</p>
-<p>  它的效率提高的地方是无需回溯s的下标<code>i</code>，只需回溯<code>j</code>，匹配时，直接<code>i++</code>，<code>j</code>找到合适的位置，依次比对下去。</p>
-<p>  那如何找到j的恰当位置呢，这时要引入一个整形数组<code>next[]</code>，<code>next</code>下标与<code>p</code>的下标对应，存储是的是这个 <strong>字符之前(不包含自己)</strong> 的子串的前缀和后缀(包含最后一个字符的子串)相等时字符的个数。</p>
+        <h3 id="1、-回文数"><a href="#1、-回文数" class="headerlink" title="1、 回文数"></a>1、 回文数</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　按从小到大的顺序输出满足条件的四位十进制数。<br><a id="more"></a></p>
+<h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> i)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">int</span> a = i;</span><br><span class="line">	t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i){</span><br><span class="line">		t = i % <span class="number">10</span>  + t * <span class="number">10</span>;</span><br><span class="line">		i = i / <span class="number">10</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(t == a){</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	}<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1000</span>;i&lt;<span class="number">10000</span>;i++){</span><br><span class="line">		<span class="keyword">if</span>(fun(i)){</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2、特殊的数字"><a href="#2、特殊的数字" class="headerlink" title="2、特殊的数字"></a>2、特殊的数字</h3><h4 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　153是一个非常特殊的数，它等于它的每位数字的立方和，即153=1*1*1+5*5*5+3*3*3。编程求所有满足这种条件的三位十进制数。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　按从小到大的顺序输出满足条件的三位十进制数，每个数占一行。</p>
+<h4 id="代码如下：-1"><a href="#代码如下：-1" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++){</span><br><span class="line">		a = i / <span class="number">100</span>;</span><br><span class="line">		b = i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">		c = i % <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>((a*a*a+b*b*b+c*c*c) == i){</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">		} </span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3、杨辉三角形"><a href="#3、杨辉三角形" class="headerlink" title="3、杨辉三角形"></a>3、杨辉三角形</h3><h4 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h4><p>杨辉三角形又称Pascal三角形，它的第i+1行是(a+b)i的展开式的系数。<br>它的一个重要性质是：三角形中的每个数字等于它两肩上的数字相加。</p>
+<p>下面给出了杨辉三角形的前4行：</p>
+<p>1</p>
+<p>1 1</p>
+<p>1 2 1</p>
+<p>1 3 3 1</p>
+<p>　　<br>给出n，输出它的前n行。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含一个数n。</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出杨辉三角形的前n行。每一行从这一行的第一个数开始依次输出，中间使用一个空格分隔。请不要在前面输出多余的空格。</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><p>4</p>
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><p>1</p>
+<p>1 1</p>
+<p>1 2 1</p>
+<p>1 3 3 1</p>
+<h4 id="数据规模与约定"><a href="#数据规模与约定" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 34。</p>
 <blockquote>
-<p>前缀(包含第一个字符的子串) <br><br>后缀(包含最后一个字符的子串)</p>
-</blockquote>
-<p>其中 <strong>规定next[0] = -1</strong>，所以 <code>p = "abcabd"</code> 对应的next数组为<code>next= [-1,0,0,0,1,2]</code>，这样其实就已经结束了，但是为了追求更少的对比次数。可以把next数组在优化一下。因为<code>p[3] = p[0] = 'a'</code>,<code>p[3]</code>之前的字符不重复， 所以无需取<code>j</code>,直接让i继续走。所以`next= [-1,0,0,-1,0,2];</p>
-<h4 id="2-3-1-求Next数组："><a href="#2-3-1-求Next数组：" class="headerlink" title="2.3.1 求Next数组："></a>2.3.1 求Next数组：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNext</span><span class="params">(<span class="keyword">char</span>* p, <span class="keyword">int</span> next[])</span></span>{</span><br><span class="line">	<span class="keyword">int</span> pLen = <span class="built_in">strlen</span>(p);</span><br><span class="line">	next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (j &lt; pLen - <span class="number">1</span>){</span><br><span class="line">		<span class="comment">//p[k]表示前缀，p[j]表示后缀  </span></span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">-1</span> || p[j] == p[k]){</span><br><span class="line">			++j;</span><br><span class="line">			++k;</span><br><span class="line">			<span class="comment">//较之前next数组求法，改动在下面4行</span></span><br><span class="line">			<span class="keyword">if</span> (p[j] != p[k])</span><br><span class="line">				next[j] = k;   <span class="comment">//之前只有这一行</span></span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="comment">//因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]</span></span><br><span class="line">				next[j] = next[k];</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span>{</span><br><span class="line">			k = next[k];</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="2-3-2-KMP算法代码："><a href="#2-3-2-KMP算法代码：" class="headerlink" title="2.3.2 KMP算法代码："></a>2.3.2 KMP算法代码：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kmpSearch</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> next[lenp];</span><br><span class="line">	getNext(p,next);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;lens &amp;&amp; j&lt;lenp){</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">-1</span>||s[i]==p[j]){</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			j = next[j];</span><br><span class="line">		} </span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(j==lenp){    </span><br><span class="line">		<span class="keyword">return</span> i-j; </span><br><span class="line">	}<span class="keyword">else</span>{ 	</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>; </span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>算法复杂度 O(n+m)</p>
-<h2 id="3、测试"><a href="#3、测试" class="headerlink" title="3、测试"></a>3、测试</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">char</span> *s = <span class="string">"abcabgabcabay"</span>;</span><br><span class="line">	<span class="keyword">char</span> *p = <span class="string">"abcaba"</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"s = \"abcabgabcabay\"  p = \"abcaba\"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"朴素的模式匹配：\n"</span>); </span><br><span class="line">	<span class="keyword">int</span> pos = search(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"动态规划算法：\n"</span>);</span><br><span class="line">	pos = kmpSearch(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"KMP算法：\n"</span>);</span><br><span class="line">	pos = dynamicSearch(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904" alt="输出结果"></p>
-<h2 id="4、总结"><a href="#4、总结" class="headerlink" title="4、总结"></a>4、总结</h2><p>  综合来说这三种方法各有优劣，如果追求效率的话，KMP算法最好，算法复杂度最低，但是也难理解。如果您感觉KMP算法效率还是不符合您的要求，请<a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">点击这里</a>，里面介绍了BM算法和Sunday算法，效率更好，算法复杂度减少到了O(n)。</p>
-<hr>
-<blockquote>
-<p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
-</blockquote>
-
+<h4 id="分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。"><a href="#分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。" class="headerlink" title="分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。"></a>分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。</h4></blockquote>
+<h4 id="代码如下：-2"><a href="#代码如下：-2" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,j,n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> arr[n][n];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++){</span><br><span class="line">			<span class="keyword">if</span>(j==<span class="number">0</span>||i==j){</span><br><span class="line">				arr[i][j] = <span class="number">1</span>;</span><br><span class="line">			}<span class="keyword">else</span> <span class="keyword">if</span>(i&gt;j){</span><br><span class="line">				arr[i][j] = arr[i<span class="number">-1</span>][j] + arr[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">			} </span><br><span class="line">			</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++){</span><br><span class="line">			<span class="keyword">if</span>(i&gt;=j){</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d "</span>,arr[i][j]);</span><br><span class="line">			}	</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="4、查找整数"><a href="#4、查找整数" class="headerlink" title="4、查找整数"></a>4、查找整数</h3><h4 id="问题描述-3"><a href="#问题描述-3" class="headerlink" title="问题描述"></a>问题描述</h4><p>给出一个包含n个整数的数列，问整数a在数列中的第一次出现是第几个。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行包含一个整数n。</p>
+<p>第二行包含n个非负整数，为给定的数列，数列中的每个数都不大于10000。</p>
+<p>第三行包含一个整数a，为待查找的数。</p>
+<h4 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h4><p>如果a在数列中出现了，输出它第一次出现的位置(位置从1开始编号)，否则输出-1。</p>
+<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><p>6 <br><br>1 9 4 8 3 9 <br><br>9</p>
+<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><p>2</p>
+<h4 id="数据规模与约定-1"><a href="#数据规模与约定-1" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 1000。</p>
+<h4 id="代码如下：-3"><a href="#代码如下：-3" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n,i,a;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> arr[n];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d "</span>,&amp;arr[i]);</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="keyword">if</span>(a == arr[i]){</span><br><span class="line">			index = i + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,index);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="5、数列特征"><a href="#5、数列特征" class="headerlink" title="5、数列特征"></a>5、数列特征</h3><h4 id="问题描述-4"><a href="#问题描述-4" class="headerlink" title="问题描述"></a>问题描述</h4><p>给出n个数，找出这n个数的最大值，最小值，和。</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行为整数n，表示数的个数。</p>
+<p>第二行有n个数，为给定的n个数，每个数的绝对值都小于10000。</p>
+<h4 id="输出格式-4"><a href="#输出格式-4" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出三行，每行一个整数。第一行表示这些数中的最大值，第二行表示这些数中的最小值，第三行表示这些数的和。</p>
+<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><p>5 <br><br>1 3 -2 4 5</p>
+<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><p>5 <br><br>-2 <br><br>11 </p>
+<h4 id="数据规模与约定-2"><a href="#数据规模与约定-2" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 10000。</p>
+<h4 id="代码如下：-4"><a href="#代码如下：-4" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n,i,max,min,sum;</span><br><span class="line">	sum = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> arr[n];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;arr[i]);</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">0</span>){</span><br><span class="line">			max = arr[i];</span><br><span class="line">			min = arr[i];</span><br><span class="line">			sum = arr[i];</span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			sum = sum + arr[i];</span><br><span class="line">			<span class="keyword">if</span>(arr[i]&gt;max){</span><br><span class="line">				max = arr[i];</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">if</span>(arr[i]&lt;min){</span><br><span class="line">				min = arr[i];</span><br><span class="line">			} </span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n%d\n%d\n"</span>,max,min,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
     
@@ -485,7 +491,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2019/01/24/dataStructure7/" title="漫谈数据结构(四)——字符串的模式匹配">https://www.you3xuan.top/2019/01/24/dataStructure7/</a>
+    <a href="https://www.you3xuan.top/2019/01/26/lanqiao/basic3/" title="蓝桥杯试题——基础练习6-10">https://www.you3xuan.top/2019/01/26/lanqiao/basic3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -500,11 +506,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
-          
             <a href="/tags/算法/" rel="tag"># 算法</a>
           
-            <a href="/tags/字符串处理/" rel="tag"># 字符串处理</a>
+            <a href="/tags/蓝桥杯试题/" rel="tag"># 蓝桥杯试题</a>
           
         </div>
       
@@ -529,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/22/dataStructure6/" rel="next" title="漫谈数据结构(四)——串">
-                <i class="fa fa-chevron-left"></i> 漫谈数据结构(四)——串
+              <a href="/2019/01/26/lanqiao/basic2/" rel="next" title="蓝桥杯试题——基础练习1-5">
+                <i class="fa fa-chevron-left"></i> 蓝桥杯试题——基础练习1-5
               </a>
             
           </div>
@@ -538,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/24/lanqiao/basic/" rel="prev" title="蓝桥杯试题——基础篇">
-                蓝桥杯试题——基础篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -735,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、字符串匹配的用处"><span class="nav-text">1、字符串匹配的用处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、匹配方法："><span class="nav-text">2、匹配方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-朴素的模式匹配："><span class="nav-text">2.1 朴素的模式匹配：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-动态规划算法："><span class="nav-text">2.2 动态规划算法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-KMP算法："><span class="nav-text">2.3 KMP算法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-求Next数组："><span class="nav-text">2.3.1 求Next数组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-KMP算法代码："><span class="nav-text">2.3.2 KMP算法代码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、测试"><span class="nav-text">3、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、总结"><span class="nav-text">4、总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、-回文数"><span class="nav-text">1、 回文数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下："><span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、特殊的数字"><span class="nav-text">2、特殊的数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-1"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-1"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下：-1"><span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、杨辉三角形"><span class="nav-text">3、杨辉三角形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-2"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-2"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定"><span class="nav-text">数据规模与约定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。"><span class="nav-text">分析：直接用两层循环不是很好找规律，因为是内部数与数之间的关系，所以使用二维数组。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下：-2"><span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、查找整数"><span class="nav-text">4、查找整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-3"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-1"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-3"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入-1"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出-1"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定-1"><span class="nav-text">数据规模与约定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下：-3"><span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、数列特征"><span class="nav-text">5、数列特征</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-4"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-2"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-4"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入-2"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出-2"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据规模与约定-2"><span class="nav-text">数据规模与约定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下：-4"><span class="nav-text">代码如下：</span></a></li></ol></li></ol></div>
             
 
           </div>

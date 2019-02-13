@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/18/16860948bde316fe?w=809&amp;h=348&amp;f=png&amp;s=31637">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/18/168609864448c237?w=1041&amp;h=374&amp;f=png&amp;s=34426">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/18/168616d53e483a55?w=542&amp;h=152&amp;f=png&amp;s=5742">
-<meta property="og:updated_time" content="2019-01-20T15:13:02.407Z">
+<meta property="og:updated_time" content="2019-02-13T11:45:48.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈数据结构(二)——线性表2">
 <meta name="twitter:description" content="作者个人博客   https://www.you3xuan.top/ 查看原文。  1、线性表的链式存储&amp;emsp;&amp;emsp;在链式存储中，结点之间的内存单元地址是不连续的。它的每一个结点包括数据域和下一个结点的地址。头结点的数据域只存放结点的长度，并指向第一个元素。尾结点指向NULL。如图所示：">
@@ -474,7 +474,9 @@
 <h3 id="4-4-测试"><a href="#4-4-测试" class="headerlink" title="4.4 测试"></a>4.4 测试</h3><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//循环链表</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Create Circle Node List: \n"</span>);</span><br><span class="line">	Head * pHead = createList();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"length = %d\n"</span>,pHead-&gt;length);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Insert Node: \n"</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">11</span>;i++){</span><br><span class="line">		insertCircleList(pHead,i,i);</span><br><span class="line">	}</span><br><span class="line">	print(pHead);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Delete Node: \n"</span>);</span><br><span class="line">	deleteCircleNode(pHead,<span class="number">0</span>);</span><br><span class="line">	print(pHead);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>输出结果：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/1/18/168616d53e483a55?w=542&amp;h=152&amp;f=png&amp;s=5742" alt="输出结果"></p>
-<p><br>本文为线性表第二篇，如果读者想了解第一篇，请<a href="https://www.you3xuan.top/2019/01/17/dataStructure2/#more">点击这里</a>。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
+<blockquote>
+<p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
+</blockquote>
 
       
     </div>
@@ -678,7 +680,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

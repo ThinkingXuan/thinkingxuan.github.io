@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="算法,leetcode,">
+  <meta name="keywords" content="bat脚本,Hexo,">
 
 
 
@@ -71,20 +71,21 @@
 
 
 
-<meta name="description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
-<meta name="keywords" content="算法,leetcode">
+<meta name="description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作。并且解决每次都要输入的重复操作。脚">
+<meta name="keywords" content="bat脚本,Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 3(Longest Substring)">
-<meta property="og:url" content="https://www.you3xuan.top/2018/12/16/leetcode3/index.html">
+<meta property="og:title" content="Hexo博客使用bat脚本自动部署和免密码部署">
+<meta property="og:url" content="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
+<meta property="og:description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作。并且解决每次都要输入的重复操作。脚">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-06T07:42:39.120Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f5a21011b6d60?w=1339&amp;h=671&amp;f=gif&amp;s=1943677">
+<meta property="og:updated_time" content="2019-02-16T10:17:55.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 3(Longest Substring)">
-<meta name="twitter:description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Hexo博客使用bat脚本自动部署和免密码部署">
+<meta name="twitter:description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作。并且解决每次都要输入的重复操作。脚">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438">
 
 
 
@@ -114,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2018/12/16/leetcode3/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
 
 
 
@@ -131,7 +132,7 @@
 
 
 
-  <title>LeetCode 3(Longest Substring) | 旋哥的博客</title>
+  <title>Hexo博客使用bat脚本自动部署和免密码部署 | 旋哥的博客</title>
   
 
 
@@ -300,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2018/12/16/leetcode3/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -317,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 3(Longest Substring)</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo博客使用bat脚本自动部署和免密码部署</h1>
         
 
         <div class="post-meta">
@@ -329,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T15:43:54+08:00">
-                2018-12-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T18:17:46+08:00">
+                2019-02-16
               </time>
             
 
@@ -352,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -370,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/16/leetcode3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/leetcode3/" itemprop="commentCount"></span>
+                <a href="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -404,124 +405,26 @@
       
 
       
-        <h3 id="Longest-Substring-Without-Repeating-Characters"><a href="#Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Longest Substring Without Repeating Characters"></a>Longest Substring Without Repeating Characters</h3><div class="note info"><p>题目描述 </p></div>
-<p>Given a string, find the length of the longest substring without repeating characters.</p>
-<a id="more"></a>
-<p>Example 1:</p>
-<p>Input: “abcabcbb”<br>Output: 3<br>Explanation: The answer is “abc”, with the length of 3. </p>
-<p>简述：统计字符串不重复字符最长子串的长度。</p>
-<blockquote>
-<p>C语言实现</p>
-</blockquote>
-<p>使用两个下标<code>i</code>，<code>index</code>。<code>i</code>作为字符串的下标，依次往下移动。<code>index</code>为子串的下标往右移动。<code>index+i</code>是在母串移动的位置。<br>初始化子串<code>p</code>比母串大1，不然有的编译器报越界。<code>每次赋值后给下一位赋值'\0'</code>，<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isInclude</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> a)</span> </span>{</span><br><span class="line">    <span class="keyword">while</span> (*s != <span class="string">'\0'</span>) {</span><br><span class="line">        <span class="keyword">if</span> (*s == a) {</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        s++;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>{</span><br><span class="line">    <span class="keyword">while</span> (*s != <span class="string">'\0'</span>) {</span><br><span class="line">        *s = <span class="string">'\0'</span>;</span><br><span class="line">        s++;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> p[<span class="built_in">strlen</span>(s) &gt; <span class="number">0</span> ? <span class="built_in">strlen</span>(s)+<span class="number">1</span> : <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (s[i] != <span class="string">'\0'</span>) {</span><br><span class="line">        <span class="keyword">if</span> (!isInclude(p, s[i + index])) {</span><br><span class="line">            p[index] = s[i + index];</span><br><span class="line">            p[index+<span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line">            index++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (index &gt;= max) {</span><br><span class="line">                max = index;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (s[index + i] == <span class="string">'\0'</span>) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            index = <span class="number">0</span>;</span><br><span class="line">            clear(p);</span><br><span class="line">            i++;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">char</span> *s = <span class="string">"vfqsrebtogjmcanajfyzvypzibtngtrca"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> length = lengthOfLongestSubstring(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"LongestLength=%d\n"</span>, length);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>因为C语言没有现成使用的集合类，如（Map,Set），书写起来较为复杂。算法复杂度也挺高。下图为执行耗时，比较不理想。<br><img src="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>时间复杂度：</p>
-<p>遍历母串加子串移动n<em>(n-1)  ，找到一个字符需要从头查找比对。最坏情况为，n</em>(n-1)*n ，时间复杂度O(n^3)</p>
-<p>空间复杂度：<br>O(n)+1</p>
-<blockquote>
-<p>Java实现（使用Set实现）</p>
-</blockquote>
-<p>通过集合Set的特性集合中不能出现重复值，检测子串在Set中是否存在，存在的话把集合里面连同本身及之前的元素全部去掉。这种方式被称为SLIDING WINDOW(滑动窗口)</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最初实现</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_2</span><span class="params">(String s)</span> </span>{</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">       Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (i &lt; s.length() &amp;&amp; j &lt; s.length()) {</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span> (!set.contains(s.charAt(j))) {</span><br><span class="line">               set.add(s.charAt(j++));</span><br><span class="line">               max = Math.max(max, j - i);</span><br><span class="line">           } <span class="keyword">else</span> {</span><br><span class="line">               set.remove(s.charAt(i++));</span><br><span class="line">           }</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> max;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<p>执行流程如下：<code>String s = "abcaea"</code></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">i</th>
-<th style="text-align:center">set</th>
-<th style="text-align:center">j</th>
-<th style="text-align:center">max</th>
-<th style="text-align:center">j - i</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">a</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">a,b</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">a,b,c</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">b,c</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">b,c,a</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">b,c,a,e</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">c,a,e</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">a,e</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">e</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">ea</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>算法复杂度  O(2n)  =O(n)<br>空间复杂度  O(n)</p>
-<blockquote>
-<p>Java实现(HashMap 优化) </p>
-</blockquote>
-<p>使用HashMap自动覆盖重复的key相同的value，记录下每个字符在字符串中出现的最后位置。使用<code>i</code>记录不重复字符子串的起点，<code>j-i-1</code>表示字符串的长度。出现重复字符是更新<code>i</code>的位置。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_3</span><span class="params">(String s)</span> </span>{</span><br><span class="line"></span><br><span class="line">       Map&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>; j &lt; s.length(); j++) {</span><br><span class="line">           <span class="keyword">if</span> (map.containsKey(s.charAt(j))){</span><br><span class="line">               i = Math.max(map.get(s.charAt(j)),i);</span><br><span class="line">           }</span><br><span class="line"></span><br><span class="line">           max = Math.max(max, j - i + <span class="number">1</span>);</span><br><span class="line">           map.put(s.charAt(j), j + <span class="number">1</span>);</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> max;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<p>时间复杂度：O(n)<br>空间复杂度：O(n)<br>效率比HashSet快的原因是，没有对字符移除的操作，并且HashMap的查询速率把HashSet更快。</p>
-<blockquote>
-<p>Java实现 (使用ASCII 128）</p>
-</blockquote>
-<p>标准ASCll表示从0-127表示128个字符，通过字符代表ASCll值字符位置，数组中存储的是每个字符在字符串中出现的最后位置。是对HashMap实现的优化。因为没有了查询耗时，这种的执行效率最好。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_4</span><span class="params">(String s)</span> </span>{</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span>[] index = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]; <span class="comment">// current index of character</span></span><br><span class="line">       <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++) {</span><br><span class="line">           i = Math.max(index[s.charAt(j)], i);</span><br><span class="line">           ans = Math.max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">           index[s.charAt(j)] = j + <span class="number">1</span>;</span><br><span class="line">       }</span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-<p>时间复杂度：O(n)<br>空间复杂度：O(n)</p>
+        <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code> ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。</p>
+<p>所以，我就在windows下用bat脚本搭建了一个自动化部署的操作。并且解决每次都要输入的重复操作。脚本包括三部分：新建博客，调试，部署。<br><a id="more"></a></p>
+<h3 id="bat脚本："><a href="#bat脚本：" class="headerlink" title="bat脚本："></a>bat脚本：</h3><h4 id="1、新建博客"><a href="#1、新建博客" class="headerlink" title="1、新建博客"></a>1、新建博客</h4><p>在桌面或者文件夹中新建 <code>CreateNewPage.bat</code>文本。<br>使用<code>notepad++</code>或者任意文本编辑器打开输入以下代码：</p>
+<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /p name=input pages name:</span><br><span class="line"><span class="built_in">echo</span> name:<span class="variable">%name%</span></span><br><span class="line"><span class="built_in">echo</span> please wait</span><br><span class="line"><span class="built_in">start</span> /d "F:\notepad\Notepad++"   notepad++.exe  "D:\Blog\blog\source\_posts\<span class="variable">%name%</span>.<span class="built_in">md</span>"</span><br></pre></td></tr></tbody></table></figure>
+<p><code>@echo off</code>表示不回显，意思就是说在命令提示符中输入的命令不显示。你也可以设置为 <code>@echo on</code>。</p>
+<p><code>set /p name=input pages name:</code> 表示你要输入这篇博客的文件名。使用<code>name</code>变量存储。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start /d "F:\notepad\Notepad++"   notepad++.exe  "D:\Blog\blog\source\_posts\%name%.md"</span><br><span class="line">表示使用这个notepad++来新建这个.md文件。</span><br></pre></td></tr></tbody></table></figure>
+<p>其中<code>"F:\notepad\Notepad++"</code>表示nodepad++的安装位置。<code>D:\Blog\blog\source\_posts\%name%.md</code>表示这个文件的存放位置。</p>
+<p><strong>博客路径和文本编辑器位置请改成你自己的。</strong></p>
+<p>如图所示：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438" alt="新建博客"></p>
+<h4 id="2、调试"><a href="#2、调试" class="headerlink" title="2、调试"></a>2、调试</h4><p>新建<code>debug.bat</code>文件<br>内容如下：<br></p><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">D</span>:\<span class="title">Blog</span>\<span class="title">blog</span></span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">s</span> -<span class="title">debug</span></span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>表示在博客根目录中运行 hexo s -debug命令。</p>
+<p>如图所示：<br><img src="https://user-gold-cdn.xitu.io/2019/2/16/168f5a21011b6d60?w=1339&amp;h=671&amp;f=gif&amp;s=1943677" alt="调试"></p>
+<h4 id="3、部署"><a href="#3、部署" class="headerlink" title="3、部署"></a>3、部署</h4><p>新建Deploy.bat文件<br>内容如下：<br></p><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> on</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">D</span>:\<span class="title">Blog</span>\<span class="title">blog</span> </span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">clean</span> &amp;&amp; <span class="title">hexo</span> <span class="title">g</span> &amp;&amp; <span class="title">hexo</span> <span class="title">d</span></span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果你只使用的http推送的代码，需要手动输入用户名和账号的。下面讲解如果免密部署。</p>
+<h3 id="免密码部署："><a href="#免密码部署：" class="headerlink" title="免密码部署："></a>免密码部署：</h3><p>打开博客根目录的config.yml，查看自己博客的部署方式：我这里部署了双平台。<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: </span><br><span class="line">      github: https://github.com/ThinkingXuan/thinkingxuan.github.io.git,master</span><br><span class="line">      coding: https://git.coding.net/q1454739828/q1454739828.coding.me.git,master</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>这是一般的部署方式，git使用https推送代码，保密性不足，所以需要输入用户名密码。<br>所以我们需要做的改成使用ssh认证。</p>
+<p>你需要做的就是在github或者coding中录入你自己的ssh密钥，然后在本地连接认证，一般密钥存储在id_rsa.pub文件。在C:\Users\Administrator\.ssh文件夹里面。如果你没有这个文件，请自行百度生成，连接认证。github和coding基本一样。然后修改config.yml文件：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: </span><br><span class="line">      github: git@github.com:ThinkingXuan/thinkingxuan.github.io.git,master</span><br><span class="line">      coding: git@git.coding.net:q1454739828/q1454739828.coding.me.git</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>然后运行脚本。</p>
 
       
     </div>
@@ -581,7 +484,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2018/12/16/leetcode3/" title="LeetCode 3(Longest Substring)">https://www.you3xuan.top/2018/12/16/leetcode3/</a>
+    <a href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" title="Hexo博客使用bat脚本自动部署和免密码部署">https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -596,9 +499,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/bat脚本/" rel="tag"><i class="fa fa-tag"></i> bat脚本</a>
           
-            <a href="/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
         </div>
       
@@ -623,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/16/leetcode2/" rel="next" title="LeetCode 2(Add Two Numbers)">
-                <i class="fa fa-chevron-left"></i> LeetCode 2(Add Two Numbers)
+              <a href="/2019/02/16/lanqiao/龟兔赛跑预测/" rel="next" title="蓝桥杯试题 —— 龟兔赛跑预测">
+                <i class="fa fa-chevron-left"></i> 蓝桥杯试题 —— 龟兔赛跑预测
               </a>
             
           </div>
@@ -632,10 +535,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/16/leetcode4/" rel="prev" title="LeetCode 4(Median of Two Sorted Arrays)">
-                LeetCode 4(Median of Two Sorted Arrays) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -808,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest-Substring-Without-Repeating-Characters"><span class="nav-text">Longest Substring Without Repeating Characters</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原因"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat脚本："><span class="nav-text">bat脚本：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、新建博客"><span class="nav-text">1、新建博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、调试"><span class="nav-text">2、调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、部署"><span class="nav-text">3、部署</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#免密码部署："><span class="nav-text">免密码部署：</span></a></li></ol></div>
             
 
           </div>

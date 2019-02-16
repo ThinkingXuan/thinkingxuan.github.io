@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[蓝桥杯试题——芯片测试]]></title>
+    <url>%2F2019%2F02%2F16%2Flanqiao%2F%E8%8A%AF%E7%89%87%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[芯片测试：问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。给出所有芯片的测试结果，问哪些芯片是好芯片。 输入格式输入数据第一行为一个整数n，表示芯片个数。 第二行到第n+1行为n*n的一张表，每行n个数据。表中的每个数据为0或1，在这n行中的第i行第j列（1≤i,j≤n）的数据表示用第i块芯片测试第j块芯片时得到的测试结果，1表示好，0表示坏，i=j时一律为1（并不表示该芯片对本身的测试结果。芯片不能对本身进行测试）。 输出格式按从小到大的顺序输出所有好芯片的编号 样例输入3 1 0 1 0 1 0 1 0 1 样例输出1 3 思路：题目的前提说的是好的芯片一定大于坏的芯片，一个芯片的测试结果相当于一列，，好的芯片在一列中1的数量一定大于0的个数(或者1的数量大于一半)。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;stdio.h&gt;int n;int fun(int *b)&#123; int i; int y,k; y = 0; //1的个数 k = 0; //0的个数 for(i=0;i&lt;n;i++)&#123; if(b[i] == 1)&#123; y++; &#125;else&#123; k++; &#125; &#125; if(y&gt;k)&#123; return 1; &#125;else&#123; return 0; &#125;&#125;int main()&#123; int i,j; scanf("%d",&amp;n); int a[n][n]; for(i=0;i&lt;n;i++)&#123; for(j=0;j&lt;n;j++)&#123; scanf("%d",&amp;a[i][j]); &#125; &#125; int b[n]; for(i=0;i&lt;n;i++)&#123; for(j=0;j&lt;n;j++)&#123; b[j] = a[j][i]; &#125; int t = fun(b); if(t)&#123; printf("%d ",i+1); &#125; &#125; return 0;&#125; 输出结果：]]></content>
+      <categories>
+        <category>蓝桥杯试题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>蓝桥杯试题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo博客使用bat脚本自动部署和免密码部署]]></title>
     <url>%2F2019%2F02%2F16%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%92%8C%E5%85%8D%E5%AF%86%E7%A0%81%E9%83%A8%E7%BD%B2%2F</url>
     <content type="text"><![CDATA[原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作。并且解决每次都要输入的重复操作。脚本包括三部分：新建博客，调试，部署。 bat脚本：1、新建博客在桌面或者文件夹中新建 CreateNewPage.bat文本。使用notepad++或者任意文本编辑器打开输入以下代码： 12345@echo offset /p name=input pages name:echo name:%name%echo please waitstart /d "F:\notepad\Notepad++" notepad++.exe "D:\Blog\blog\source\_posts\%name%.md" @echo off表示不回显，意思就是说在命令提示符中输入的命令不显示。你也可以设置为 @echo on。 set /p name=input pages name: 表示你要输入这篇博客的文件名。使用name变量存储。 12start /d &quot;F:\notepad\Notepad++&quot; notepad++.exe &quot;D:\Blog\blog\source\_posts\%name%.md&quot;表示使用这个notepad++来新建这个.md文件。 其中&quot;F:\notepad\Notepad++&quot;表示nodepad++的安装位置。D:\Blog\blog\source\_posts\%name%.md表示这个文件的存放位置。 博客路径和文本编辑器位置请改成你自己的。 如图所示： 2、调试新建debug.bat文件内容如下：1234@echo offD:cd D:\Blog\bloghexo s -debug 表示在博客根目录中运行 hexo s -debug命令。 如图所示： 3、部署新建Deploy.bat文件内容如下：1234@echo onD:cd D:\Blog\blog hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 如果你只使用的http推送的代码，需要手动输入用户名和账号的。下面讲解如果免密部署。 免密码部署：打开博客根目录的config.yml，查看自己博客的部署方式：我这里部署了双平台。1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: https://github.com/ThinkingXuan/thinkingxuan.github.io.git,master coding: https://git.coding.net/q1454739828/q1454739828.coding.me.git,master 这是一般的部署方式，git使用https推送代码，保密性不足，所以需要输入用户名密码。所以我们需要做的改成使用ssh认证。 你需要做的就是在github或者coding中录入你自己的ssh密钥，然后在本地连接认证，一般密钥存储在id_rsa.pub文件。在C:\Users\Administrator\.ssh文件夹里面。如果你没有这个文件，请自行百度生成，连接认证。github和coding基本一样。然后修改config.yml文件：1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: git@github.com:ThinkingXuan/thinkingxuan.github.io.git,master coding: git@git.coding.net:q1454739828/q1454739828.coding.me.git 然后运行脚本。]]></content>

@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,算法,字符串处理,">
+  <meta name="keywords" content="数据结构,算法,">
 
 
 
@@ -71,23 +71,24 @@
 
 
 
-<meta name="description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
-<meta name="keywords" content="数据结构,算法,字符串处理">
+<meta name="description" content="1、为什么要学习数据结构？&amp;emsp; &amp;emsp;数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。">
+<meta name="keywords" content="数据结构,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="漫谈数据结构(四)——字符串的模式匹配">
-<meta property="og:url" content="https://www.you3xuan.top/2019/01/24/dataStructure7/index.html">
+<meta property="og:title" content="漫谈数据结构(一)—— 概述">
+<meta property="og:url" content="https://www.you3xuan.top/2019/01/16/DataStructure/dataStructure1/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
+<meta property="og:description" content="1、为什么要学习数据结构？&amp;emsp; &amp;emsp;数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904">
-<meta property="og:updated_time" content="2019-01-24T11:07:14.268Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-8a33232654a654cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/16/16854baf84eb4dea?w=304&amp;h=105&amp;f=png&amp;s=1984">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/16/16854bbb84cfbd09?w=457&amp;h=113&amp;f=png&amp;s=5619">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/16/16854c603e1d5c77?w=403&amp;h=283&amp;f=png&amp;s=17339">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/16/16854d4634c7bb4a?w=410&amp;h=276&amp;f=png&amp;s=21436">
+<meta property="og:updated_time" content="2019-01-20T15:14:32.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="漫谈数据结构(四)——字符串的模式匹配">
-<meta name="twitter:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997">
+<meta name="twitter:title" content="漫谈数据结构(一)—— 概述">
+<meta name="twitter:description" content="1、为什么要学习数据结构？&amp;emsp; &amp;emsp;数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2514354-8a33232654a654cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -117,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2019/01/24/dataStructure7/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/01/16/DataStructure/dataStructure1/">
 
 
 
@@ -134,7 +135,7 @@
 
 
 
-  <title>漫谈数据结构(四)——字符串的模式匹配 | 旋哥的博客</title>
+  <title>漫谈数据结构(一)—— 概述 | 旋哥的博客</title>
   
 
 
@@ -303,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/01/24/dataStructure7/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/01/16/DataStructure/dataStructure1/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">漫谈数据结构(四)——字符串的模式匹配</h1>
+          <h1 class="post-title" itemprop="name headline">漫谈数据结构(一)—— 概述</h1>
         
 
         <div class="post-meta">
@@ -332,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T17:11:19+08:00">
-                2019-01-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T14:59:29+08:00">
+                2019-01-16
               </time>
             
 
@@ -355,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -373,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/24/dataStructure7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/dataStructure7/" itemprop="commentCount"></span>
+                <a href="/2019/01/16/DataStructure/dataStructure1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/16/DataStructure/dataStructure1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,32 +408,105 @@
       
 
       
-        <h2 id="1、字符串匹配的用处"><a href="#1、字符串匹配的用处" class="headerlink" title="1、字符串匹配的用处"></a>1、字符串匹配的用处</h2><p>  在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中<code>strstr()</code>方法，Java中的<code>indexOf()</code>方法。本篇文章用3种方法来讲解这个算法的实现。<br><a id="more"></a></p>
-<h2 id="2、匹配方法："><a href="#2、匹配方法：" class="headerlink" title="2、匹配方法："></a>2、匹配方法：</h2><h3 id="2-1-朴素的模式匹配："><a href="#2-1-朴素的模式匹配：" class="headerlink" title="2.1 朴素的模式匹配："></a>2.1 朴素的模式匹配：</h3><p>  又称(Brute Force)，其实就是暴力破解的意思。具体思路是同时遍历主串和模式串，先比较<code>s</code>和<code>p</code>的第一个字符，如果相等继续比较第二个字符，如果不相等，<code>s</code>从第二个字符开始比较<code>p</code>的第一个字符。如果相等，继续往下比较，如果不相等，<code>s</code>从第三个字符开始比较<code>p</code>的第一个字符，以此类推，直到模式串第一次匹配完毕终止。</p>
-<p>  用<code>i</code>表示主串s下标，用<code>j</code>表示模式串p下标。字符相等时就<code>i++; j++;</code>,不相等是就 <code>i = i - j + 1; j=0;</code> 如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687e9340acdf4c0?w=425&amp;h=239&amp;f=png&amp;s=5997" alt=""><br>  当<code>s[3]!=p[2]</code>时，因为这次比较是从<code>i=1</code>开始比较的，所以<code>i</code>要回溯到<code>i=2 也就是 i = i - j + 1</code>, <code>j</code>要回溯到<code>j = 0</code>。<br>代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//暴力破解法</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(i&lt;lens &amp;&amp; j&lt;lenp){</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(s[i]!=p[j]){</span><br><span class="line">			i = i - j + <span class="number">1</span>;      <span class="comment">//主串从下一个位置开始 </span></span><br><span class="line">			j = <span class="number">0</span>;             <span class="comment">//模式串从0开始 </span></span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(j==lenp){    <span class="comment">//匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> i-j; <span class="comment">//j代表p的长度减1 , i为s中搜索的字符个数减1 。i-j为p在s中匹配成功后第一个字符的开始下标</span></span><br><span class="line">	}<span class="keyword">else</span>{ 			<span class="comment">//没有匹配成功 </span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>; </span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>时间复杂度：O(n*m)</p>
-<h3 id="2-2-动态规划算法："><a href="#2-2-动态规划算法：" class="headerlink" title="2.2 动态规划算法："></a>2.2 动态规划算法：</h3><p>  使用二维数组记录匹配的所有情况，如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725" alt=""><br>  先匹配第一行，第一列。相等记为1，不等记为0。然后往里比较，如果相等，取主对角线的前一位加一,不等记为0。等数组中出现的数字也模式串p的长度相等时，匹配结束。代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动态规划 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dynamicSearch</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> temp[lens][lenp];</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;lens;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;lenp;j++){</span><br><span class="line">			<span class="keyword">if</span>(j==<span class="number">0</span>||i==<span class="number">0</span>){</span><br><span class="line">				<span class="keyword">if</span>(p[j] == s[i]){</span><br><span class="line">					temp[i][j] = <span class="number">1</span>;</span><br><span class="line">				}<span class="keyword">else</span>{</span><br><span class="line">					temp[i][j] = <span class="number">0</span>;</span><br><span class="line">				}</span><br><span class="line">			}<span class="keyword">else</span>{</span><br><span class="line">				<span class="keyword">if</span>(p[j] == s[i]){</span><br><span class="line">					temp[i][j] = temp[i<span class="number">-1</span>][j<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line">				}<span class="keyword">else</span>{</span><br><span class="line">					temp[i][j] = <span class="number">0</span>;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(temp[i][j] == lenp){</span><br><span class="line">				<span class="keyword">return</span> i - lenp + <span class="number">1</span>;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>算法复杂度：O(n*m)</p>
-<h3 id="2-3-KMP算法："><a href="#2-3-KMP算法：" class="headerlink" title="2.3 KMP算法："></a>2.3 KMP算法：</h3><p>  当模式串为<code>p = "abcabd"</code>，主串为<code>s = "abcabgabey"</code>时，如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603" alt=""><br>  当<code>s[5]!=p[5]</code>,如果按照之前的方法，i要回溯到1，p要回溯到0，但是仔细想想，真的有这个必要吗？观察p串，有相同子符<code>ab</code>。推出：</p>
-<p>$p[0] = p[3] 且 p[1] = p[4]$ <br><br>$p[3] = s[3] 且 p[4] = s[4]$ <br><br>$=&gt; p[0] = s[3] 且p[1] = s[4]$ <br></p>
-<p>  所以，<code>i</code>不需要回溯，只需对比<code>p[2]</code> 是否等于 <code>s[5]</code>,这样i直接从0跳到了5，省略了许多不必要的重复步骤。那么问题的关键就是如何确定<code>p</code>匹配失败时<code>j</code>回到哪一个最恰当的位置。仔细观察一下，只有出现重复子串时，才会出现这种情况。如果没有重复子串,j只能取0。</p>
-<p>  它的效率提高的地方是无需回溯s的下标<code>i</code>，只需回溯<code>j</code>，匹配时，直接<code>i++</code>，<code>j</code>找到合适的位置，依次比对下去。</p>
-<p>  那如何找到j的恰当位置呢，这时要引入一个整形数组<code>next[]</code>，<code>next</code>下标与<code>p</code>的下标对应，存储是的是这个 <strong>字符之前(不包含自己)</strong> 的子串的前缀和后缀(包含最后一个字符的子串)相等时字符的个数。</p>
-<blockquote>
-<p>前缀(包含第一个字符的子串) <br><br>后缀(包含最后一个字符的子串)</p>
+        <p><img src="https://upload-images.jianshu.io/upload_images/2514354-8a33232654a654cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="风景图"></p>
+<h2 id="1、为什么要学习数据结构？"><a href="#1、为什么要学习数据结构？" class="headerlink" title="1、为什么要学习数据结构？"></a>1、为什么要学习数据结构？</h2><p>   数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。<br><a id="more"></a></p>
+<p>   本教程主要介绍数据结构的常见用法，为了兼容更多人群，所有以C语言为主要的编程语言。如果您C语言基础不过关，请自行Google。其次，语言只是描述程序的一种形式，万变不离其中，掌握一种也就很容易掌握另外一种。</p>
+<h2 id="2、什么是数据结构？"><a href="#2、什么是数据结构？" class="headerlink" title="2、什么是数据结构？"></a>2、什么是数据结构？</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" target="_blank" rel="noopener">维基百科</a>给出了定义: 数据结构（英语：data structure）是计算机中存储、组织数据的方式。无论是大数据时代的海量数据的存储，还是简单用户信息或者学生信息的存储，其数据存储的底层都要以某种更方便、更快捷且更省内存空间的方式进行，这种存储方式就是数据结构。如下图，就是一个简单的数据结构，他描述一个基础的学生信息，由id,name,sex,class组成。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">name</th>
+<th style="text-align:center">sex</th>
+<th style="text-align:center">class </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">001</td>
+<td style="text-align:center">张三</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">1班    </td>
+</tr>
+<tr>
+<td style="text-align:center">002</td>
+<td style="text-align:center">李四</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">2班 </td>
+</tr>
+<tr>
+<td style="text-align:center">003</td>
+<td style="text-align:center">王五</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">3班  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-1、基本术语"><a href="#2-1、基本术语" class="headerlink" title="2.1、基本术语"></a>2.1、基本术语</h3><blockquote>
+<p>数据</p>
 </blockquote>
-<p>其中 <strong>规定next[0] = -1</strong>，所以 <code>p = "abcabd"</code> 对应的next数组为<code>next= [-1,0,0,0,1,2]</code>，这样其实就已经结束了，但是为了追求更少的对比次数。可以把next数组在优化一下。因为<code>p[3] = p[0] = 'a'</code>,<code>p[3]</code>之前的字符不重复， 所以无需取<code>j</code>,直接让i继续走。所以`next= [-1,0,0,-1,0,2];</p>
-<h4 id="2-3-1-求Next数组："><a href="#2-3-1-求Next数组：" class="headerlink" title="2.3.1 求Next数组："></a>2.3.1 求Next数组：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getNext</span><span class="params">(<span class="keyword">char</span>* p, <span class="keyword">int</span> next[])</span></span>{</span><br><span class="line">	<span class="keyword">int</span> pLen = <span class="built_in">strlen</span>(p);</span><br><span class="line">	next[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (j &lt; pLen - <span class="number">1</span>){</span><br><span class="line">		<span class="comment">//p[k]表示前缀，p[j]表示后缀  </span></span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">-1</span> || p[j] == p[k]){</span><br><span class="line">			++j;</span><br><span class="line">			++k;</span><br><span class="line">			<span class="comment">//较之前next数组求法，改动在下面4行</span></span><br><span class="line">			<span class="keyword">if</span> (p[j] != p[k])</span><br><span class="line">				next[j] = k;   <span class="comment">//之前只有这一行</span></span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="comment">//因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]</span></span><br><span class="line">				next[j] = next[k];</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span>{</span><br><span class="line">			k = next[k];</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="2-3-2-KMP算法代码："><a href="#2-3-2-KMP算法代码：" class="headerlink" title="2.3.2 KMP算法代码："></a>2.3.2 KMP算法代码：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kmpSearch</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">char</span> *p)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">	<span class="keyword">int</span> lenp = <span class="built_in">strlen</span>(p);</span><br><span class="line">	<span class="keyword">int</span> next[lenp];</span><br><span class="line">	getNext(p,next);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;lens &amp;&amp; j&lt;lenp){</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">-1</span>||s[i]==p[j]){</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			j = next[j];</span><br><span class="line">		} </span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(j==lenp){    </span><br><span class="line">		<span class="keyword">return</span> i-j; </span><br><span class="line">	}<span class="keyword">else</span>{ 	</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>; </span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>算法复杂度 O(n+m)</p>
-<h2 id="3、测试"><a href="#3、测试" class="headerlink" title="3、测试"></a>3、测试</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">char</span> *s = <span class="string">"abcabgabcabay"</span>;</span><br><span class="line">	<span class="keyword">char</span> *p = <span class="string">"abcaba"</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"s = \"abcabgabcabay\"  p = \"abcaba\"\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"朴素的模式匹配：\n"</span>); </span><br><span class="line">	<span class="keyword">int</span> pos = search(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"动态规划算法：\n"</span>);</span><br><span class="line">	pos = kmpSearch(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"KMP算法：\n"</span>);</span><br><span class="line">	pos = dynamicSearch(s,p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"pos = %d\n"</span>,pos);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904" alt="输出结果"></p>
-<h2 id="4、总结"><a href="#4、总结" class="headerlink" title="4、总结"></a>4、总结</h2><p>  综合来说这三种方法各有优劣，如果追求效率的话，KMP算法最好，算法复杂度最低，但是也难理解。如果您感觉KMP算法效率还是不符合您的要求，请<a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">点击这里</a>，里面介绍了BM算法和Sunday算法，效率更好，算法复杂度减少到了O(n)。</p>
-<hr>
+<p>   计算机中存储的的最小单位</p>
+<blockquote>
+<p>数据元素</p>
+</blockquote>
+<p>    也叫元素或记录，及为上表中的一行。</p>
+<blockquote>
+<p>数据对象</p>
+</blockquote>
+<p>    数据元素的集合</p>
+<h2 id="3、数据结构的分类"><a href="#3、数据结构的分类" class="headerlink" title="3、数据结构的分类"></a>3、数据结构的分类</h2><h3 id="3-1、逻辑结构"><a href="#3-1、逻辑结构" class="headerlink" title="3.1、逻辑结构"></a>3.1、逻辑结构</h3><blockquote>
+<p>描述元素之间的逻辑关系，与数据的存储位置无关。他包括集合、线性结构，树形结构和图形结构。</p>
+</blockquote>
+<h4 id="1、集合"><a href="#1、集合" class="headerlink" title="1、集合"></a>1、集合</h4><p>    类似于数学中的集合，一个数据存在于集合中，数据之间没有什么关系。</p>
+<h4 id="2、线性结构"><a href="#2、线性结构" class="headerlink" title="2、线性结构"></a>2、线性结构</h4><p>    与元素具有一对一的关系，在内存中逐个排列。它分为<code>顺序存储</code>和<code>链式存储</code>，顺序存储相当于高级语言的数组，在内存中排列是连续的。链式存储使用链表维护元素，在内存中排列是不连续的。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/1/16/16854baf84eb4dea?w=304&amp;h=105&amp;f=png&amp;s=1984" alt="顺序存储"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/1/16/16854bbb84cfbd09?w=457&amp;h=113&amp;f=png&amp;s=5619" alt="链式存储"></p>
+<h4 id="3、树形结构"><a href="#3、树形结构" class="headerlink" title="3、树形结构"></a>3、树形结构</h4><p>    使用<a href="https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">树</a>来维护元素的多个层次关系（对二叉树不了解请点击链接），除根结点外，一个节点只有一个父结点，可以根据一个节点寻找它的子结点或者父结点。<br><img src="https://user-gold-cdn.xitu.io/2019/1/16/16854c603e1d5c77?w=403&amp;h=283&amp;f=png&amp;s=17339" alt="树"></p>
+<h4 id="4、图形结构"><a href="#4、图形结构" class="headerlink" title="4、图形结构"></a>4、图形结构</h4><p>  使用<a href="https://zh.wikipedia.org/wiki/%E5%9B%BE_(%E6%95%B0%E5%AD%A6" target="_blank" rel="noopener">图</a>)来维护元素的多个层次关系（图不了解请点击链接），一个图中的结点可以有多个父结点和子结点。<br><img src="https://user-gold-cdn.xitu.io/2019/1/16/16854d4634c7bb4a?w=410&amp;h=276&amp;f=png&amp;s=21436" alt="图"></p>
+<h3 id="3-2、存储结构"><a href="#3-2、存储结构" class="headerlink" title="3.2、存储结构"></a>3.2、存储结构</h3><h4 id="1、顺序存储结构"><a href="#1、顺序存储结构" class="headerlink" title="1、顺序存储结构"></a>1、顺序存储结构</h4><p>  使用顺序表来存储数据，数据存储在是连续的内存单元上。</p>
+<p>优点：查询效率高，可以使用元素的下标直接找到某一个元素。因为其存储结构是紧密的，所以提高了空间利用率。</p>
+<p>缺点：插入和删除一个元素的效率低，插入或者删除一个元素，要把这个元素的右边所有元素右移或者左移1个单位，随着数据量的增大，插入和删除的效率也会随之下降。且存储空间大小在定义时已经明确指定，操作元素是会出现“溢出”或者浪费空间的情况。</p>
+<h4 id="2、链式存储结构"><a href="#2、链式存储结构" class="headerlink" title="2、链式存储结构"></a>2、链式存储结构</h4><p>  使用链表来存储数据，数据存储在是不连续的内存单元上。</p>
+<p>优点：插入和删除效率很高，不会造成空间的浪费。</p>
+<p>缺点：无法随机访问，内存单元一部分用来存储元素之间的逻辑关系，造成空间利用率低。</p>
+<h4 id="3、索引存储结构"><a href="#3、索引存储结构" class="headerlink" title="3、索引存储结构"></a>3、索引存储结构</h4><p>  除建立存储结点信息外，还建立附加的索引表来标识结点的地址。索引表由若干索引项组成</p>
+<p>  特点：索引存储结构是用结点的索引号来确定结点存储地址，其优点是检索速度快，缺点是增加了附加的索引表,会占用较多的存储空间。</p>
+<h4 id="4、散列存储结构"><a href="#4、散列存储结构" class="headerlink" title="4、散列存储结构"></a>4、散列存储结构</h4><p>  散列存储，又称hash存储，是一种力图将数据元素的存储位置与关键码之间建立确定对应关系的查找技术。</p>
+<p>  散列法存储的基本思想是：由节点的关键码值决定节点的存储地址。散列技术除了可以用于查找外，还可以用于存储。</p>
+<p>  特点：散列是数组存储方式的一种发展，相比数组，散列的数据访问速度要高于数组，因为可以依据存储数据的部分内容找到数据在数组中的存储位置，进而能够快速实现数据的访问，理想的散列访问速度是非常迅速的。</p>
+<h2 id="4、算法"><a href="#4、算法" class="headerlink" title="4、算法"></a>4、算法</h2><p>程序 = 数据结构 + 算法</p>
+<p>算法是数据结构的灵魂，一个数据结构设计的再好，如果没有算法，如同失去了灵魂，它的存在就毫无意义。</p>
+<h3 id="4-1-什么是算法"><a href="#4-1-什么是算法" class="headerlink" title="4.1 什么是算法"></a>4.1 什么是算法</h3><p>  算法是解决某个特定问题的具体步骤。</p>
+<p>  描述算法的方法：伪代码法，N-S结构化流程图和流程图， 具体方法请自行百度。</p>
+<h3 id="4-2-算法的特性"><a href="#4-2-算法的特性" class="headerlink" title="4.2 算法的特性"></a>4.2 算法的特性</h3><ol>
+<li>确定性</li>
+<li>可行性</li>
+<li>有穷性</li>
+<li>零个或者多个输入</li>
+<li>一个或者多个输出</li>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+<li>高效率和低存储</li>
+</ol>
+<h3 id="4-3-算法的复杂度"><a href="#4-3-算法的复杂度" class="headerlink" title="4.3 算法的复杂度"></a>4.3 算法的复杂度</h3><p>  用来表示算法执行消耗的计算机资源，主要从时间和空间两个方面考虑。</p>
+<h4 id="1、时间复杂度"><a href="#1、时间复杂度" class="headerlink" title="1、时间复杂度"></a>1、时间复杂度</h4><p>  描述算法的执行时间(次数)，常用O(n)表示。<br>推导方法:</p>
+<ol>
+<li>n为常数，用1代替。</li>
+<li>n为未知数，系数为1，只保留最高阶项。</li>
+<li>n为未知数，系数不为1，只保留最高阶项且最高阶项除去系数。</li>
+</ol>
+<p>例子如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> sum = a + b;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>共执行$f（n）= 3$ 次，所以 时间复杂度为<code>O(1)</code>。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,sum;          <span class="comment">//执行一次 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		sum += i;       <span class="comment">//执行n次 </span></span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum); <span class="comment">//执行一次</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>共执行$f（n）= n+3 $次，所以 时间复杂度为<code>O(n)</code>。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &lt; n){</span><br><span class="line">		i * = <span class="number">2</span>;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>共执行$ 2^f = n $, 即 $ f =  {log_2{n}}$，所以复杂度为O(logn)。</p>
+<h4 id="2、空间复杂度"><a href="#2、空间复杂度" class="headerlink" title="2、空间复杂度"></a>2、空间复杂度</h4><p>  算法运行所占空间的大小，常用O(n)表示。</p>
+<h2 id="4、算法和数据结构"><a href="#4、算法和数据结构" class="headerlink" title="4、算法和数据结构"></a>4、算法和数据结构</h2><p>  算法通常是决定程序效率的关键，但是一切算法最终都要在相应的数据结构上实现，许多算法的精髓就是在于选择了合适的数据结构作为基础。在程序设计中，不但要注重算法设计，也要正确选择数据结构，这样往往能够事半功倍。</p>
+<p>具体参考如下:<br><a href="https://www.you3xuan.top/2018/12/16/leetcode1/#more">LeetCode1</a> 使用散列存储，极大的提高了算法效率。</p>
 <blockquote>
 <p>作者个人博客   <a href="https://www.you3xuan.top/">https://www.you3xuan.top/</a> 查看原文。<br><br> 源码地址: <a href="https://github.com/ThinkingXuan/DataStructure" target="_blank" rel="noopener">https://github.com/ThinkingXuan/DataStructure</a> <br><br>如果对您有帮助，随手一个Star吧。</p>
 </blockquote>
@@ -495,7 +569,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2019/01/24/dataStructure7/" title="漫谈数据结构(四)——字符串的模式匹配">https://www.you3xuan.top/2019/01/24/dataStructure7/</a>
+    <a href="https://www.you3xuan.top/2019/01/16/DataStructure/dataStructure1/" title="漫谈数据结构(一)—— 概述">https://www.you3xuan.top/2019/01/16/DataStructure/dataStructure1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -513,8 +587,6 @@
             <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-            <a href="/tags/字符串处理/" rel="tag"><i class="fa fa-tag"></i> 字符串处理</a>
           
         </div>
       
@@ -539,8 +611,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/22/dataStructure6/" rel="next" title="漫谈数据结构(四)——串">
-                <i class="fa fa-chevron-left"></i> 漫谈数据结构(四)——串
+              <a href="/2018/12/16/LeetCode/leetcode6/" rel="next" title="LeetCode 6(ZigZag Conversion)">
+                <i class="fa fa-chevron-left"></i> LeetCode 6(ZigZag Conversion)
               </a>
             
           </div>
@@ -549,8 +621,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/24/lanqiao/basic/" rel="prev" title="蓝桥杯试题——基础篇">
-                蓝桥杯试题——基础篇 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/17/DataStructure/dataStructure2/" rel="prev" title="漫谈数据结构(二)——线性表1">
+                漫谈数据结构(二)——线性表1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -724,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、字符串匹配的用处"><span class="nav-text">1、字符串匹配的用处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、匹配方法："><span class="nav-text">2、匹配方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-朴素的模式匹配："><span class="nav-text">2.1 朴素的模式匹配：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-动态规划算法："><span class="nav-text">2.2 动态规划算法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-KMP算法："><span class="nav-text">2.3 KMP算法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-求Next数组："><span class="nav-text">2.3.1 求Next数组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-KMP算法代码："><span class="nav-text">2.3.2 KMP算法代码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、测试"><span class="nav-text">3、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、总结"><span class="nav-text">4、总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、为什么要学习数据结构？"><span class="nav-text">1、为什么要学习数据结构？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、什么是数据结构？"><span class="nav-text">2、什么是数据结构？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、基本术语"><span class="nav-text">2.1、基本术语</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、数据结构的分类"><span class="nav-text">3、数据结构的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、逻辑结构"><span class="nav-text">3.1、逻辑结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、集合"><span class="nav-text">1、集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、线性结构"><span class="nav-text">2、线性结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、树形结构"><span class="nav-text">3、树形结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、图形结构"><span class="nav-text">4、图形结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、存储结构"><span class="nav-text">3.2、存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、顺序存储结构"><span class="nav-text">1、顺序存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、链式存储结构"><span class="nav-text">2、链式存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、索引存储结构"><span class="nav-text">3、索引存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、散列存储结构"><span class="nav-text">4、散列存储结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、算法"><span class="nav-text">4、算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-什么是算法"><span class="nav-text">4.1 什么是算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-算法的特性"><span class="nav-text">4.2 算法的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-算法的复杂度"><span class="nav-text">4.3 算法的复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、时间复杂度"><span class="nav-text">1、时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、空间复杂度"><span class="nav-text">2、空间复杂度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、算法和数据结构"><span class="nav-text">4、算法和数据结构</span></a></li></ol></div>
             
 
           </div>
@@ -969,6 +1041,11 @@
 
 
   
+  
+    
+
+    
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -1324,4 +1401,15 @@
     mc.async = true;
     mc.src = '//embed.widgetpack.com/widget.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->
+  })();;MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });;MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->

@@ -71,18 +71,20 @@
 
 
 
-<meta name="description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
+<meta name="description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
 <meta name="keywords" content="算法,leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 1(Two Sum)">
-<meta property="og:url" content="https://www.you3xuan.top/2018/12/16/leetcode1/index.html">
+<meta property="og:title" content="LeetCode 3(Longest Substring)">
+<meta property="og:url" content="https://www.you3xuan.top/2018/12/16/LeetCode/leetcode3/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
+<meta property="og:description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T03:13:08.167Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-06T07:42:39.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 1(Two Sum)">
-<meta name="twitter:description" content="Two Sum题目描述 (md partial supported)  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
+<meta name="twitter:title" content="LeetCode 3(Longest Substring)">
+<meta name="twitter:description" content="Longest Substring Without Repeating Characters题目描述  Given a string, find the length of the longest substring without repeating characters.">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -112,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2018/12/16/leetcode1/">
+  <link rel="canonical" href="https://www.you3xuan.top/2018/12/16/LeetCode/leetcode3/">
 
 
 
@@ -129,7 +131,7 @@
 
 
 
-  <title>LeetCode 1(Two Sum) | 旋哥的博客</title>
+  <title>LeetCode 3(Longest Substring) | 旋哥的博客</title>
   
 
 
@@ -298,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2018/12/16/leetcode1/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2018/12/16/LeetCode/leetcode3/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -315,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 1(Two Sum)</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode 3(Longest Substring)</h1>
         
 
         <div class="post-meta">
@@ -327,7 +329,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T15:05:06+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T15:43:54+08:00">
                 2018-12-16
               </time>
             
@@ -368,8 +370,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/16/leetcode1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/leetcode1/" itemprop="commentCount"></span>
+                <a href="/2018/12/16/LeetCode/leetcode3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/LeetCode/leetcode3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,21 +404,124 @@
       
 
       
-        <h3 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h3><div class="note info"><p>题目描述 (md partial supported) </p></div>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+        <h3 id="Longest-Substring-Without-Repeating-Characters"><a href="#Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Longest Substring Without Repeating Characters"></a>Longest Substring Without Repeating Characters</h3><div class="note info"><p>题目描述 </p></div>
+<p>Given a string, find the length of the longest substring without repeating characters.</p>
 <a id="more"></a>
-<p>Example:</p>
-<p>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
+<p>Example 1:</p>
+<p>Input: “abcabcbb”<br>Output: 3<br>Explanation: The answer is “abc”, with the length of 3. </p>
+<p>简述：统计字符串不重复字符最长子串的长度。</p>
 <blockquote>
 <p>C语言实现</p>
 </blockquote>
-<p>通过最简单的方式，两个下标，先保持一个下标<code>i</code>不动，另一个下标<code>j</code>从第一个下标后一个开始移动，<code>j</code>移动到最后一个后，开始移动第一个下标<code>i</code>。<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//时间复杂度 O(n^2) </span></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">twoSum</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize, <span class="keyword">int</span> target)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">int</span> * indices = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">2</span>*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numsSize;i++){           </span><br><span class="line">        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;numsSize;j++){      </span><br><span class="line">            <span class="keyword">if</span>(nums[i]+nums[j] == target){</span><br><span class="line">                *indices = i;</span><br><span class="line">                *(indices+<span class="number">1</span>)= j;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } </span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> indices;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//测试代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">5</span>] = {<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>};</span><br><span class="line">	<span class="keyword">int</span> *p = twoSum(a,<span class="number">5</span>,<span class="number">9</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++){</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,*(p+i));</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>使用两个下标<code>i</code>，<code>index</code>。<code>i</code>作为字符串的下标，依次往下移动。<code>index</code>为子串的下标往右移动。<code>index+i</code>是在母串移动的位置。<br>初始化子串<code>p</code>比母串大1，不然有的编译器报越界。<code>每次赋值后给下一位赋值'\0'</code>，<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isInclude</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> a)</span> </span>{</span><br><span class="line">    <span class="keyword">while</span> (*s != <span class="string">'\0'</span>) {</span><br><span class="line">        <span class="keyword">if</span> (*s == a) {</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        s++;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>{</span><br><span class="line">    <span class="keyword">while</span> (*s != <span class="string">'\0'</span>) {</span><br><span class="line">        *s = <span class="string">'\0'</span>;</span><br><span class="line">        s++;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> p[<span class="built_in">strlen</span>(s) &gt; <span class="number">0</span> ? <span class="built_in">strlen</span>(s)+<span class="number">1</span> : <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (s[i] != <span class="string">'\0'</span>) {</span><br><span class="line">        <span class="keyword">if</span> (!isInclude(p, s[i + index])) {</span><br><span class="line">            p[index] = s[i + index];</span><br><span class="line">            p[index+<span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line">            index++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (index &gt;= max) {</span><br><span class="line">                max = index;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (s[index + i] == <span class="string">'\0'</span>) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            index = <span class="number">0</span>;</span><br><span class="line">            clear(p);</span><br><span class="line">            i++;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">char</span> *s = <span class="string">"vfqsrebtogjmcanajfyzvypzibtngtrca"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> length = lengthOfLongestSubstring(s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"LongestLength=%d\n"</span>, length);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>因为C语言没有现成使用的集合类，如（Map,Set），书写起来较为复杂。算法复杂度也挺高。下图为执行耗时，比较不理想。<br><img src="https://upload-images.jianshu.io/upload_images/2514354-185fd5f94a0f0489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>时间复杂度：</p>
+<p>遍历母串加子串移动n<em>(n-1)  ，找到一个字符需要从头查找比对。最坏情况为，n</em>(n-1)*n ，时间复杂度O(n^3)</p>
+<p>空间复杂度：<br>O(n)+1</p>
 <blockquote>
-<p>Java实现(优化过)</p>
+<p>Java实现（使用Set实现）</p>
 </blockquote>
-<p>使用<code>Map</code>集合，<code>Map</code>里存储目标值与数组值之差<code>target-num[i]</code> 和 下标 <code>i</code>，然后判断<code>num[i]</code>是否在Map的key中，不在时继续存储，在时就是所找目标值。<br>这种方式时间复杂度为O(n)，执行效率大大提高。<br></p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">One</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        One one = <span class="keyword">new</span> One();</span><br><span class="line">        <span class="keyword">int</span>[] array = one.twoSum(<span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>},<span class="number">10</span>);</span><br><span class="line">        System.out.println(Arrays.toString(array));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) {</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span>(!map.containsKey(nums[i])){</span><br><span class="line">                map.put(target-nums[i],i);</span><br><span class="line">            }<span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]{i,map.get(nums[i])};</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"no exist"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>通过集合Set的特性集合中不能出现重复值，检测子串在Set中是否存在，存在的话把集合里面连同本身及之前的元素全部去掉。这种方式被称为SLIDING WINDOW(滑动窗口)</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最初实现</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_2</span><span class="params">(String s)</span> </span>{</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">       Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span> (i &lt; s.length() &amp;&amp; j &lt; s.length()) {</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span> (!set.contains(s.charAt(j))) {</span><br><span class="line">               set.add(s.charAt(j++));</span><br><span class="line">               max = Math.max(max, j - i);</span><br><span class="line">           } <span class="keyword">else</span> {</span><br><span class="line">               set.remove(s.charAt(i++));</span><br><span class="line">           }</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> max;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<p>执行流程如下：<code>String s = "abcaea"</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">set</th>
+<th style="text-align:center">j</th>
+<th style="text-align:center">max</th>
+<th style="text-align:center">j - i</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">a,b</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">a,b,c</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">b,c</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">b,c,a</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">b,c,a,e</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">c,a,e</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">a,e</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">ea</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>算法复杂度  O(2n)  =O(n)<br>空间复杂度  O(n)</p>
+<blockquote>
+<p>Java实现(HashMap 优化) </p>
+</blockquote>
+<p>使用HashMap自动覆盖重复的key相同的value，记录下每个字符在字符串中出现的最后位置。使用<code>i</code>记录不重复字符子串的起点，<code>j-i-1</code>表示字符串的长度。出现重复字符是更新<code>i</code>的位置。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_3</span><span class="params">(String s)</span> </span>{</span><br><span class="line"></span><br><span class="line">       Map&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>,j=<span class="number">0</span>; j &lt; s.length(); j++) {</span><br><span class="line">           <span class="keyword">if</span> (map.containsKey(s.charAt(j))){</span><br><span class="line">               i = Math.max(map.get(s.charAt(j)),i);</span><br><span class="line">           }</span><br><span class="line"></span><br><span class="line">           max = Math.max(max, j - i + <span class="number">1</span>);</span><br><span class="line">           map.put(s.charAt(j), j + <span class="number">1</span>);</span><br><span class="line">       }</span><br><span class="line">       <span class="keyword">return</span> max;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O(n)<br>空间复杂度：O(n)<br>效率比HashSet快的原因是，没有对字符移除的操作，并且HashMap的查询速率把HashSet更快。</p>
+<blockquote>
+<p>Java实现 (使用ASCII 128）</p>
+</blockquote>
+<p>标准ASCll表示从0-127表示128个字符，通过字符代表ASCll值字符位置，数组中存储的是每个字符在字符串中出现的最后位置。是对HashMap实现的优化。因为没有了查询耗时，这种的执行效率最好。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring_4</span><span class="params">(String s)</span> </span>{</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">int</span>[] index = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]; <span class="comment">// current index of character</span></span><br><span class="line">       <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++) {</span><br><span class="line">           i = Math.max(index[s.charAt(j)], i);</span><br><span class="line">           ans = Math.max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">           index[s.charAt(j)] = j + <span class="number">1</span>;</span><br><span class="line">       }</span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O(n)<br>空间复杂度：O(n)</p>
 
       
     </div>
@@ -476,7 +581,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2018/12/16/leetcode1/" title="LeetCode 1(Two Sum)">https://www.you3xuan.top/2018/12/16/leetcode1/</a>
+    <a href="https://www.you3xuan.top/2018/12/16/LeetCode/leetcode3/" title="LeetCode 3(Longest Substring)">https://www.you3xuan.top/2018/12/16/LeetCode/leetcode3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -518,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/12/16/LeetCode/leetcode2/" rel="next" title="LeetCode 2(Add Two Numbers)">
+                <i class="fa fa-chevron-left"></i> LeetCode 2(Add Two Numbers)
               </a>
             
           </div>
@@ -528,8 +633,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/16/leetcode2/" rel="prev" title="LeetCode 2(Add Two Numbers)">
-                LeetCode 2(Add Two Numbers) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/16/LeetCode/leetcode4/" rel="prev" title="LeetCode 4(Median of Two Sorted Arrays)">
+                LeetCode 4(Median of Two Sorted Arrays) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -703,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Sum"><span class="nav-text">Two Sum</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest-Substring-Without-Repeating-Characters"><span class="nav-text">Longest Substring Without Repeating Characters</span></a></li></ol></div>
             
 
           </div>

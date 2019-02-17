@@ -83,7 +83,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ea5f0ac550bd?w=366&amp;h=449&amp;f=png&amp;s=8725">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/24/1687f17ce327bb42?w=462&amp;h=129&amp;f=png&amp;s=4904">
-<meta property="og:updated_time" content="2019-01-24T11:07:14.268Z">
+<meta property="og:updated_time" content="2019-02-17T12:54:35.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漫谈数据结构(四)——字符串的模式匹配">
 <meta name="twitter:description" content="1、字符串匹配的用处&amp;emsp;&amp;emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中strstr()方法，Java中的indexOf()方法。本篇文章用3种方法来讲解这个算法的实现。">
@@ -417,7 +417,9 @@
 <p>算法复杂度：O(n*m)</p>
 <h3 id="2-3-KMP算法："><a href="#2-3-KMP算法：" class="headerlink" title="2.3 KMP算法："></a>2.3 KMP算法：</h3><p>  当模式串为<code>p = "abcabd"</code>，主串为<code>s = "abcabgabey"</code>时，如图所示：</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/1/24/1687ed082d41b645?w=697&amp;h=241&amp;f=png&amp;s=8603" alt=""><br>  当<code>s[5]!=p[5]</code>,如果按照之前的方法，i要回溯到1，p要回溯到0，但是仔细想想，真的有这个必要吗？观察p串，有相同子符<code>ab</code>。推出：</p>
-<p>$p[0] = p[3] 且 p[1] = p[4]$ <br><br>$p[3] = s[3] 且 p[4] = s[4]$ <br><br>$=&gt; p[0] = s[3] 且p[1] = s[4]$ <br></p>
+<p><script type="math/tex">p[0] = p[3] 且 p[1] = p[4]</script> <br></p>
+<p><script type="math/tex">p[3] = s[3] 且 p[4] = s[4]</script> <br></p>
+<p><script type="math/tex">=> p[0] = s[3] 且p[1] = s[4]</script> <br></p>
 <p>  所以，<code>i</code>不需要回溯，只需对比<code>p[2]</code> 是否等于 <code>s[5]</code>,这样i直接从0跳到了5，省略了许多不必要的重复步骤。那么问题的关键就是如何确定<code>p</code>匹配失败时<code>j</code>回到哪一个最恰当的位置。仔细观察一下，只有出现重复子串时，才会出现这种情况。如果没有重复子串,j只能取0。</p>
 <p>  它的效率提高的地方是无需回溯s的下标<code>i</code>，只需回溯<code>j</code>，匹配时，直接<code>i++</code>，<code>j</code>找到合适的位置，依次比对下去。</p>
 <p>  那如何找到j的恰当位置呢，这时要引入一个整形数组<code>next[]</code>，<code>next</code>下标与<code>p</code>的下标对应，存储是的是这个 <strong>字符之前(不包含自己)</strong> 的子串的前缀和后缀(包含最后一个字符的子串)相等时字符的个数。</p>
@@ -641,7 +643,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -969,6 +971,11 @@
 
 
   
+  
+    
+
+    
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -1324,4 +1331,15 @@
     mc.async = true;
     mc.src = '//embed.widgetpack.com/widget.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->
+  })();;MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });;MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });;InstantClick.init();</script></body></html><!-- 页面点击小红心 -->

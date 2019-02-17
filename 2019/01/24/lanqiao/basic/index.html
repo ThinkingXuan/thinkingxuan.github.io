@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="旋哥的博客">
 <meta property="og:description" content="1、 A+B问题问题描述输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-24T14:53:31.493Z">
+<meta property="og:updated_time" content="2019-02-17T12:55:04.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蓝桥杯试题——基础篇">
 <meta name="twitter:description" content="1、 A+B问题问题描述输入A、B，输出A+B。 输入格式输入的第一行包括两个整数，由空格分隔，分别表示A、B。 输出格式输出一行，包括一个整数，表示A+B的值。">
@@ -409,7 +409,7 @@
 <h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包括一个整数n。</p>
 <h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包括一个整数，表示1+2+3+…+n的值。</p>
 <h4 id="数据规模与约定"><a href="#数据规模与约定" class="headerlink" title="数据规模与约定"></a>数据规模与约定</h4><p>1 &lt;= n &lt;= 1,000,000,000。</p>
-<p>分析：因为n要求的数据规模很大，所以直接循环累加的方式不能满足要求，所以采用求等差数列前n和公式 $ S(n) = \frac{(a_1 + a_n)*n}{2} $</p>
+<p>分析：因为n要求的数据规模很大，所以直接循环累加的方式不能满足要求，所以采用求等差数列前n和公式 <script type="math/tex">S(n) = \frac{(a_1 + a_n)*n}{2}</script></p>
 <p>代码：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	sum = ((<span class="number">1</span>+n) * n)/<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="3、圆的面积"><a href="#3、圆的面积" class="headerlink" title="3、圆的面积"></a>3、圆的面积</h2><h4 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h4><p>给定圆的半径r，求圆的面积。</p>
 <h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含一个整数r，表示圆的半径。</p>
@@ -628,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

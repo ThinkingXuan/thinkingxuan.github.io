@@ -71,19 +71,19 @@
 
 
 
-<meta name="description" content="芯片测试：问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
+<meta name="description" content="芯片测试问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
 <meta name="keywords" content="算法,蓝桥杯试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝桥杯试题——芯片测试">
 <meta property="og:url" content="https://www.you3xuan.top/2019/02/16/lanqiao/芯片测试/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="芯片测试：问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
+<meta property="og:description" content="芯片测试问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f66fe51532c7a?w=595&amp;h=131&amp;f=png&amp;s=4636">
-<meta property="og:updated_time" content="2019-02-16T13:16:05.919Z">
+<meta property="og:updated_time" content="2019-02-17T04:26:18.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蓝桥杯试题——芯片测试">
-<meta name="twitter:description" content="芯片测试：问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
+<meta name="twitter:description" content="芯片测试问题描述有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。 每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f66fe51532c7a?w=595&amp;h=131&amp;f=png&amp;s=4636">
 
 
@@ -404,7 +404,7 @@
       
 
       
-        <h3 id="芯片测试："><a href="#芯片测试：" class="headerlink" title="芯片测试："></a>芯片测试：</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。</p>
+        <h3 id="芯片测试"><a href="#芯片测试" class="headerlink" title="芯片测试"></a>芯片测试</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。</p>
 <p>每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。<br><a id="more"></a><br>给出所有芯片的测试结果，问哪些芯片是好芯片。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入数据第一行为一个整数n，表示芯片个数。</p>
 <p>第二行到第n+1行为n*n的一张表，每行n个数据。表中的每个数据为0或1，在这n行中的第i行第j列（1≤i,j≤n）的数据表示用第i块芯片测试第j块芯片时得到的测试结果，1表示好，0表示坏，i=j时一律为1（并不表示该芯片对本身的测试结果。芯片不能对本身进行测试）。</p>
@@ -697,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#芯片测试："><span class="nav-text">芯片测试：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路：题目的前提说的是好的芯片一定大于坏的芯片，一个芯片的测试结果相当于一列，，好的芯片在一列中1的数量一定大于0的个数-或者1的数量大于一半-。"><span class="nav-text">思路：题目的前提说的是好的芯片一定大于坏的芯片，一个芯片的测试结果相当于一列，，好的芯片在一列中1的数量一定大于0的个数(或者1的数量大于一半)。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#芯片测试"><span class="nav-text">芯片测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路：题目的前提说的是好的芯片一定大于坏的芯片，一个芯片的测试结果相当于一列，，好的芯片在一列中1的数量一定大于0的个数-或者1的数量大于一半-。"><span class="nav-text">思路：题目的前提说的是好的芯片一定大于坏的芯片，一个芯片的测试结果相当于一列，，好的芯片在一列中1的数量一定大于0的个数(或者1的数量大于一半)。</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[蓝桥杯试题——数的读法]]></title>
+    <url>%2F2019%2F02%2F20%2Flanqiao%2F%E6%95%B0%E7%9A%84%E8%AF%BB%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[数的读法问题描述Tom教授正在给研究生讲授一门关于基因的课程，有一件事情让他颇为头疼：一条染色体上有成千上万个碱基对，它们从0开始编号，到几百万，几千万，甚至上亿。 比如说，在对学生讲解第1234567009号位置上的碱基时，光看着数字是很难准确的念出来的。所以，他迫切地需要一个系统，然后当他输入1234567009时，会给出相应的念法： &emsp;&emsp;十二亿三千四百五十六万七千零九 用汉语拼音表示为: &emsp;&emsp;shi er yi san qian si bai wu shi liu wan qi qian ling jiu 这样他只需要照着念就可以了。 你的任务是帮他设计这样一个系统：给定一个阿拉伯数字串，你帮他按照中文读写的规范转为汉语拼音字串，相邻的两个音节用一个空格符格开。 注意必须严格按照规范，比如说“10010”读作“yi wan ling yi shi”而不是“yi wan ling shi”，“100000”读作“shi wan”而不是“yi shi wan”，“2000”读作“er qian”而不是“liang qian”。 输入格式有一个数字串，数值大小不超过2,000,000,000。 输出格式是一个由小写英文字母，逗号和空格组成的字符串，表示该数的英文读法。 样例输入1234567009 样例输出shi er yi san qian si bai wu shi liu wan qi qian ling jiu 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;stdio.h&gt;int main()&#123; char*num[]= &#123;"ling","yi","er","san","si","wu","liu","qi","ba","jiu"&#125;; char*wei[]= &#123;"shi","bai","qian","wan","yi"&#125;; char*str[20]; int i,j,k,n,l[2]= &#123;0&#125;; i=0; j=0; scanf("%d",&amp;n); while(n&gt;0) &#123; k = n%10; n /= 10; if(k&gt;0) &#123; if(i&gt;0)&#123; if(i&gt;=4&amp;&amp;!l[i/4-1])&#123; l[i/4-1]=1; str[j++]=wei[i/4+2]; &#125; if(i%4!=0) str[j++]=wei[i%4-1]; &#125; str[j++]=num[k]; &#125; else if(j&gt;0&amp;&amp;str[j-1]!=num[0]) &#123; str[j++]=num[0]; &#125; i++; &#125; if(!(str[j-1]=="yi"&amp;&amp;j&gt;1&amp;&amp;str[j-2]=="shi")) printf("%s ",str[j-1]); for(i=j-2; i&gt;=0; i--) &#123; printf("%s ",str[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>蓝桥杯试题</category>
+      </categories>
+      <tags>
+        <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[蓝桥杯试题——Sine之舞]]></title>
     <url>%2F2019%2F02%2F18%2Flanqiao%2FSine%E4%B9%8B%E8%88%9E%2F</url>
     <content type="text"><![CDATA[Sine之舞问题描述最近FJ为他的奶牛们开设了数学分析课，FJ知道若要学好这门课，必须有一个好的三角函数基本功。所以他准备和奶牛们做一个“Sine之舞”的游戏，寓教于乐，提高奶牛们的计算能力。不妨设: &emsp;&emsp;An=sin(1–sin(2+sin(3–sin(4+...sin(n))...) &emsp;&emsp;Sn=(...(A1+n)A2+n-1)A3+...+2)An+1FJ想让奶牛们计算Sn的值，请你帮助FJ打印出Sn的完整表达式，以方便奶牛们做题。 输入格式仅有一个数：N&lt;201。 输出格式请输出相应的表达式Sn，以一个换行符结束。输出中不得含有多余的空格或换行、回车符。 样例输入3 样例输出((sin(1)+3)sin(1–sin(2))+2)sin(1–sin(2+sin(3)))+1 使用递归解题 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include &lt;stdio.h&gt;void fun1( int , int );void fun2( int , int );int main()&#123; int n; scanf("%d", &amp;n); fun1(n , n + 1); printf("\n"); return 0;&#125;void fun2(int n, int k)&#123; if (n == k) &#123; printf("sin(%d)", n ); &#125; else &#123; printf("sin(%d", n); if( n % 2 == 0 ) &#123; printf("+"); &#125; else &#123; printf("-"); &#125; fun2(n + 1, k); printf(")"); &#125;&#125;void fun1(int n , int k)&#123; if ( n == 1 ) &#123; fun2(n , n); &#125; else &#123; printf("("); fun1(n-1, k); printf(")"); fun2(1, n); &#125; printf("+%d", k - n);&#125;]]></content>
@@ -8,8 +20,8 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -32,14 +44,14 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署]]></title>
     <url>%2F2019%2F02%2F16%2FHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%92%8C%E5%85%8D%E5%AF%86%E7%A0%81%E9%83%A8%E7%BD%B2%2F</url>
-    <content type="text"><![CDATA[原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚本包括四部分：新建博客，调试，部署，查找并编辑。 一、Hexo bat脚本：1、新建博客在桌面或者文件夹中新建 CreateNewPage.bat文本。使用notepad++或者任意文本编辑器打开输入以下代码： 12345@echo offset /p name=input pages name:echo name:%name%echo please waitstart /d "F:\notepad\Notepad++" notepad++.exe "D:\Blog\blog\source\_posts\%name%.md" @echo off表示不回显，意思就是说在命令提示符中输入的命令不显示。你也可以设置为 @echo on。 set /p name=input pages name: 表示你要输入这篇博客的文件名。使用name变量存储。 12start /d &quot;F:\notepad\Notepad++&quot; notepad++.exe &quot;D:\Blog\blog\source\_posts\%name%.md&quot;表示使用这个notepad++来新建这个.md文件。 其中&quot;F:\notepad\Notepad++&quot;表示nodepad++的安装位置。D:\Blog\blog\source\_posts\%name%.md表示这个文件的存放位置。 博客路径和文本编辑器位置请改成你自己的。 如图所示： 2、调试新建debug.bat文件内容如下：1234@echo offD:cd D:\Blog\bloghexo s -debug 表示在博客根目录中运行 hexo s -debug命令。 如图所示： 3、部署新建Deploy.bat文件内容如下：1234@echo onD:cd D:\Blog\blog hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 如果你只使用的http推送的代码，需要手动输入用户名和账号的。下面讲解如果免密部署。 4、查找并编辑新建Edit.bat文件1234567891011@echo off::设置编码方式chcp 65001set /p name=input blog name: set "FileName=*%name%*.md"set "PathName=D:\Blog\blog\source\_posts"set "EditPath=F:\notepad\Notepad++"for %%a in (%PathName%) do for /f "delims=" %%b in ('dir /a-d/b/s %%a\%FileName%') do ( start /d %EditPath% notepad++.exe "%%b") 输入需要修改的文件名，会自动查找根文件夹及子文件夹下的所有文件，对文件名进行模糊匹配，匹配成功后自动使用指定的文本编辑器打开。您需要自动配置文件根目录PathName，和编辑器路径EditPath，并且把notepad++.exe修改成对应的文本编辑器可执行文件名。 二、免密码部署：打开博客根目录的config.yml，查看自己博客的部署方式：我这里部署了双平台。1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: https://github.com/ThinkingXuan/thinkingxuan.github.io.git,master coding: https://git.coding.net/q1454739828/q1454739828.coding.me.git,master 这是一般的部署方式，git使用https推送代码，保密性不足，所以需要输入用户名密码。所以我们需要做的改成使用ssh认证。 你需要做的就是在github或者coding中录入你自己的ssh密钥，然后在本地连接认证，一般密钥存储在id_rsa.pub文件。在C:\Users\Administrator\.ssh文件夹里面。如果你没有这个文件，请自行百度生成，连接认证。github和coding基本一样。然后修改config.yml文件：1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: git@github.com:ThinkingXuan/thinkingxuan.github.io.git,master coding: git@git.coding.net:q1454739828/q1454739828.coding.me.git 然后运行脚本。]]></content>
+    <content type="text"><![CDATA[原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚本包括四部分：新建博客，调试，部署，查找并编辑。 一、Hexo bat脚本：1、新建博客在桌面或者文件夹中新建 CreateNewPage.bat文本。使用notepad++或者任意文本编辑器打开输入以下代码： 12345@echo offset /p name=input pages name:echo name:%name%echo please waitstart /d "F:\notepad\Notepad++" notepad++.exe "D:\Blog\blog\source\_posts\%name%.md" @echo off表示不回显，意思就是说在命令提示符中输入的命令不显示。你也可以设置为 @echo on。 set /p name=input pages name: 表示你要输入这篇博客的文件名。使用name变量存储。 12start /d &quot;F:\notepad\Notepad++&quot; notepad++.exe &quot;D:\Blog\blog\source\_posts\%name%.md&quot;表示使用这个notepad++来新建这个.md文件。 其中&quot;F:\notepad\Notepad++&quot;表示nodepad++的安装位置。D:\Blog\blog\source\_posts\%name%.md表示这个文件的存放位置。 博客路径和文本编辑器位置请改成你自己的。 如图所示： 2、调试新建debug.bat文件内容如下：1234@echo offD:cd D:\Blog\bloghexo s -debug 表示在博客根目录中运行 hexo s -debug命令。 如图所示： 3、部署新建Deploy.bat文件内容如下：1234@echo onD:cd D:\Blog\blog hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 如果你只使用的http推送的代码，需要手动输入用户名和账号的。下面讲解如果免密部署。 4、查找并编辑新建Edit.bat文件1234567891011@echo off::设置编码方式chcp 65001set /p name=input blog name: set "FileName=*%name%*.md"set "PathName=D:\Blog\blog\source\_posts"set "EditPath=F:\notepad\Notepad++"for %%a in (%PathName%) do for /f "delims=" %%b in ('dir /a-d/b/s %%a\%FileName%') do ( start /d %EditPath%notepad++.exe "%%b") 输入需要修改的文件名，会自动查找根文件夹及子文件夹下的所有文件，对文件名进行模糊匹配，匹配成功后自动使用指定的文本编辑器打开。您需要自动配置文件根目录PathName，和编辑器路径EditPath，并且把notepad++.exe修改成对应的文本编辑器可执行文件名。 二、免密码部署：打开博客根目录的config.yml，查看自己博客的部署方式：我这里部署了双平台。1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: https://github.com/ThinkingXuan/thinkingxuan.github.io.git,master coding: https://git.coding.net/q1454739828/q1454739828.coding.me.git,master 这是一般的部署方式，git使用https推送代码，保密性不足，所以需要输入用户名密码。所以我们需要做的改成使用ssh认证。 你需要做的就是在github或者coding中录入你自己的ssh密钥，然后在本地连接认证，一般密钥存储在id_rsa.pub文件。在C:\Users\Administrator\.ssh文件夹里面。如果你没有这个文件，请自行百度生成，连接认证。github和coding基本一样。然后修改config.yml文件：1234567# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: git@github.com:ThinkingXuan/thinkingxuan.github.io.git,master coding: git@git.coding.net:q1454739828/q1454739828.coding.me.git 然后运行脚本。]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -56,8 +68,8 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +92,8 @@
         <category>蓝桥杯试题</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +104,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
         <tag>深度优先搜索</tag>
         <tag>2N皇后</tag>
       </tags>
@@ -119,8 +131,8 @@
         <category>蓝桥杯</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -131,8 +143,8 @@
         <category>蓝桥杯</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -143,8 +155,8 @@
         <category>蓝桥杯</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -155,8 +167,8 @@
         <category>蓝桥杯</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -167,8 +179,8 @@
         <category>蓝桥杯</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -179,8 +191,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -192,8 +204,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -204,8 +216,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -216,8 +228,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -228,8 +240,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -240,8 +252,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -252,8 +264,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>

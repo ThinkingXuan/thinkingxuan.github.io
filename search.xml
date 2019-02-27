@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[蓝桥杯试题——完美的代价]]></title>
+    <url>%2F2019%2F02%2F27%2Flanqiao%2F%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7%2F</url>
+    <content type="text"><![CDATA[完美的代价问题描述回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。 交换的定义是：交换两个相邻的字符&emsp;&emsp;例如mamad &emsp;&emsp;第一次交换 ad : mamda &emsp;&emsp;第二次交换 md : madma &emsp;&emsp;第三次交换 ma : madam (回文！完美！) 输入格式第一行是一个整数N，表示接下来的字符串的长度(N &lt;= 8000) 第二行是一个字符串，长度为N.只包含小写字母 输出格式如果可能，输出最少的交换次数。 否则输出Impossible 样例输入5 mamad 样例输出3 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;int main()&#123; int n; char *s; scanf("%d",&amp;n); s = (char *)malloc(sizeof(char)*n); scanf("%s",s); int i,j,k,t,flag,c,sum; //i第一个元素下标，j最后一个元素下标 ，k记录已经交换好的元素。 sum = 0; flag = 0; c = -1; k = n -1; //使用贪心算法，将每个遍历的字符找到后面与他相同的然后交换到正确的位置时所需的交换次数 for(i=0; i&lt;k; i++)&#123; for(j=k; j&gt;=i; j--)&#123; if(j==i)&#123; //没有找到与arr[i]相同的字符 if(n%2 == 0 || c!=-1)&#123; //n为偶数或者 ，奇数情况下只有一个单个字符。 flag = 1; break; &#125; c = 1; //n为奇数，且只有一个单个字符。 sum = sum + n / 2 - i; break; &#125; if(s[j] == s[i])&#123; //找到字符相同的是情况，进行移动 for(t=j;t&lt;k;t++)&#123; s[t] = s[t+1]; &#125; s[k] = s[i]; sum = sum + k - j; k--; break; &#125; &#125; if(flag == 1)&#123; break; &#125; &#125; if(flag == 1)&#123; printf("Impossible"); &#125;else if (sum==0)&#123; printf("%d\n",sum); &#125;else &#123; printf("%d\n",sum); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>蓝桥杯试题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>蓝桥杯试题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[快速排序]]></title>
+    <url>%2F2019%2F02%2F27%2FDataStructure%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[快速排序的定义快速排序是交换排序的一种，它的基本思想是：通过一趟排序，把序列中的数组分割为2部分，如果是升序的话，右半边的所有元素都大于左半元素。然后用此方法，把每一部分在分为两个子部分，进行同样的操作。直到排序完成。这个算法是通过递归来完成的。 步骤 定义变量i，j分别指向序列的第一个元素和最后一个元素，定义key记录键值，这里使用key = arr[0]。 若i&lt;j 成立 从后往前：比较arr[j] 和 key。当找到一个arr[j]&lt;key,使arr[i] =arr[j],否则一直往前移动j。 从前往后：比较arr[i] 和 key。当找到一个key&lt;arr[j],使arr[j] = arr[i],否则一直往后移动i。 重复步骤（2），知道i&gt;=j ,然后在使arr[i] = key 代码如下：12345678910111213141516171819202122232425262728//快速排序void QuickSort(int arr[], int left, int right)&#123; if(left&gt;=right)&#123; //左边大于右边 排序完成 return; &#125; int i = left; int j = right; int key = arr[i]; //key作为比较的数据，一般取数组的第一个元素。 while(i&lt;j)&#123; //从右向左 ，找小于key的。 while(i&lt;j &amp;&amp; arr[j] &gt;= key)&#123; j--; &#125; arr[i] = arr[j]; //从左向右，找大于key的。 while(i&lt;j &amp;&amp; arr[i]&lt;=key)&#123; i++; &#125; arr[j] = arr[i]; &#125; arr[i] = key; //把key值放于指定位置 QuickSort(arr,left,i-1); QuickSort(arr,i+1,right); &#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>快速排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[冒泡排序及其优化方法]]></title>
     <url>%2F2019%2F02%2F26%2FDataStructure%2F%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[冒泡排序的思想 不停的比较相邻的两个元素，如果不符合预期，就交换两个元素，否则继续比较。如果升序排序时，就是不停的把最大元素放于序列最后。 代码如下 12345678910111213 //冒泡排序 void fun1(int arr[],int n)&#123; int i,j; for(i=0;i&lt;n-1;i++)&#123; //确定排序趟数 for(j=0;j&lt;n-i-1;j++)&#123; //比较的次数 if(arr[j]&gt;arr[j+1])&#123; int temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; &#125; &#125; &#125; &#125; 优化1 经过第n趟后，如果数组已经有序，就不往后执行。定义一个flag，如果有一趟没有进行排序，给flag赋一个值。然后终止这个方法。针对连片有序，整体无序情况。 代码如下： 123456789101112131415161718192021 //冒泡排序 优化1 (针对连片有序，整体无序情况，如果一趟中已经有序，就不需要再进行比较)void fun2(int arr[],int n)&#123; int i,j; int flag = 0; for(i=0;i&lt;n-1;i++)&#123; //确定排序趟数 for(j=0;j&lt;n-i-1;j++)&#123; if(arr[j]&gt;arr[j+1])&#123; flag = 1; int temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; &#125; &#125; if(!flag)&#123; //如果没有交换过元素，则已经有序 break; &#125; &#125; &#125; 优化2对于前面大部分是无序而后边小半部分有序的数据(1，2，5，7，4，3，6，8，9，10)排序效率也不可观，我们可以继续优化。既我们可以记下最后一次交换的位置，后边没有交换，必然是有序的，然后下一次排序从第一个比较到上次记录的位置结束即可。代码如下：1234567891011121314151617181920212223242526void fun3(int arr[],int n)&#123; int i,j; int flag; int pos = 0; //用来记录最后一次交换的位置 int k = n - 1; for(i=0;i&lt;n-1;i++)&#123; //确定排序趟数 pos = 0; flag = 0; for(j=0;j&lt;k;j++)&#123; if(arr[j]&gt;arr[j+1])&#123; flag = 1; //加入标记 int temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; pos = j; //记录最后一次的交换位置 &#125; &#125; if(!flag)&#123; //如果没有交换过元素，则已经有序 break; &#125; k = pos; //下一次比较到记录位置 &#125; &#125; 优化3 优化二的效率有很大的提升，还有一种优化方法可以继续提高效率。大致思想就是一次排序可以确定两个值，正向扫描找到最大值交换到最后，反向扫描找到最小值交换到最前面。 代码如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546 //冒泡排序 优化3 void fun4(int arr[],int n)&#123; int i,j,t = 0; int flag; int pos = 0; int k = n - 1; for(i=0;i&lt;n-1;i++)&#123; pos = 0; flag = 0; //正向找最大值 for(j=t;j&lt;k;j++)&#123; if(arr[j]&gt;arr[j+1])&#123; flag = 1; int temp = arr[j]; arr[j] = arr[j+1]; arr[j+1] = temp; pos = j; &#125; &#125; if(!flag)&#123; //如果没有交换过元素，则已经有序 break; &#125; k = pos; //下一次比较到记录位置 //反向寻找最小值 for(j=k;j&gt;t;j--)&#123; if(arr[j] &lt; arr[j-1])&#123; flag = 1; int temp = arr[j]; arr[j] = arr[j-1]; arr[j-1] = temp; &#125; &#125; t++; //找到最大最小值后,t往后移动一位 if(!flag)&#123; break; &#125; &#125; &#125; 参考文章 【排序】：冒泡排序以及三种优化]]></content>

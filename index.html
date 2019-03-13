@@ -299,6 +299,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/03/13/lanqiao/数字排列/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="you xuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旋哥的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/13/lanqiao/数字排列/" itemprop="url">蓝桥杯试题——数字排列（今有7对数字）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-13T20:03:02+08:00">
+                2019-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/蓝桥杯试题/" itemprop="url" rel="index">
+                    <span itemprop="name">蓝桥杯试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/13/lanqiao/数字排列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/13/lanqiao/数字排列/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数字排列"><a href="#数字排列" class="headerlink" title="数字排列"></a>数字排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>今有7对数字：两个1，两个2，两个3，…两个7，把它们排成一行。<br>要求，两个1间有1个其它数字，两个2间有2个其它数字，以此类推，两个7之间有7个其它数字。如下就是一个符合要求的排列：</p>
+<p>17126425374635</p>
+<p>当然，如果把它倒过来，也是符合要求的。</p>
+<p>请你找出另一种符合要求的排列法，并且这个排列法是以74开头的。</p>
+<p>注意：只填写这个14位的整数，不能填写任何多余的内容，比如说明注释等。</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>题目很好理解，就是俺规则放置14个数字。每2个数字有下标规律，并且题目已经说明以74开头，所以其实就是放置1-5五个数字。所有呀，首先想到的手写法，把出现的情况列出来。这个是解法一。另外一个方法就是搜索了。每一个存在的位置都有5中放法。所有采用深度优先搜索的方法。</p>
+<h4 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h4><p>列出所有情况：<br>首次写错题目要求的 74开头的序列：</p>
+<p>7 4 _ _ _ _ 4 _ 7 _ _ _ _ _</p>
+<p>如果直接放置1-3情况较多，所有首先放 6 和 5</p>
+<p>所有含有6的情况：</p>
+<p>7 4 _ _ _ 6 4 _ 7 _ _ _ 6 _</p>
+<p>7 4 _ _ 6 _ 4 _ 7 _ _ 6 _ _</p>
+<p>7 4 _ 6 _ _ 4 _ 7 _ 6 _ _ _</p>
+<p>7 4 6 _ _ _ 4 _ 7 6 _ _ _ _</p>
+<p>如果列出所有含有6和5的情况：</p>
+<p>7 4 _ _ _ 6 4 5 7 _ _ _ 6 5</p>
+<p>7 4 _ _ 5 6 4 _ 7 _ 5 _ 6 _</p>
+<p>7 4 _ 5 _ 6 4 _ 7 5 _ _ 6 _</p>
+<p>. . . . . . .</p>
+<p>然后放置3 2 1 。<br>最后能得出结果：</p>
+<p>7 4 1 5 1 6 4 3 7 5 2 3 6 2</p>
+<h4 id="解法2"><a href="#解法2" class="headerlink" title="解法2"></a>解法2</h4><p>使用递归试探所有出现的所有种情况，剔除 数值为4和7的情况，并且剔除 下4和7出现所有情况的下标。<code>i=1,i =2,i = 7,i = 9</code>的情况。</p>
+<p>按照n=1~7进行DFS：我们每次尝试在当前存在的若干空位中放入n，如果可以放入，就往下搜索n+1；<br>代码如下：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> num[<span class="number">15</span>]= {<span class="number">0</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//跳过n=4的情况 </span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">4</span>) {</span><br><span class="line">		dfs(n+<span class="number">1</span>);</span><br><span class="line">	}</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">//已经放满，输出n=7的情况。 </span></span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">7</span>) {</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=<span class="number">14</span>; i++) {</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d"</span>,num[i]);</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=<span class="number">14</span>; i++) {</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">1</span> || i==<span class="number">2</span> || i==<span class="number">7</span> || i==<span class="number">9</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//放入的数对应的下一个位置 </span></span><br><span class="line">		<span class="keyword">int</span> bak=i+n+<span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//溢出 </span></span><br><span class="line">		<span class="keyword">if</span>(bak&gt;<span class="number">14</span>) </span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//放置 </span></span><br><span class="line">		<span class="keyword">if</span>(num[i]==<span class="number">0</span> &amp;&amp; num[bak]==<span class="number">0</span>) {</span><br><span class="line">			num[i]=num[bak]=n;</span><br><span class="line">			dfs(n+<span class="number">1</span>);</span><br><span class="line">			num[i]=num[bak]=<span class="number">0</span>;   <span class="comment">//回溯，其中一种情况结束后，把使用的位置恢复为原来的值。  </span></span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/13/16976ec320638770?w=495&amp;h=111&amp;f=png&amp;s=3975" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+    
+	</div>
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+  
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/27/lanqiao/完美的代价/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1765,169 +1946,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-  
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/15/lanqiao/回形取数/">
-
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="you xuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旋哥的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/15/lanqiao/回形取数/" itemprop="url">蓝桥杯试题 —— 回形取数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-15T20:27:19+08:00">
-                2019-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/蓝桥杯试题/" itemprop="url" rel="index">
-                    <span itemprop="name">蓝桥杯试题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/15/lanqiao/回形取数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/lanqiao/回形取数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="回形取数"><a href="#回形取数" class="headerlink" title="回形取数"></a>回形取数</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。<br>
-		  
-		  
-          
-          <!--noindex-->
-          </p><div class="post-button text-center">
-            <a class="btn" href="/2019/02/15/lanqiao/回形取数/#more" rel="contents">
-              阅读全文 »
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    <p></p></div>
-    
-    
-    
-
-	<div>
-    
-	</div>
-	
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1982,7 +2000,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2004,7 +2022,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

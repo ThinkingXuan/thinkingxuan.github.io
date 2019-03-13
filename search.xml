@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[蓝桥杯试题——数字排列（今有7对数字）]]></title>
+    <url>%2F2019%2F03%2F13%2Flanqiao%2F%E6%95%B0%E5%AD%97%E6%8E%92%E5%88%97%2F</url>
+    <content type="text"><![CDATA[数字排列题目描述今有7对数字：两个1，两个2，两个3，…两个7，把它们排成一行。要求，两个1间有1个其它数字，两个2间有2个其它数字，以此类推，两个7之间有7个其它数字。如下就是一个符合要求的排列： 17126425374635 当然，如果把它倒过来，也是符合要求的。 请你找出另一种符合要求的排列法，并且这个排列法是以74开头的。 注意：只填写这个14位的整数，不能填写任何多余的内容，比如说明注释等。 分析题目很好理解，就是俺规则放置14个数字。每2个数字有下标规律，并且题目已经说明以74开头，所以其实就是放置1-5五个数字。所有呀，首先想到的手写法，把出现的情况列出来。这个是解法一。另外一个方法就是搜索了。每一个存在的位置都有5中放法。所有采用深度优先搜索的方法。 解法1列出所有情况：首次写错题目要求的 74开头的序列： 7 4 _ _ _ _ 4 _ 7 _ _ _ _ _ 如果直接放置1-3情况较多，所有首先放 6 和 5 所有含有6的情况： 7 4 _ _ _ 6 4 _ 7 _ _ _ 6 _ 7 4 _ _ 6 _ 4 _ 7 _ _ 6 _ _ 7 4 _ 6 _ _ 4 _ 7 _ 6 _ _ _ 7 4 6 _ _ _ 4 _ 7 6 _ _ _ _ 如果列出所有含有6和5的情况： 7 4 _ _ _ 6 4 5 7 _ _ _ 6 5 7 4 _ _ 5 6 4 _ 7 _ 5 _ 6 _ 7 4 _ 5 _ 6 4 _ 7 5 _ _ 6 _ . . . . . . . 然后放置3 2 1 。最后能得出结果： 7 4 1 5 1 6 4 3 7 5 2 3 6 2 解法2使用递归试探所有出现的所有种情况，剔除 数值为4和7的情况，并且剔除 下4和7出现所有情况的下标。i=1,i =2,i = 7,i = 9的情况。 按照n=1~7进行DFS：我们每次尝试在当前存在的若干空位中放入n，如果可以放入，就往下搜索n+1；代码如下： 123456789101112131415161718192021222324252627282930313233343536373839404142#include&lt;stdio.h&gt;int num[15]= &#123;0,7,4,0,0,0,0,4,0,7,0,0,0,0,0&#125;;void dfs(int n) &#123; //跳过n=4的情况 if(n==4) &#123; dfs(n+1); &#125; int i; //已经放满，输出n=7的情况。 if(n==7) &#123; for(i=1; i&lt;=14; i++) &#123; printf("%d",num[i]); &#125; printf("\n"); return; &#125; for(i=1; i&lt;=14; i++) &#123; if(i==1 || i==2 || i==7 || i==9) continue; //放入的数对应的下一个位置 int bak=i+n+1; //溢出 if(bak&gt;14) continue; //放置 if(num[i]==0 &amp;&amp; num[bak]==0) &#123; num[i]=num[bak]=n; dfs(n+1); num[i]=num[bak]=0; //回溯，其中一种情况结束后，把使用的位置恢复为原来的值。 &#125; &#125;&#125;int main() &#123; dfs(1);&#125; 输出结果:]]></content>
+      <categories>
+        <category>蓝桥杯试题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>蓝桥杯试题</tag>
+        <tag>搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[蓝桥杯试题——完美的代价]]></title>
     <url>%2F2019%2F02%2F27%2Flanqiao%2F%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7%2F</url>
     <content type="text"><![CDATA[完美的代价问题描述回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。 交换的定义是：交换两个相邻的字符&emsp;&emsp;例如mamad &emsp;&emsp;第一次交换 ad : mamda &emsp;&emsp;第二次交换 md : madma &emsp;&emsp;第三次交换 ma : madam (回文！完美！) 输入格式第一行是一个整数N，表示接下来的字符串的长度(N &lt;= 8000) 第二行是一个字符串，长度为N.只包含小写字母 输出格式如果可能，输出最少的交换次数。 否则输出Impossible 样例输入5 mamad 样例输出3 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;int main()&#123; int n; char *s; scanf("%d",&amp;n); s = (char *)malloc(sizeof(char)*n); scanf("%s",s); int i,j,k,t,flag,c,sum; //i第一个元素下标，j最后一个元素下标 ，k记录已经交换好的元素。 sum = 0; flag = 0; c = -1; k = n -1; //使用贪心算法，将每个遍历的字符找到后面与他相同的然后交换到正确的位置时所需的交换次数 for(i=0; i&lt;k; i++)&#123; for(j=k; j&gt;=i; j--)&#123; if(j==i)&#123; //没有找到与arr[i]相同的字符 if(n%2 == 0 || c!=-1)&#123; //n为偶数或者 ，奇数情况下只有一个单个字符。 flag = 1; break; &#125; c = 1; //n为奇数，且只有一个单个字符。 sum = sum + n / 2 - i; break; &#125; if(s[j] == s[i])&#123; //找到字符相同的是情况，进行移动 for(t=j;t&lt;k;t++)&#123; s[t] = s[t+1]; &#125; s[k] = s[i]; sum = sum + k - j; k--; break; &#125; &#125; if(flag == 1)&#123; break; &#125; &#125; if(flag == 1)&#123; printf("Impossible"); &#125;else if (sum==0)&#123; printf("%d\n",sum); &#125;else &#123; printf("%d\n",sum); &#125; return 0;&#125;]]></content>
@@ -20,8 +33,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>快速排序</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -227,8 +240,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -240,8 +253,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -252,8 +265,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -264,8 +277,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -276,8 +289,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -288,8 +301,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -300,8 +313,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>

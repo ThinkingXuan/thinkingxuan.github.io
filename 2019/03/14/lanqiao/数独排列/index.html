@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="bat脚本,Hexo,">
+  <meta name="keywords" content="算法,蓝桥杯试题,深度优先搜索,">
 
 
 
@@ -71,22 +71,21 @@
 
 
 
-<meta name="description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚">
-<meta name="keywords" content="bat脚本,Hexo">
+<meta name="description" content="数字排列题目描述你一定听说过“数独”游戏。如【图1.png】，玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个同色九宫内的数字均含1-9，不重复。 数独的答案都是唯一的，所以，多个解也称为无解。 本图的数字据说是芬兰数学家花了3个月的时间设计出来的较难的题目。但对会使用计算机编程的你来说，恐怕易如反掌了。">
+<meta name="keywords" content="算法,蓝桥杯试题,深度优先搜索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">
-<meta property="og:url" content="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/index.html">
+<meta property="og:title" content="蓝桥杯试题——数独排列">
+<meta property="og:url" content="https://www.you3xuan.top/2019/03/14/lanqiao/数独排列/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚">
+<meta property="og:description" content="数字排列题目描述你一定听说过“数独”游戏。如【图1.png】，玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个同色九宫内的数字均含1-9，不重复。 数独的答案都是唯一的，所以，多个解也称为无解。 本图的数字据说是芬兰数学家花了3个月的时间设计出来的较难的题目。但对会使用计算机编程的你来说，恐怕易如反掌了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f5a21011b6d60?w=1339&amp;h=671&amp;f=gif&amp;s=1943677">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/17/168f9cb1888a12f9?w=1339&amp;h=671&amp;f=gif&amp;s=581071">
-<meta property="og:updated_time" content="2019-02-18T14:38:58.463Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/14/1697b27934a755a1?w=437&amp;h=420&amp;f=png&amp;s=127437">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/14/1697b267ceef667f?w=497&amp;h=313&amp;f=png&amp;s=9265">
+<meta property="og:updated_time" content="2019-03-14T07:44:51.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">
-<meta name="twitter:description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438">
+<meta name="twitter:title" content="蓝桥杯试题——数独排列">
+<meta name="twitter:description" content="数字排列题目描述你一定听说过“数独”游戏。如【图1.png】，玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个同色九宫内的数字均含1-9，不重复。 数独的答案都是唯一的，所以，多个解也称为无解。 本图的数字据说是芬兰数学家花了3个月的时间设计出来的较难的题目。但对会使用计算机编程的你来说，恐怕易如反掌了。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/3/14/1697b27934a755a1?w=437&amp;h=420&amp;f=png&amp;s=127437">
 
 
 
@@ -116,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/03/14/lanqiao/数独排列/">
 
 
 
@@ -133,7 +132,7 @@
 
 
 
-  <title>Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署 | 旋哥的博客</title>
+  <title>蓝桥杯试题——数独排列 | 旋哥的博客</title>
   
 
 
@@ -304,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/03/14/lanqiao/数独排列/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -321,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署</h1>
+          <h1 class="post-title" itemprop="name headline">蓝桥杯试题——数独排列</h1>
         
 
         <div class="post-meta">
@@ -333,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T18:17:46+08:00">
-                2019-02-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T15:44:43+08:00">
+                2019-03-14
               </time>
             
 
@@ -356,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/蓝桥杯试题/" itemprop="url" rel="index">
+                    <span itemprop="name">蓝桥杯试题</span>
                   </a>
                 </span>
 
@@ -374,8 +373,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" itemprop="commentCount"></span>
+                <a href="/2019/03/14/lanqiao/数独排列/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/14/lanqiao/数独排列/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -408,30 +407,18 @@
       
 
       
-        <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code> ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。</p>
-<p>所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。</p>
-<p><strong>脚本包括四部分：新建博客，调试，部署，查找并编辑。</strong><br><a id="more"></a></p>
-<h3 id="一、Hexo-bat脚本："><a href="#一、Hexo-bat脚本：" class="headerlink" title="一、Hexo bat脚本："></a>一、Hexo bat脚本：</h3><h4 id="1、新建博客"><a href="#1、新建博客" class="headerlink" title="1、新建博客"></a>1、新建博客</h4><p>在桌面或者文件夹中新建 <code>CreateNewPage.bat</code>文本。<br>使用<code>notepad++</code>或者任意文本编辑器打开输入以下代码：</p>
-<figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> /p name=input pages name:</span><br><span class="line"><span class="built_in">echo</span> name:<span class="variable">%name%</span></span><br><span class="line"><span class="built_in">echo</span> please wait</span><br><span class="line"><span class="built_in">start</span> /d "F:\notepad\Notepad++"   notepad++.exe  "D:\Blog\blog\source\_posts\<span class="variable">%name%</span>.<span class="built_in">md</span>"</span><br></pre></td></tr></tbody></table></figure>
-<p><code>@echo off</code>表示不回显，意思就是说在命令提示符中输入的命令不显示。你也可以设置为 <code>@echo on</code>。</p>
-<p><code>set /p name=input pages name:</code> 表示你要输入这篇博客的文件名。使用<code>name</code>变量存储。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start /d "F:\notepad\Notepad++"   notepad++.exe  "D:\Blog\blog\source\_posts\%name%.md"</span><br><span class="line">表示使用这个notepad++来新建这个.md文件。</span><br></pre></td></tr></tbody></table></figure>
-<p>其中<code>"F:\notepad\Notepad++"</code>表示nodepad++的安装位置。<code>D:\Blog\blog\source\_posts\%name%.md</code>表示这个文件的存放位置。</p>
-<p><strong>博客路径和文本编辑器位置请改成你自己的。</strong></p>
-<p>如图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/16/168f59b21efdae35?w=1346&amp;h=663&amp;f=gif&amp;s=358438" alt="新建博客"></p>
-<h4 id="2、调试"><a href="#2、调试" class="headerlink" title="2、调试"></a>2、调试</h4><p>新建<code>debug.bat</code>文件<br>内容如下：<br></p><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">D</span>:\<span class="title">Blog</span>\<span class="title">blog</span></span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">s</span> -<span class="title">debug</span></span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>表示在博客根目录中运行 hexo s -debug命令。</p>
-<p>如图所示：<br><img src="https://user-gold-cdn.xitu.io/2019/2/16/168f5a21011b6d60?w=1339&amp;h=671&amp;f=gif&amp;s=1943677" alt="调试"></p>
-<h4 id="3、部署"><a href="#3、部署" class="headerlink" title="3、部署"></a>3、部署</h4><p>新建Deploy.bat文件<br>内容如下：<br></p><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> on</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function"><span class="title">cd</span> <span class="title">D</span>:\<span class="title">Blog</span>\<span class="title">blog</span> </span></span><br><span class="line"><span class="function"><span class="title">hexo</span> <span class="title">clean</span> &amp;&amp; <span class="title">hexo</span> <span class="title">g</span> &amp;&amp; <span class="title">hexo</span> <span class="title">d</span></span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>如果你只使用的http推送的代码，需要手动输入用户名和账号的。下面讲解如果免密部署。</p>
-<h4 id="4、查找并编辑"><a href="#4、查找并编辑" class="headerlink" title="4、查找并编辑"></a>4、查找并编辑</h4><p>新建Edit.bat文件<br></p><figure class="highlight bat"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">::设置编码方式</span><br><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span></span><br><span class="line"><span class="built_in">set</span> /p name=input blog name: </span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> "FileName=*<span class="variable">%name%</span>*.<span class="built_in">md</span>"</span><br><span class="line"><span class="built_in">set</span> "PathName=D:\Blog\blog\source\_posts"</span><br><span class="line"><span class="built_in">set</span> "EditPath=F:\notepad\Notepad++"</span><br><span class="line"><span class="keyword">for</span> <span class="variable">%%a</span> <span class="keyword">in</span> (<span class="variable">%PathName%</span>) <span class="keyword">do</span> <span class="keyword">for</span> /f "delims=" <span class="variable">%%b</span> <span class="keyword">in</span> ('<span class="built_in">dir</span> /a-d/b/s <span class="variable">%%a</span>\<span class="variable">%FileName%</span>') <span class="keyword">do</span> ( </span><br><span class="line">   <span class="built_in">start</span> /d <span class="variable">%EditPath%</span>notepad++.exe  "<span class="variable">%%b</span>"</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>输入需要修改的文件名，会自动查找根文件夹及子文件夹下的所有文件，对文件名进行模糊匹配，匹配成功后自动使用指定的文本编辑器打开。您需要自动配置文件根目录<code>PathName</code>，和编辑器路径<code>EditPath</code>，并且把notepad++.exe修改成对应的文本编辑器可执行文件名。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/17/168f9cb1888a12f9?w=1339&amp;h=671&amp;f=gif&amp;s=581071" alt=""></p>
-<h3 id="二、免密码部署："><a href="#二、免密码部署：" class="headerlink" title="二、免密码部署："></a>二、免密码部署：</h3><p>打开博客根目录的config.yml，查看自己博客的部署方式：我这里部署了双平台。<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: </span><br><span class="line">      github: https://github.com/ThinkingXuan/thinkingxuan.github.io.git,master</span><br><span class="line">      coding: https://git.coding.net/q1454739828/q1454739828.coding.me.git,master</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>这是一般的部署方式，git使用https推送代码，保密性不足，所以需要输入用户名密码。<br>所以我们需要做的改成使用ssh认证。</p>
-<p>你需要做的就是在github或者coding中录入你自己的ssh密钥，然后在本地连接认证，一般密钥存储在id_rsa.pub文件。在C:\Users\Administrator\.ssh文件夹里面。如果你没有这个文件，请自行百度生成，连接认证。github和coding基本一样。然后修改config.yml文件：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: </span><br><span class="line">      github: git@github.com:ThinkingXuan/thinkingxuan.github.io.git,master</span><br><span class="line">      coding: git@git.coding.net:q1454739828/q1454739828.coding.me.git</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>然后运行脚本。</p>
+        <h3 id="数字排列"><a href="#数字排列" class="headerlink" title="数字排列"></a>数字排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>你一定听说过“数独”游戏。<br>如【图1.png】，玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个同色九宫内的数字均含1-9，不重复。</p>
+<p>数独的答案都是唯一的，所以，多个解也称为无解。</p>
+<p>本图的数字据说是芬兰数学家花了3个月的时间设计出来的较难的题目。但对会使用计算机编程的你来说，恐怕易如反掌了。<br><a id="more"></a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/14/1697b27934a755a1?w=437&amp;h=420&amp;f=png&amp;s=127437" alt="图1"><br>本题的要求就是输入数独题目，程序输出数独的唯一解。我们保证所有已知数据的格式都是合法的，并且题目有唯一的解。</p>
+<p>格式要求，输入9行，每行9个数字，0代表未知，其它数字为已知。<br>输出9行，每行9个数字表示数独的解。</p>
+<p>例如：<br>输入（即图中题目）：<br><br>005300000<br><br>800000020<br><br>070010500<br><br>400005300<br><br>010070006<br><br>003200080<br><br>060500009<br><br>004000030<br><br>000009700<br></p>
+<p>程序应该输出：<br><br>145327698<br><br>839654127<br><br>672918543<br><br>496185372<br><br>218473956<br><br>753296481<br><br>367542819<br><br>984761235<br><br>521839764<br></p>
+<p>再例如，输入：<br><br>800000000<br><br>003600000<br><br>070090200<br><br>050007000<br><br>000045700<br><br>000100030<br><br>001000068<br><br>008500010<br><br>090000400<br></p>
+<p>程序应该输出：<br><br>812753649<br><br>943682175<br><br>675491283<br><br>154237896<br><br>369845721<br><br>287169534<br><br>521974368<br><br>438526917<br><br>796318452<br></p>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> num[N][N] = {<span class="number">0</span>}; </span><br><span class="line"></span><br><span class="line"><span class="comment">//输出 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;N;j++){</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>,num[i][j]);</span><br><span class="line">		} </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//放在指定位置上的数是否合法 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLegal</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j,<span class="keyword">int</span> data)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> ii,jj;</span><br><span class="line">	<span class="comment">//行 </span></span><br><span class="line">	<span class="keyword">for</span>(ii=<span class="number">0</span>;ii&lt;N;ii++){</span><br><span class="line">		<span class="keyword">if</span>(num[i][ii] == data ){</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//列 </span></span><br><span class="line">	<span class="keyword">for</span>(ii=<span class="number">0</span>;ii&lt;N;ii++){</span><br><span class="line">		<span class="keyword">if</span>(num[ii][j] == data){</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//方块 </span></span><br><span class="line">	<span class="keyword">for</span>(ii = i / <span class="number">3</span> *<span class="number">3</span>; ii&lt; i / <span class="number">3</span> *<span class="number">3</span> + <span class="number">3</span>; ii++){</span><br><span class="line">		<span class="keyword">for</span>(jj = j / <span class="number">3</span> * <span class="number">3</span>; jj&lt;j / <span class="number">3</span> *<span class="number">3</span> + <span class="number">3</span>; jj++){</span><br><span class="line">			<span class="keyword">if</span>(num[ii][jj] == data){</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> row,<span class="keyword">int</span> col)</span></span>{</span><br><span class="line">	<span class="comment">//搜索结束 </span></span><br><span class="line">	<span class="keyword">if</span>(row == N){</span><br><span class="line">		print(); </span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}<span class="keyword">else</span>{</span><br><span class="line">		<span class="keyword">int</span> k;</span><br><span class="line">		<span class="keyword">if</span>(num[row][col]==<span class="number">0</span>){       <span class="comment">//判断这个位置是否已经被占用 </span></span><br><span class="line">		</span><br><span class="line">			<span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=N;k++){       <span class="comment">//遍历可能会放置的数 </span></span><br><span class="line">				<span class="keyword">if</span>(isLegal(row,col,k)){      <span class="comment">// 放在指定位置上的数是否合法 </span></span><br><span class="line">					num[row][col] = k;      <span class="comment">//合法就放置 </span></span><br><span class="line">					dfs(row+(col+<span class="number">1</span>)/<span class="number">9</span>,(col+<span class="number">1</span>)%<span class="number">9</span>);   <span class="comment">//搜索下一个或者下一行 </span></span><br><span class="line">					num[row][col] = <span class="number">0</span>;      <span class="comment">//已经搜索过当不合适置 0 </span></span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			</span><br><span class="line">			 </span><br><span class="line">		}<span class="keyword">else</span>{</span><br><span class="line">			dfs(row+(col+<span class="number">1</span>)/<span class="number">9</span>,(col+<span class="number">1</span>)%<span class="number">9</span>);   <span class="comment">//搜索下一个或者下一行 </span></span><br><span class="line">		} </span><br><span class="line">	} </span><br><span class="line">	</span><br><span class="line">} </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;N;i++){</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;N;j++){</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%1d"</span>,&amp;num[i][j]);</span><br><span class="line">		} </span><br><span class="line">	}</span><br><span class="line">	<span class="comment">//print(); </span></span><br><span class="line">	dfs(<span class="number">0</span>,<span class="number">0</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/14/1697b267ceef667f?w=497&amp;h=313&amp;f=png&amp;s=9265" alt=""></p>
 
       
     </div>
@@ -491,7 +478,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" title="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">https://www.you3xuan.top/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/</a>
+    <a href="https://www.you3xuan.top/2019/03/14/lanqiao/数独排列/" title="蓝桥杯试题——数独排列">https://www.you3xuan.top/2019/03/14/lanqiao/数独排列/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -506,9 +493,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/bat脚本/" rel="tag"><i class="fa fa-tag"></i> bat脚本</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/蓝桥杯试题/" rel="tag"><i class="fa fa-tag"></i> 蓝桥杯试题</a>
+          
+            <a href="/tags/深度优先搜索/" rel="tag"><i class="fa fa-tag"></i> 深度优先搜索</a>
           
         </div>
       
@@ -533,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/lanqiao/龟兔赛跑预测/" rel="next" title="蓝桥杯试题 —— 龟兔赛跑预测">
-                <i class="fa fa-chevron-left"></i> 蓝桥杯试题 —— 龟兔赛跑预测
+              <a href="/2019/03/13/lanqiao/数字排列/" rel="next" title="蓝桥杯试题——数字排列（今有7对数字）">
+                <i class="fa fa-chevron-left"></i> 蓝桥杯试题——数字排列（今有7对数字）
               </a>
             
           </div>
@@ -542,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/16/lanqiao/芯片测试/" rel="prev" title="蓝桥杯试题——芯片测试">
-                蓝桥杯试题——芯片测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -718,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原因"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Hexo-bat脚本："><span class="nav-text">一、Hexo bat脚本：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、新建博客"><span class="nav-text">1、新建博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、调试"><span class="nav-text">2、调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、部署"><span class="nav-text">3、部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、查找并编辑"><span class="nav-text">4、查找并编辑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、免密码部署："><span class="nav-text">二、免密码部署：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字排列"><span class="nav-text">数字排列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法"><span class="nav-text">解法</span></a></li></ol></li></ol></div>
             
 
           </div>

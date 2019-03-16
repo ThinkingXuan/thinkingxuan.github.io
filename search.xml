@@ -55,7 +55,7 @@
   <entry>
     <title><![CDATA[快速排序]]></title>
     <url>%2F2019%2F02%2F27%2FDataStructure%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[快速排序的定义快速排序是交换排序的一种，它的基本思想是：通过一趟排序，把序列中的数组分割为2部分，如果是升序的话，右半边的所有元素都大于左半元素。然后用此方法，把每一部分在分为两个子部分，进行同样的操作。直到排序完成。这个算法是通过递归来完成的。 步骤 定义变量i，j分别指向序列的第一个元素和最后一个元素，定义key记录键值，这里使用key = arr[0]。 若i&lt;j 成立 从后往前：比较arr[j] 和 key。当找到一个arr[j]&lt;key,使arr[i] =arr[j],否则一直往前移动j。 从前往后：比较arr[i] 和 key。当找到一个key&lt;arr[j],使arr[j] = arr[i],否则一直往后移动i。 重复步骤（2），知道i&gt;=j ,然后在使arr[i] = key 代码如下：12345678910111213141516171819202122232425262728//快速排序void QuickSort(int arr[], int left, int right)&#123; if(left&gt;=right)&#123; //左边大于右边 排序完成 return; &#125; int i = left; int j = right; int key = arr[i]; //key作为比较的数据，一般取数组的第一个元素。 while(i&lt;j)&#123; //从右向左 ，找小于key的。 while(i&lt;j &amp;&amp; arr[j] &gt;= key)&#123; j--; &#125; arr[i] = arr[j]; //从左向右，找大于key的。 while(i&lt;j &amp;&amp; arr[i]&lt;=key)&#123; i++; &#125; arr[j] = arr[i]; &#125; arr[i] = key; //把key值放于指定位置 QuickSort(arr,left,i-1); QuickSort(arr,i+1,right); &#125;]]></content>
+    <content type="text"><![CDATA[快速排序的定义快速排序是交换排序的一种，它的基本思想是：通过一趟排序，把序列中的数组分割为2部分，如果是升序的话，右半边的所有元素都大于左半元素。然后用此方法，把每一部分在分为两个子部分，进行同样的操作。直到排序完成。这个算法是通过递归来完成的。 步骤 定义变量i，j分别指向序列的第一个元素和最后一个元素，定义key记录键值，这里使用key = arr[0]。 若i&lt;j 成立 从后往前：比较arr[j] 和 key。当找到一个arr[j]&lt;key,使arr[i] =arr[j],否则一直往前移动j。 从前往后：比较arr[i] 和 key。当找到一个key&lt;arr[j],使arr[j] = arr[i],否则一直往后移动i。 重复步骤（2），知道i&gt;=j ,然后在使arr[i] = key 方法一：12345678910111213141516171819202122232425262728//快速排序void QuickSort(int arr[], int left, int right)&#123; if(left&gt;=right)&#123; //左边大于右边 排序完成 return; &#125; int i = left; int j = right; int key = arr[i]; //key作为比较的数据，一般取数组的第一个元素。 while(i&lt;j)&#123; //从右向左 ，找小于key的。 while(i&lt;j &amp;&amp; arr[j] &gt;= key)&#123; j--; &#125; arr[i] = arr[j]; //从左向右，找大于key的。 while(i&lt;j &amp;&amp; arr[i]&lt;=key)&#123; i++; &#125; arr[j] = arr[i]; &#125; arr[i] = key; //把key值放于指定位置 QuickSort(arr,left,i-1); QuickSort(arr,i+1,right); &#125; 方法二：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;stdio.h&gt;void swap(int a[], int i, int j)&#123; int t = a[i]; a[i] = a[j]; a[j] = t;&#125;int partition(int a[], int p, int r)&#123; int i = p; int j = r + 1; int x = a[p]; while(1)&#123; while(i&lt;r &amp;&amp; a[++i]&lt;x); while(a[--j]&gt;x); if(i&gt;=j) break; swap(a,i,j); &#125; swap(a,p,j); return j;&#125;void quicksort(int a[], int p, int r)&#123; if(p&lt;r)&#123; int q = partition(a,p,r); quicksort(a,p,q-1); quicksort(a,q+1,r); &#125;&#125; int main()&#123; int i; int a[] = &#123;5,13,6,24,2,8,19,27,6,12,1,17&#125;; int N = 12; quicksort(a, 0, N-1); for(i=0; i&lt;N; i++) printf("%d ", a[i]); printf("\n"); return 0;&#125;]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -182,8 +182,8 @@
       <tags>
         <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
-        <tag>深度优先搜索</tag>
         <tag>2N皇后</tag>
+        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -195,8 +195,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>N皇后</tag>
         <tag>深度优先搜索</tag>
+        <tag>N皇后</tag>
       </tags>
   </entry>
   <entry>

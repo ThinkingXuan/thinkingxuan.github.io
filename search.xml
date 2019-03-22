@@ -71,7 +71,7 @@
   <entry>
     <title><![CDATA[蓝桥杯试题——完美的代价]]></title>
     <url>%2F2019%2F02%2F27%2Flanqiao%2F%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7%2F</url>
-    <content type="text"><![CDATA[完美的代价问题描述回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。 交换的定义是：交换两个相邻的字符&emsp;&emsp;例如mamad &emsp;&emsp;第一次交换 ad : mamda &emsp;&emsp;第二次交换 md : madma &emsp;&emsp;第三次交换 ma : madam (回文！完美！) 输入格式第一行是一个整数N，表示接下来的字符串的长度(N &lt;= 8000) 第二行是一个字符串，长度为N.只包含小写字母 输出格式如果可能，输出最少的交换次数。 否则输出Impossible 样例输入5 mamad 样例输出3 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;int main()&#123; int n; char *s; scanf("%d",&amp;n); s = (char *)malloc(sizeof(char)*n); scanf("%s",s); int i,j,k,t,flag,c,sum; //i第一个元素下标，j最后一个元素下标 ，k记录已经交换好的元素。 sum = 0; flag = 0; c = -1; k = n -1; //使用贪心算法，将每个遍历的字符找到后面与他相同的然后交换到正确的位置时所需的交换次数 for(i=0; i&lt;k; i++)&#123; for(j=k; j&gt;=i; j--)&#123; if(j==i)&#123; //没有找到与arr[i]相同的字符 if(n%2 == 0 || c!=-1)&#123; //n为偶数或者 ，奇数情况下只有一个单个字符。 flag = 1; break; &#125; c = 1; //n为奇数，且只有一个单个字符。 sum = sum + n / 2 - i; break; &#125; if(s[j] == s[i])&#123; //找到字符相同的是情况，进行移动 for(t=j;t&lt;k;t++)&#123; s[t] = s[t+1]; &#125; s[k] = s[i]; sum = sum + k - j; k--; break; &#125; &#125; if(flag == 1)&#123; break; &#125; &#125; if(flag == 1)&#123; printf("Impossible"); &#125;else if (sum==0)&#123; printf("%d\n",sum); &#125;else &#123; printf("%d\n",sum); &#125; return 0;&#125;]]></content>
+    <content type="text"><![CDATA[完美的代价问题描述回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。 交换的定义是：交换两个相邻的字符&emsp;&emsp;例如mamad &emsp;&emsp;第一次交换 ad : mamda &emsp;&emsp;第二次交换 md : madma &emsp;&emsp;第三次交换 ma : madam (回文！完美！) 输入格式第一行是一个整数N，表示接下来的字符串的长度(N &lt;= 8000) 第二行是一个字符串，长度为N.只包含小写字母 输出格式如果可能，输出最少的交换次数。 否则输出Impossible 样例输入5 mamad 样例输出3 代码如下：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;int main()&#123; int n; char *s; scanf("%d",&amp;n); s = (char *)malloc(sizeof(char)*n); scanf("%s",s); int i,j,k,t,flag,c,sum; //i第一个元素下标，j最后一个元素下标 ，k记录已经交换好的元素。 sum = 0; flag = 0; c = -1; k = n -1; //使用贪心算法，将每个遍历的字符找到后面与他相同的然后交换到正确的位置时所需的交换次数 for(i=0; i&lt;k; i++)&#123; for(j=k; j&gt;=i; j--)&#123; if(j==i)&#123; //没有找到与arr[i]相同的字符 if(n%2 == 0 || c!=-1)&#123; //n为偶数 或者 奇数情况下出现多个独立字符，直接视为Impossible。 flag = 1; break; &#125;else&#123; c = 1; //奇数情况下，出现了一个独立字符。 sum = sum + n / 2 - i; break; &#125; &#125; if(s[j] == s[i])&#123; //找到字符相同的是情况，进行移动 for(t=j;t&lt;k;t++)&#123; s[t] = s[t+1]; &#125; s[k] = s[i]; sum = sum + k - j; k--; break; &#125; &#125; if(flag == 1)&#123; break; &#125; &#125; if(flag == 1)&#123; printf("Impossible"); &#125;else if (sum==0)&#123; printf("%d\n",sum); &#125;else &#123; printf("%d\n",sum); &#125; return 0;&#125;]]></content>
       <categories>
         <category>蓝桥杯试题</category>
       </categories>
@@ -210,8 +210,8 @@
       <tags>
         <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
-        <tag>深度优先搜索</tag>
         <tag>2N皇后</tag>
+        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -223,8 +223,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>N皇后</tag>
         <tag>深度优先搜索</tag>
+        <tag>N皇后</tag>
       </tags>
   </entry>
   <entry>

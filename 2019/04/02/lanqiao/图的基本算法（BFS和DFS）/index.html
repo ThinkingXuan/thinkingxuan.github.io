@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca6f959bcac?w=288&amp;h=247&amp;f=png&amp;s=21638">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca9425a0352?w=264&amp;h=241&amp;f=png&amp;s=21056">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddcab54198b2d?w=287&amp;h=237&amp;f=png&amp;s=20928">
-<meta property="og:updated_time" content="2019-04-02T11:27:15.407Z">
+<meta property="og:updated_time" content="2019-04-02T11:36:45.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图的基本算法（BFS和DFS）">
 <meta name="twitter:description" content="概述图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。">
@@ -439,7 +439,8 @@
 <li>初始状态，从顶点1开始，队列={1}</li>
 <li>访问1的邻接顶点，1出队变黑，2,3入队，队列={2,3,}</li>
 <li>访问2的邻接结点，2出队，4入队，队列={3,4}</li>
-<li>访问3的邻接结点，3出队，队列={4}<br>5.访问4的邻接结点，4出队，队列={ 空}</li>
+<li>访问3的邻接结点，3出队，队列={4}</li>
+<li>访问4的邻接结点，4出队，队列={ 空}</li>
 <li>结点5对于1来说不可达。</li>
 </ol>
 <p>上面的图可以通过如下邻接矩阵表示：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int maze[5][5] = {</span><br><span class="line">    { 0, 1, 1, 0, 0 },</span><br><span class="line">    { 0, 0, 1, 1, 0 },</span><br><span class="line">    { 0, 1, 1, 1, 0 },</span><br><span class="line">    { 1, 0, 0, 0, 0 },</span><br><span class="line">    { 0, 0, 1, 1, 0 }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -452,12 +453,12 @@
 <li>回溯到这个涂黑顶点的上一层顶点，再找这个上一层顶点的其余邻接结点，继续如上操作，如果所有邻接结点往下都访问过了，就把自己涂黑，再回溯到更上一层。</li>
 <li>上一层继续做如上操作，知道所有顶点都访问过。<br>用图可以更清楚的表达这个过程：</li>
 </ol>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca08108a764?w=282&amp;h=253&amp;f=png&amp;s=22333" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca3106c5f7b?w=298&amp;h=233&amp;f=png&amp;s=22537" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca4f01345e1?w=302&amp;h=248&amp;f=png&amp;s=22268" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca6f959bcac?w=288&amp;h=247&amp;f=png&amp;s=21638" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca9425a0352?w=264&amp;h=241&amp;f=png&amp;s=21056" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddcab54198b2d?w=287&amp;h=237&amp;f=png&amp;s=20928" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca08108a764?w=282&amp;h=253&amp;f=png&amp;s=22333" alt="图1"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca3106c5f7b?w=298&amp;h=233&amp;f=png&amp;s=22537" alt="图2"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca4f01345e1?w=302&amp;h=248&amp;f=png&amp;s=22268" alt="图3"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca6f959bcac?w=288&amp;h=247&amp;f=png&amp;s=21638" alt="图4"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca9425a0352?w=264&amp;h=241&amp;f=png&amp;s=21056" alt="图5"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddcab54198b2d?w=287&amp;h=237&amp;f=png&amp;s=20928" alt="图6"></p>
 <p>从顶点1开始做深度搜索：</p>
 <ol>
 <li><p>初始状态，从顶点1开始</p>

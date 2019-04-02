@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="算法,蓝桥杯试题,">
+  <meta name="keywords" content="算法,图,">
 
 
 
@@ -71,18 +71,30 @@
 
 
 
-<meta name="description" content="1、Huffuman树">
-<meta name="keywords" content="算法,蓝桥杯试题">
+<meta name="description" content="概述图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。">
+<meta name="keywords" content="算法,图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓝桥杯试题——基础练习16">
-<meta property="og:url" content="https://www.you3xuan.top/2019/02/13/lanqiao/basic5/index.html">
+<meta property="og:title" content="图的基本算法（BFS和DFS）">
+<meta property="og:url" content="https://www.you3xuan.top/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="1、Huffuman树">
+<meta property="og:description" content="概述图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-13T15:45:27.719Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc4d7e3bb792?w=290&amp;h=259&amp;f=png&amp;s=23535">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc5ec640d808?w=290&amp;h=255&amp;f=png&amp;s=23358">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc6237cf353d?w=292&amp;h=303&amp;f=png&amp;s=23787">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc6540fd2deb?w=302&amp;h=266&amp;f=png&amp;s=22925">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc679654bdfb?w=297&amp;h=248&amp;f=png&amp;s=22326">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca08108a764?w=282&amp;h=253&amp;f=png&amp;s=22333">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca3106c5f7b?w=298&amp;h=233&amp;f=png&amp;s=22537">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca4f01345e1?w=302&amp;h=248&amp;f=png&amp;s=22268">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca6f959bcac?w=288&amp;h=247&amp;f=png&amp;s=21638">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddca9425a0352?w=264&amp;h=241&amp;f=png&amp;s=21056">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddcab54198b2d?w=287&amp;h=237&amp;f=png&amp;s=20928">
+<meta property="og:updated_time" content="2019-04-02T11:27:15.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蓝桥杯试题——基础练习16">
-<meta name="twitter:description" content="1、Huffuman树">
+<meta name="twitter:title" content="图的基本算法（BFS和DFS）">
+<meta name="twitter:description" content="概述图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/4/2/169ddc4d7e3bb792?w=290&amp;h=259&amp;f=png&amp;s=23535">
 
 
 
@@ -112,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://www.you3xuan.top/2019/02/13/lanqiao/basic5/">
+  <link rel="canonical" href="https://www.you3xuan.top/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/">
 
 
 
@@ -129,7 +141,7 @@
 
 
 
-  <title>蓝桥杯试题——基础练习16 | 旋哥的博客</title>
+  <title>图的基本算法（BFS和DFS） | 旋哥的博客</title>
   
 
 
@@ -300,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/13/lanqiao/basic5/">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
@@ -317,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蓝桥杯试题——基础练习16</h1>
+          <h1 class="post-title" itemprop="name headline">图的基本算法（BFS和DFS）</h1>
         
 
         <div class="post-meta">
@@ -329,8 +341,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T23:43:07+08:00">
-                2019-02-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T19:26:59+08:00">
+                2019-04-02
               </time>
             
 
@@ -352,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/蓝桥杯/" itemprop="url" rel="index">
-                    <span itemprop="name">蓝桥杯</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -370,8 +382,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/13/lanqiao/basic5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/13/lanqiao/basic5/" itemprop="commentCount"></span>
+                <a href="/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -404,33 +416,68 @@
       
 
       
-        <h3 id="1、Huffuman树"><a href="#1、Huffuman树" class="headerlink" title="1、Huffuman树"></a>1、Huffuman树</h3><a id="more"></a>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　Huffman树在编码中有着广泛的应用。在这里，我们只关心Huffman树的构造过程。<br>　　给出一列数{pi}={p0, p1, …, pn-1}，用这列数构造Huffman树的过程如下：<br><br>　　1. 找到{pi}中最小的两个数，设为pa和pb，将pa和pb从{pi}中删除掉，然后将它们的和加入到{pi}中。这个过程的费用记为pa +pb。<br><br>　　2. 重复步骤1，直到{pi}中只剩下一个数。<br><br>　　在上面的操作过程中，把所有的费用相加，就得到了构造Huffman树的总费用。<br><br>　　本题任务：对于给定的一个数列，现在请你求出用该数列构造Huffman树的总费用。</p>
-<p>　　例如，对于数列{pi}={5, 3, 8, 2, 9}，Huffman树的构造过程如下：<br><br>　　1. 找到{5, 3, 8, 2,<br> 9}中最小的两个数，分别是2和3，从{pi}中删除它们并将和5加入，得到{5, 8, 9, 5}，费用为5。<br><br>　　2. 找到{5, 8, 9,5}中最小的两个数，分别是5和5，从{pi}中删除它们并将和10加入，得到{8, 9, 10}，费用为10。<br><br>　　3. 找到{8, 9, 10}中最小的两个数，分别是8和9，从{pi}中删除它们并将和17加入，得到{10, 17}，费用为17。<br><br>　　4. 找到{10, 17}中最小的两个数，分别是10和17，从{pi}中删除它们并将和27加入，得到{27}，费用为27。<br><br>　　5. 现在，数列中只剩下一个数27，构造过程结束，总费用为5+10+17+27=59。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式<br></h4><p>　　输入的第一行包含一个正整数n（n&lt;=100）。<br>　　接下来是n个正整数，表示p0, p1, …, pn-1，每个数不超过1000。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　输出用这些数构造Huffman树的总费用。</p>
-<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><p>5<br><br>5 3 8 2 9<br></p>
-<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出<br></h4><p>59</p>
-<h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> length)</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">for</span>(j=i;j&lt;length;j++){</span><br><span class="line">			<span class="keyword">if</span>(arr[i]&gt;arr[j]){</span><br><span class="line">				<span class="keyword">int</span> t = arr[i];</span><br><span class="line">				arr[i] = arr[j];</span><br><span class="line">				arr[j] = t;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> n,i,sum,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> arr[n];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;arr[i]);</span><br><span class="line">	}</span><br><span class="line">	sort(arr,n);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	j = <span class="number">0</span>;</span><br><span class="line">	sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(j&lt;n<span class="number">-1</span>){</span><br><span class="line">		sum = sum + arr[j] + arr[j+<span class="number">1</span>];</span><br><span class="line">		arr[j+<span class="number">1</span>] = arr[j] + arr[j+<span class="number">1</span>];</span><br><span class="line">		arr[j] = <span class="number">-1</span>;</span><br><span class="line">		sort(arr,n);</span><br><span class="line">		j++;</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2、2n皇后问题"><a href="#2、2n皇后问题" class="headerlink" title="2、2n皇后问题"></a>2、2n皇后问题</h3><h4 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　给定一个n*n的棋盘，棋盘中有一些位置不能放皇后。现在要向棋盘中放入n个黑皇后和n个白皇后，使任意的两个黑皇后都不在同一行、同一列或同一条对角线上，任意的两个白皇后都不在同一行、同一列或同一条对角线上。问总共有多少种放法？n小于等于8。</p>
-<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h4><p>　　输入的第一行为一个整数n，表示棋盘的大小。</p>
-<p>　　接下来n行，每行n个0或1的整数，如果一个整数为1，表示对应的位置可以放皇后，如果一个整数为0，表示对应的位置不可以放皇后。</p>
-<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　输出一个整数，表示总共有多少种放法。</p>
-<h4 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h4><p>4</p>
-<p>1 1 1 1</p>
-<p>1 1 1 1</p>
-<p>1 1 1 1</p>
-<p>1 1 1 1</p>
-<h4 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h4><p>2</p>
-<h4 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h4><p>4</p>
-<p>1 0 1 1</p>
-<p>1 1 1 1</p>
-<p>1 1 1 1</p>
-<p>1 1 1 1</p>
-<h4 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h4><p>0</p>
-<blockquote>
-<p>篇幅较长，详见下一篇</p>
-</blockquote>
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。<br>图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。<br>在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。<br><a id="more"></a></p>
+<h4 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h4><p>广度优先搜索在进一步遍历图中顶点之前，先访问当前顶点的所有邻接结点。</p>
+<ol>
+<li><p>首先选择一个顶点作为起始结点，并将其染成灰色，其余结点为白色。</p>
+</li>
+<li><p>将起始结点放入队列中。</p>
+</li>
+<li><p>从队列首部选出一个顶点，并找出所有与之邻接的结点，将找到的邻接结点放入队列尾部，将已访问过结点涂成黑色，没访问过的结点是白色。如果顶点的颜色是灰色，表示已经发现并且放入了队列，如果顶点的颜色是白色，表示还没有发现</p>
+</li>
+<li><p>按照同样的方法处理队列中的下一个结点。<br>基本就是出队的顶点变成黑色，在队列里的是灰色，还没入队的是白色。</p>
+</li>
+</ol>
+<p>用一副图来表达这个流程如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddc4d7e3bb792?w=290&amp;h=259&amp;f=png&amp;s=23535" alt="图1"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddc5ec640d808?w=290&amp;h=255&amp;f=png&amp;s=23358" alt="图2"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddc6237cf353d?w=292&amp;h=303&amp;f=png&amp;s=23787" alt="图3"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddc6540fd2deb?w=302&amp;h=266&amp;f=png&amp;s=22925" alt="图4"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddc679654bdfb?w=297&amp;h=248&amp;f=png&amp;s=22326" alt="图5"></p>
+<p>从顶点1开始进行广度优先搜索：</p>
+<ol>
+<li>初始状态，从顶点1开始，队列={1}</li>
+<li>访问1的邻接顶点，1出队变黑，2,3入队，队列={2,3,}</li>
+<li>访问2的邻接结点，2出队，4入队，队列={3,4}</li>
+<li>访问3的邻接结点，3出队，队列={4}<br>5.访问4的邻接结点，4出队，队列={ 空}</li>
+<li>结点5对于1来说不可达。</li>
+</ol>
+<p>上面的图可以通过如下邻接矩阵表示：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int maze[5][5] = {</span><br><span class="line">    { 0, 1, 1, 0, 0 },</span><br><span class="line">    { 0, 0, 1, 1, 0 },</span><br><span class="line">    { 0, 1, 1, 1, 0 },</span><br><span class="line">    { 1, 0, 0, 0, 0 },</span><br><span class="line">    { 0, 0, 1, 1, 0 }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>BFS核心代码如下：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> maze[N][N] = {</span><br><span class="line">    { <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span> }</span><br><span class="line">};</span><br><span class="line"><span class="keyword">int</span> visited[N + <span class="number">1</span>] = { <span class="number">0</span>, };</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(<span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    Q.push(start);</span><br><span class="line">    visited[start] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!Q.empty())</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">int</span> front = Q.front();</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; front &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        Q.pop();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (!visited[i] &amp;&amp; maze[front - <span class="number">1</span>][i - <span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line">            {</span><br><span class="line">                visited[i] = <span class="number">1</span>;</span><br><span class="line">                Q.push(i);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        BFS(i);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="深度优先搜索（DFS）"><a href="#深度优先搜索（DFS）" class="headerlink" title="深度优先搜索（DFS）"></a>深度优先搜索（DFS）</h4><p>深度优先搜索在搜索过程中访问某个顶点后，需要递归地访问此顶点的所有未访问过的相邻顶点。</p>
+<p>初始条件下所有节点为白色，选择一个作为起始顶点，按照如下步骤遍历：</p>
+<ol>
+<li>选择起始顶点涂成灰色，表示还未访问</li>
+<li>从该顶点的邻接顶点中选择一个，继续这个过程（即再寻找邻接结点的邻接结点），一直深入下去，直到一个顶点没有邻接结点了，涂黑它，表示访问过了</li>
+<li>回溯到这个涂黑顶点的上一层顶点，再找这个上一层顶点的其余邻接结点，继续如上操作，如果所有邻接结点往下都访问过了，就把自己涂黑，再回溯到更上一层。</li>
+<li>上一层继续做如上操作，知道所有顶点都访问过。<br>用图可以更清楚的表达这个过程：</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca08108a764?w=282&amp;h=253&amp;f=png&amp;s=22333" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca3106c5f7b?w=298&amp;h=233&amp;f=png&amp;s=22537" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca4f01345e1?w=302&amp;h=248&amp;f=png&amp;s=22268" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca6f959bcac?w=288&amp;h=247&amp;f=png&amp;s=21638" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddca9425a0352?w=264&amp;h=241&amp;f=png&amp;s=21056" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/4/2/169ddcab54198b2d?w=287&amp;h=237&amp;f=png&amp;s=20928" alt=""></p>
+<p>从顶点1开始做深度搜索：</p>
+<ol>
+<li><p>初始状态，从顶点1开始</p>
+</li>
+<li><p>依次访问过顶点1,2,3后，终止于顶点3</p>
+</li>
+<li><p>从顶点3回溯到顶点2，继续访问顶点5，并且终止于顶点5</p>
+</li>
+<li><p>从顶点5回溯到顶点2，并且终止于顶点2</p>
+</li>
+<li><p>从顶点2回溯到顶点1，并终止于顶点1</p>
+</li>
+<li><p>从顶点4开始访问，并终止于顶点4</p>
+</li>
+</ol>
+<p>上面的图可以通过如下邻接矩阵表示：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int maze[5][5] = {</span><br><span class="line">    { 0, 1, 1, 0, 0 },</span><br><span class="line">    { 0, 0, 1, 0, 1 },</span><br><span class="line">    { 0, 0, 1, 0, 0 },</span><br><span class="line">    { 1, 1, 0, 0, 1 },</span><br><span class="line">    { 0, 0, 1, 0, 0 }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>DFS核心代码如下（递归实现）：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> maze[N][N] = {</span><br><span class="line">    { <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> }</span><br><span class="line">};</span><br><span class="line"><span class="keyword">int</span> visited[N + <span class="number">1</span>] = { <span class="number">0</span>, };</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    visited[start] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (!visited[i] &amp;&amp; maze[start - <span class="number">1</span>][i - <span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line">            DFS(i);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; start &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        DFS(i);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>非递归实现如下，借助一个栈：<br></p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> maze[N][N] = {</span><br><span class="line">    { <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> },</span><br><span class="line">    { <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span> },</span><br><span class="line">    { <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> }</span><br><span class="line">};</span><br><span class="line"><span class="keyword">int</span> visited[N + <span class="number">1</span>] = { <span class="number">0</span>, };</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    s.push(start);</span><br><span class="line">    visited[start] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">bool</span> is_push = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (!s.empty())</span><br><span class="line">    {</span><br><span class="line">        is_push = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> v = s.top();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span> (maze[v - <span class="number">1</span>][i - <span class="number">1</span>] == <span class="number">1</span> &amp;&amp; !visited[i])</span><br><span class="line">            {</span><br><span class="line">                visited[i] = <span class="number">1</span>;</span><br><span class="line">                s.push(i);</span><br><span class="line">                is_push = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (!is_push)</span><br><span class="line">        {</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; v &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">            s.pop();</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        DFS(i);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>有的DFS是先访问读取到的结点，等回溯时就不再输出该结点，也是可以的。算法和我上面的区别就是输出点的时机不同，思想还是一样的。DFS在环监测和拓扑排序中都有不错的应用。</p>
+<p>作者：卡巴拉的树<br>链接：<a href="https://www.jianshu.com/p/70952b51f0c8" target="_blank" rel="noopener">https://www.jianshu.com/p/70952b51f0c8</a><br>来源：简书</p>
 
       
     </div>
@@ -490,7 +537,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.you3xuan.top/2019/02/13/lanqiao/basic5/" title="蓝桥杯试题——基础练习16">https://www.you3xuan.top/2019/02/13/lanqiao/basic5/</a>
+    <a href="https://www.you3xuan.top/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/" title="图的基本算法（BFS和DFS）">https://www.you3xuan.top/2019/04/02/lanqiao/图的基本算法（BFS和DFS）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -507,7 +554,7 @@
           
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/蓝桥杯试题/" rel="tag"><i class="fa fa-tag"></i> 蓝桥杯试题</a>
+            <a href="/tags/图/" rel="tag"><i class="fa fa-tag"></i> 图</a>
           
         </div>
       
@@ -532,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/27/lanqiao/basic4/" rel="next" title="蓝桥杯试题——基础练习11-15">
-                <i class="fa fa-chevron-left"></i> 蓝桥杯试题——基础练习11-15
+              <a href="/2019/03/29/lanqiao/审美课 /" rel="next" title="蓝桥杯试题——审美课">
+                <i class="fa fa-chevron-left"></i> 蓝桥杯试题——审美课
               </a>
             
           </div>
@@ -541,10 +588,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/14/lanqiao/basic6/" rel="prev" title="算法入门 —— N皇后问题">
-                算法入门 —— N皇后问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +760,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、Huffuman树"><span class="nav-text">1、Huffuman树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下："><span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、2n皇后问题"><span class="nav-text">2、2n皇后问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述-1"><span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式-1"><span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式-1"><span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入-1"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出-1"><span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入-2"><span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出-2"><span class="nav-text">样例输出</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#广度优先搜索（BFS）"><span class="nav-text">广度优先搜索（BFS）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度优先搜索（DFS）"><span class="nav-text">深度优先搜索（DFS）</span></a></li></ol></li></ol></div>
             
 
           </div>

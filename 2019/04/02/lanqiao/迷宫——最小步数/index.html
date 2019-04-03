@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="描述这有一个迷宫，有0~8行和0~8列：`1,1,1,1,1,1,1,1,1 1,0,0,1,0,0,1,0,1 1,0,0,1,1,0,0,0,1 1,0,1,0,1,1,0,1,1 1,0,0,0,0,1,0,0,1">
+<meta name="description" content="描述这有一个迷宫，有0~8行和0~8列：12345678910111213141516171,1,1,1,1,1,1,1,11,0,0,1,0,0,1,0,11,0,0,1,1,0,0,0,11,0,1,0,1,1,0,1,11,0,0,0,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,0,0,0,11,1,1,1,1,1,1,1,1">
 <meta name="keywords" content="算法,最小步数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="迷宫—最小步数">
 <meta property="og:url" content="https://www.you3xuan.top/2019/04/02/lanqiao/迷宫——最小步数/index.html">
 <meta property="og:site_name" content="旋哥的博客">
-<meta property="og:description" content="描述这有一个迷宫，有0~8行和0~8列：`1,1,1,1,1,1,1,1,1 1,0,0,1,0,0,1,0,1 1,0,0,1,1,0,0,0,1 1,0,1,0,1,1,0,1,1 1,0,0,0,0,1,0,0,1">
+<meta property="og:description" content="描述这有一个迷宫，有0~8行和0~8列：12345678910111213141516171,1,1,1,1,1,1,1,11,0,0,1,0,0,1,0,11,0,0,1,1,0,0,0,11,0,1,0,1,1,0,1,11,0,0,0,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,0,0,0,11,1,1,1,1,1,1,1,1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-03T06:25:45.542Z">
+<meta property="og:updated_time" content="2019-04-03T06:27:24.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="迷宫—最小步数">
-<meta name="twitter:description" content="描述这有一个迷宫，有0~8行和0~8列：`1,1,1,1,1,1,1,1,1 1,0,0,1,0,0,1,0,1 1,0,0,1,1,0,0,0,1 1,0,1,0,1,1,0,1,1 1,0,0,0,0,1,0,0,1">
+<meta name="twitter:description" content="描述这有一个迷宫，有0~8行和0~8列：12345678910111213141516171,1,1,1,1,1,1,1,11,0,0,1,0,0,1,0,11,0,0,1,1,0,0,0,11,0,1,0,1,1,0,1,11,0,0,0,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,1,0,0,11,1,0,1,0,0,0,0,11,1,1,1,1,1,1,1,1">
 
 
 
@@ -404,14 +404,8 @@
       
 
       
-        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>这有一个迷宫，有0~8行和0~8列：<br>`<br>1,1,1,1,1,1,1,1,1</p>
-<p>1,0,0,1,0,0,1,0,1</p>
-<p>1,0,0,1,1,0,0,0,1</p>
-<p>1,0,1,0,1,1,0,1,1</p>
-<p>1,0,0,0,0,1,0,0,1<br><a id="more"></a><br>1,1,0,1,0,1,0,0,1</p>
-<p>1,1,0,1,0,1,0,0,1</p>
-<p>1,1,0,1,0,0,0,0,1</p>
-<p>1,1,1,1,1,1,1,1,1<br>`</p>
+        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>这有一个迷宫，有0~8行和0~8列：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1,1,1,1,1,1,1,1,1</span><br><span class="line"></span><br><span class="line">1,0,0,1,0,0,1,0,1</span><br><span class="line"></span><br><span class="line">1,0,0,1,1,0,0,0,1</span><br><span class="line"></span><br><span class="line">1,0,1,0,1,1,0,1,1</span><br><span class="line"></span><br><span class="line">1,0,0,0,0,1,0,0,1</span><br><span class="line"></span><br><span class="line">1,1,0,1,0,1,0,0,1</span><br><span class="line"></span><br><span class="line">1,1,0,1,0,1,0,0,1</span><br><span class="line"></span><br><span class="line">1,1,0,1,0,0,0,0,1</span><br><span class="line"></span><br><span class="line">1,1,1,1,1,1,1,1,1</span><br></pre></td></tr></tbody></table></figure><p></p>
+<a id="more"></a>
 <p>0表示道路，1表示墙。</p>
 <p>现在输入一个道路的坐标作为起点，再如输入一个道路的坐标作为终点，问最少走几步才能从起点到达终点？</p>
 <p>（注：一步是指从一坐标点走到其上下左右相邻坐标点，如：从（3，1）到（4,1）。）</p>

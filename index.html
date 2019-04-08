@@ -299,6 +299,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/04/08/lanqiao/深入理解线性素数筛/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="you xuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旋哥的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/08/lanqiao/深入理解线性素数筛/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-08T19:54:09+08:00">
+                2019-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/08/lanqiao/深入理解线性素数筛/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/08/lanqiao/深入理解线性素数筛/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>线性素数筛也算是一种基本的算法。</p>
+<hr>
+<p>title: 深入理解线性素数筛<br>date: 2019年4月8日19:52:26<br>tags:</p>
+<ul>
+<li>素数筛</li>
+<li>算法<br>categories: 算法<br>mathjax: false</li>
+</ul>
+<hr>
+<p>两个大前提：</p>
+<ol>
+<li><p>自然数中，1既不是素数也不是合数。</p>
+</li>
+<li><p>一个合数一定能分解成一个素数和另一个数相乘。</p>
+</li>
+</ol>
+<p>先从普通的思路谈起。</p>
+<p>如果问你一个数是不是素数，那你一定是for循环一下，看看有没有数能够整除它。</p>
+<p>现在，如果我们已经知道一个数是素数了，那么这个数的k倍（k&gt;=2）,一定是合数。（这个无序任何证明）</p>
+<p>所以一个很简单的想法就是每找到一个素数，我们就把它的k倍（k&gt;=2）都标记为合数。所以我们需要开一个数组记录有哪些素数。</p>
+<p>这里我们用prime[]数组来记录素数。用bool类型 isprime[]来记录一个数到底是不是素数。</p>
+<p>按这个思路，我们可以先写一下初步的代码。</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ioStream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> prime[<span class="number">1000</span>],total;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> isprime[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">first</span><span class="params">(<span class="keyword">int</span> size)</span></span>{</span><br><span class="line">    <span class="built_in">memset</span>(isprime,<span class="number">1</span>,<span class="keyword">sizeof</span>(isprime));<span class="comment">//注意这里isprime是布尔类型，一个字节，所以我可以赋值为1，如果是int类型，则不能赋值为1。</span></span><br><span class="line">    isprime[<span class="number">1</span>]=<span class="literal">false</span>;<span class="comment">//1不是素数.</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;size;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(isprime[i])</span><br><span class="line">        {</span><br><span class="line">            prime[++total]=i;<span class="comment">//记录素数</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=total&amp;&amp;prime[j]*i&lt;size;j++) <span class="comment">//这里的i表示素数的多少倍</span></span><br><span class="line">        {</span><br><span class="line">            <span class="comment">//也就是说每经历一个i，就要遍历当前已经找到的素数。</span></span><br><span class="line">            isprime[i*prime[j]]=<span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++){</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,prime[i]);</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	first(<span class="number">1000</span>);</span><br><span class="line">	print();</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>但是你会发现复杂度不是o(n)。所以这里还需要一些优化。</p>
+<p>我们来看一个很简单的例子：</p>
+<p>当<code>i=9</code>时，当前已有的素数有<code>2,3,5,7</code>。</p>
+<p>此时我将进入二重循环，一次将<code>2 * 9 = 18, 3 * 9 = 27, 5 * 9 = 45, 7 * 9=63</code> 标记为合数。</p>
+<p>但是有个问题，<code>5*9 等价于3*15</code>,也就是说当<code>i=15</code>时，也会标记一次。这明显重复了。同理<code>，7*9等价于3*21</code>，当<code>i=21</code>时，也会重复标记一次。</p>
+<p>多观察几组数据后，你会发现，其实只要找到<code>i%prime[j]==0</code>时，我们就可以跳出循环了，因为后面的素数的倍数，我们可以留到后面进行标记。那么这样的猜想到底对不对？下面看一个结论和证明。</p>
+<p>假设 a,d为合数，b,c为素数 其中b&gt;c.</p>
+<p><code>a= b*c*d</code></p>
+<p><code>令e=c*d(显然e也是合数)</code></p>
+<p><code>令f=d*b(也是合数)</code></p>
+<p><code>a=f*c</code> (f是合数，c是素数)。对比第一个等式,<code>a=b*c*d</code> 。我们发现a可以有这两种不同的表示方法，不同的是我们可以用一个较小的素数<em>一个较大合数  来代替   一个较大素数</em>一个较小合数<code>（a=b*(c*d)）</code>。</p>
+<p>所以有下面的结论：</p>
+<p>一个比合数大的素数和该合数的乘积可以用一个更大的合数和比其小的素数相乘得到。</p>
+<p>那么如何优雅的在代码里运用这个结论呢？</p>
+<p>答案就是只要找到一个<code>i%prime[j]==0</code> 我们就跳出循环，因为后面总有更大的合数和一个小的素数相乘，满足我们需要标记的数。</p>
+<p>最终代码：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPrime</span><span class="params">(<span class="keyword">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">memset</span>(isprime,<span class="number">1</span>,<span class="keyword">sizeof</span>(isprime));</span><br><span class="line">    isprime[<span class="number">1</span>]=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;size;i++){</span><br><span class="line">        <span class="keyword">if</span>(isprime[i])</span><br><span class="line">        {</span><br><span class="line">            prime[++total] = i;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=total&amp;&amp;i*prime[j]&lt;=size;j++)</span><br><span class="line">        {</span><br><span class="line">            isprime[i*prime[j]]=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+	<div>
+    
+	</div>
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+  
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/04/08/lanqiao/素因子去重/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -318,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/08/lanqiao/素因子去重/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2019/04/08/lanqiao/素因子去重/" itemprop="url">算法训练——素因子去重</a></h1>
         
 
         <div class="post-meta">
@@ -340,6 +511,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/蓝桥杯/" itemprop="url" rel="index">
+                    <span itemprop="name">蓝桥杯</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1760,170 +1953,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-  
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.you3xuan.top/2019/02/27/lanqiao/完美的代价/">
-
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="you xuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="旋哥的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/27/lanqiao/完美的代价/" itemprop="url">蓝桥杯试题——完美的代价</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T23:06:33+08:00">
-                2019-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/蓝桥杯试题/" itemprop="url" rel="index">
-                    <span itemprop="name">蓝桥杯试题</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/27/lanqiao/完美的代价/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/27/lanqiao/完美的代价/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="完美的代价"><a href="#完美的代价" class="headerlink" title="完美的代价"></a>完美的代价</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。</p>
-<p>交换的定义是：交换两个相邻的字符<br>
-		  
-		  
-          
-          <!--noindex-->
-          </p><div class="post-button text-center">
-            <a class="btn" href="/2019/02/27/lanqiao/完美的代价/#more" rel="contents">
-              阅读全文 »
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    <p></p></div>
-    
-    
-    
-
-	<div>
-    
-	</div>
-	
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1978,7 +2007,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2000,7 +2029,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

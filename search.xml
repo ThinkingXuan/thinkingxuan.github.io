@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[P0505阶乘取数]]></title>
+    <url>%2F2019%2F04%2F09%2Flanqiao%2FP0505%E9%98%B6%E4%B9%98%E5%8F%96%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目描述一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13！就已经比较大了，已经无法存放在一个整型变量中；而35！就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算n!是非常困难的。幸运的是，在本题中，我们的任务不是去计算n!，而是去计算n!最右边的那个非0的数字是多少。例如，5！=12345=120，因此5!最右边的那个非0的数字是2。再如，7！=5040，因此7！最右边的那个非0的数字是4。再如，15！= 1307674368000，因此15！最右边的那个非0的数字是8。请编写一个程序，输入一个整数n(0&lt;n&lt;=100)，然后输出n!最右边的那个非0的数字是多少。 输入： 7 输出： 4 分析：直接计算一定不可以，我的思路的计算的时候循环去零，然后%10000000，防止溢出。 代码如下123456789101112131415161718192021222324252627#include&lt;iostream&gt;using namespace std;//15！= 1307674368000int n;int main()&#123; cin &gt;&gt; n; long long sum = 1; int k; for(int i = 1;i&lt;=n;i++)&#123; sum = sum * i; while(sum)&#123; k = sum % 10; if(k!=0)&#123; k = sum; break; &#125; sum = sum%10000000 / 10 ; &#125; &#125; cout &lt;&lt; sum %10; return 0; &#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>阶乘取数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[深入理解线性素数筛]]></title>
     <url>%2F2019%2F04%2F08%2Flanqiao%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E7%B4%A0%E6%95%B0%E7%AD%9B%2F</url>
     <content type="text"><![CDATA[线性素数筛也算是一种基本的算法。 两个大前提： 自然数中，1既不是素数也不是合数。 一个合数一定能分解成一个素数和另一个数相乘。 先从普通的思路谈起。 如果问你一个数是不是素数，那你一定是for循环一下，看看有没有数能够整除它。 现在，如果我们已经知道一个数是素数了，那么这个数的k倍（k&gt;=2）,一定是合数。（这个无序任何证明） 所以一个很简单的想法就是每找到一个素数，我们就把它的k倍（k&gt;=2）都标记为合数。所以我们需要开一个数组记录有哪些素数。 这里我们用prime[]数组来记录素数。用bool类型 isprime[]来记录一个数到底是不是素数。 按这个思路，我们可以先写一下初步的代码。 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;stdio.h&gt;#include&lt;ioStream&gt;#include&lt;string.h&gt;using namespace std;int prime[1000],total;bool isprime[1000];void first(int size)&#123; memset(isprime,1,sizeof(isprime));//注意这里isprime是布尔类型，一个字节，所以我可以赋值为1，如果是int类型，则不能赋值为1。 isprime[1]=false;//1不是素数. for(int i=2;i&lt;size;i++) &#123; if(isprime[i]) &#123; prime[++total]=i;//记录素数 &#125; for(int j=1;j&lt;=total&amp;&amp;prime[j]*i&lt;size;j++) //这里的i表示素数的多少倍 &#123; //也就是说每经历一个i，就要遍历当前已经找到的素数。 isprime[i*prime[j]]=0; &#125; &#125;&#125;void print()&#123; int i; for(i=0;i&lt;1000;i++)&#123; printf("%d ",prime[i]); &#125; printf("\n");&#125;int main()&#123; first(1000); print(); return 0;&#125; 但是你会发现复杂度不是o(n)。所以这里还需要一些优化。 我们来看一个很简单的例子： 当i=9时，当前已有的素数有2,3,5,7。 此时我将进入二重循环，一次将2 * 9 = 18, 3 * 9 = 27, 5 * 9 = 45, 7 * 9=63 标记为合数。 但是有个问题，5*9 等价于3*15,也就是说当i=15时，也会标记一次。这明显重复了。同理，7*9等价于3*21，当i=21时，也会重复标记一次。 多观察几组数据后，你会发现，其实只要找到i%prime[j]==0时，我们就可以跳出循环了，因为后面的素数的倍数，我们可以留到后面进行标记。那么这样的猜想到底对不对？下面看一个结论和证明。 假设 a,d为合数，b,c为素数 其中b&gt;c. a= b*c*d 令e=c*d(显然e也是合数) 令f=d*b(也是合数) a=f*c (f是合数，c是素数)。对比第一个等式,a=b*c*d 。我们发现a可以有这两种不同的表示方法，不同的是我们可以用一个较小的素数一个较大合数 来代替 一个较大素数一个较小合数（a=b*(c*d)）。 所以有下面的结论： 一个比合数大的素数和该合数的乘积可以用一个更大的合数和比其小的素数相乘得到。 那么如何优雅的在代码里运用这个结论呢？ 答案就是只要找到一个i%prime[j]==0 我们就跳出循环，因为后面总有更大的合数和一个小的素数相乘，满足我们需要标记的数。 最终代码： 1234567891011121314151617181920void getPrime(int size)&#123; memset(isprime,1,sizeof(isprime)); isprime[1]=false; for(int i=2;i&lt;size;i++)&#123; if(isprime[i]) &#123; prime[++total] = i; &#125; for(int j=1;j&lt;=total&amp;&amp;i*prime[j]&lt;=size;j++) &#123; isprime[i*prime[j]]=false; if(i%prime[j]==0) &#123; break; &#125; &#125; &#125;&#125;]]></content>
@@ -271,8 +283,8 @@
       <tags>
         <tag>算法</tag>
         <tag>蓝桥杯试题</tag>
-        <tag>深度优先搜索</tag>
         <tag>2N皇后</tag>
+        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -284,8 +296,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>N皇后</tag>
         <tag>深度优先搜索</tag>
+        <tag>N皇后</tag>
       </tags>
   </entry>
   <entry>

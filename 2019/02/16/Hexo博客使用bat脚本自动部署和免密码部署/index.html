@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
 
 
 
@@ -40,21 +40,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+<link href="/blog/css/main.css" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
 
 
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
 
 
@@ -75,7 +75,7 @@
 <meta name="keywords" content="bat脚本,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">
-<meta property="og:url" content="https://you3xuan.gitee.io/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/index.html">
+<meta property="og:url" content="https://you3xuan.gitee.io/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/index.html">
 <meta property="og:site_name" content="旋哥的博客">
 <meta property="og:description" content="原因每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。 所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。 脚">
 <meta property="og:locale" content="zh-Hans">
@@ -93,7 +93,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/blog/',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://you3xuan.gitee.io/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
+  <link rel="canonical" href="https://you3xuan.gitee.io/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/">
 
 
 
@@ -163,7 +163,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">旋哥的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -191,7 +191,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/blog/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -201,7 +201,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/blog/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
@@ -211,7 +211,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/blog/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -221,7 +221,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/blog/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -231,7 +231,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/blog/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -309,7 +309,7 @@
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
+      <meta itemprop="image" content="/blog/image/avatar.jpg">
     </span>
 
     <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -356,7 +356,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                  <a href="/blog/categories/Hexo/" itemprop="url" rel="index">
                     <span itemprop="name">Hexo</span>
                   </a>
                 </span>
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" itemprop="commentCount"></span>
+                <a href="/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,7 +491,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://you3xuan.gitee.io/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" title="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">https://you3xuan.gitee.io/blog/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/</a>
+    <a href="https://you3xuan.gitee.io/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/" title="Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署">https://you3xuan.gitee.io/2019/02/16/Hexo博客使用bat脚本自动部署和免密码部署/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -506,9 +506,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/bat脚本/" rel="tag"><i class="fa fa-tag"></i> bat脚本</a>
+            <a href="/blog/tags/bat脚本/" rel="tag"><i class="fa fa-tag"></i> bat脚本</a>
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/blog/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
         </div>
       
@@ -533,7 +533,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/lanqiao/龟兔赛跑预测/" rel="next" title="蓝桥杯试题 —— 龟兔赛跑预测">
+              <a href="/blog/2019/02/16/lanqiao/龟兔赛跑预测/" rel="next" title="蓝桥杯试题 —— 龟兔赛跑预测">
                 <i class="fa fa-chevron-left"></i> 蓝桥杯试题 —— 龟兔赛跑预测
               </a>
             
@@ -543,7 +543,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/16/lanqiao/芯片测试/" rel="prev" title="蓝桥杯试题——芯片测试">
+              <a href="/blog/2019/02/16/lanqiao/芯片测试/" rel="prev" title="蓝桥杯试题——芯片测试">
                 蓝桥杯试题——芯片测试 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -621,7 +621,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
 			 <a href="/">
-				<img class="site-author-image" itemprop="image" src="/image/avatar.jpg" alt="you xuan">
+				<img class="site-author-image" itemprop="image" src="/blog/image/avatar.jpg" alt="you xuan">
 			 </a>
             
               <p class="site-author-name" itemprop="name">you xuan</p>
@@ -633,7 +633,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/blog/archives/">
               
                   <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
@@ -645,7 +645,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                <a href="/blog/categories/index.html">
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -656,7 +656,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/blog/tags/index.html">
                   <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -977,7 +977,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.js"></script><script type="text/javascript">var GUEST = ['nick','mail','link'];
+<script type="text/javascript" src="/blog/bundle.js"></script><script type="text/javascript">var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
@@ -1002,7 +1002,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/" + search_path;
+    var path = "/blog/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {

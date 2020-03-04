@@ -32,7 +32,7 @@
 
   
   
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
 
 
 
@@ -40,21 +40,21 @@
 
 
 
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/blog/css/main.css" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+<link href="/css/main.css" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+
+
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 
 
@@ -75,7 +75,7 @@
 <meta name="keywords" content="数据结构,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="漫谈数据结构(三)——队列">
-<meta property="og:url" content="https://you3xuan.gitee.io/blog/2019/01/20/DataStructure/dataStructure5/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/01/20/DataStructure/dataStructure5/index.html">
 <meta property="og:site_name" content="旋哥的博客">
 <meta property="og:description" content="1、什么是队列&amp;emsp;&amp;emsp;队列是一个先进先出的线性表，它只允许在一端进行插入，在另一端进行删除操作。允许删除的称为队头，允许插入的称为队尾，分别由队头指针和队尾指针来维护队列。 &amp;emsp;&amp;emsp;队头指针指向第一个元素。当有元素出队（删除）时，队头指针向后移动一位，指向下一个元素。 &amp;emsp;&amp;emsp;队尾指针指向最后一个元素的之后的空指针，当有元素入队（插入）时，添加完元">
 <meta property="og:locale" content="zh-Hans">
@@ -98,7 +98,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://you3xuan.gitee.io/blog/2019/01/20/DataStructure/dataStructure5/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/20/DataStructure/dataStructure5/">
 
 
 
@@ -168,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">旋哥的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
@@ -206,7 +206,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/blog/about/" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
@@ -216,7 +216,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/blog/tags/" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -236,7 +236,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
@@ -309,12 +309,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://you3xuan.gitee.io/blog/blog/2019/01/20/DataStructure/dataStructure5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/20/DataStructure/dataStructure5/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="you xuan">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/image/avatar.jpg">
+      <meta itemprop="image" content="/image/avatar.jpg">
     </span>
 
     <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -361,7 +361,7 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/数据结构/" itemprop="url" rel="index">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
                     <span itemprop="name">数据结构</span>
                   </a>
                 </span>
@@ -379,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2019/01/20/DataStructure/dataStructure5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/01/20/DataStructure/dataStructure5/" itemprop="commentCount"></span>
+                <a href="/2019/01/20/DataStructure/dataStructure5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/20/DataStructure/dataStructure5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -510,7 +510,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://you3xuan.gitee.io/blog/2019/01/20/DataStructure/dataStructure5/" title="漫谈数据结构(三)——队列">https://you3xuan.gitee.io/blog/2019/01/20/DataStructure/dataStructure5/</a>
+    <a href="http://yoursite.com/2019/01/20/DataStructure/dataStructure5/" title="漫谈数据结构(三)——队列">http://yoursite.com/2019/01/20/DataStructure/dataStructure5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -525,9 +525,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
-            <a href="/blog/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -552,7 +552,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/01/19/DataStructure/dataStructure4/" rel="next" title="漫谈数据结构(三)——栈">
+              <a href="/2019/01/19/DataStructure/dataStructure4/" rel="next" title="漫谈数据结构(三)——栈">
                 <i class="fa fa-chevron-left"></i> 漫谈数据结构(三)——栈
               </a>
             
@@ -562,7 +562,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/01/22/DataStructure/dataStructure6/" rel="prev" title="漫谈数据结构(四)——串">
+              <a href="/2019/01/22/DataStructure/dataStructure6/" rel="prev" title="漫谈数据结构(四)——串">
                 漫谈数据结构(四)——串 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -640,7 +640,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
 			 <a href="/">
-				<img class="site-author-image" itemprop="image" src="/blog/image/avatar.jpg" alt="you xuan">
+				<img class="site-author-image" itemprop="image" src="/image/avatar.jpg" alt="you xuan">
 			 </a>
             
               <p class="site-author-name" itemprop="name">you xuan</p>
@@ -652,7 +652,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/blog/archives/">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
@@ -664,7 +664,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -675,7 +675,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/blog/tags/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -996,7 +996,7 @@
 
 
 
-<script type="text/javascript" src="/blog/bundle.js"></script><script type="text/javascript">var GUEST = ['nick','mail','link'];
+<script type="text/javascript" src="/bundle.js"></script><script type="text/javascript">var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
@@ -1021,7 +1021,7 @@
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/blog/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {

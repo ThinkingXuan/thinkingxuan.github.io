@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>P0505阶乘取数</title>
-    <url>/blog/2019/04/09/lanqiao/P0505%E9%98%B6%E4%B9%98%E5%8F%96%E6%95%B0/</url>
+    <url>/2019/04/09/lanqiao/P0505%E9%98%B6%E4%B9%98%E5%8F%96%E6%95%B0/</url>
     <content><![CDATA[<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13！就已经比较大了，已经无法存放在一个整型变量中；而35！就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算n!是非常困难的。幸运的是，在本题中，我们的任务不是去计算n!，而是去计算n!最右边的那个非0的数字是多少。</p>
 <a id="more"></a>
 <p>例如，<code>5！=1*2*3*4*5=120</code>，因此<code>5!</code>最右边的那个非0的数字是2。再如，<code>7！=5040</code>，因此<code>7</code>最右边的那个非0的数字是4。再如，<code>15！= 1307674368000</code>，因此<code>15！</code>最右边的那个非0的数字是8。请编写一个程序，输入一个整数n(0&lt;n&lt;=100)，然后输出n!最右边的那个非0的数字是多少。</p>
@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <title>深入理解线性素数筛</title>
-    <url>/blog/2019/04/08/lanqiao/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E7%B4%A0%E6%95%B0%E7%AD%9B/</url>
+    <url>/2019/04/08/lanqiao/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E7%B4%A0%E6%95%B0%E7%AD%9B/</url>
     <content><![CDATA[<p>线性素数筛也算是一种基本的算法。</p>
 <p>两个大前提：</p>
 <ol>
@@ -66,7 +66,7 @@
   </entry>
   <entry>
     <title>算法训练——素因子去重</title>
-    <url>/blog/2019/04/08/lanqiao/%E7%B4%A0%E5%9B%A0%E5%AD%90%E5%8E%BB%E9%87%8D/</url>
+    <url>/2019/04/08/lanqiao/%E7%B4%A0%E5%9B%A0%E5%AD%90%E5%8E%BB%E9%87%8D/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给定一个正整数n，求一个正整数p，满足p仅包含n的所有素因子，且每个素因子的次数不大于1<br><a id="more"></a></p>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>一个整数，表示n</p>
 <h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一行，包含一个整数p。</p>
@@ -89,7 +89,7 @@
   </entry>
   <entry>
     <title>迷宫—最小步数</title>
-    <url>/blog/2019/04/02/lanqiao/%E8%BF%B7%E5%AE%AB%E2%80%94%E2%80%94%E6%9C%80%E5%B0%8F%E6%AD%A5%E6%95%B0/</url>
+    <url>/2019/04/02/lanqiao/%E8%BF%B7%E5%AE%AB%E2%80%94%E2%80%94%E6%9C%80%E5%B0%8F%E6%AD%A5%E6%95%B0/</url>
     <content><![CDATA[<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>这有一个迷宫，有0~8行和0~8列：<br><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1,1,1,1,1,1,1,1,1</span><br><span class="line">1,0,0,1,0,0,1,0,1</span><br><span class="line">1,0,0,1,1,0,0,0,1</span><br><span class="line">1,0,1,0,1,1,0,1,1</span><br><span class="line">1,0,0,0,0,1,0,0,1</span><br><span class="line">1,1,0,1,0,1,0,0,1</span><br><span class="line">1,1,0,1,0,1,0,0,1</span><br><span class="line">1,1,0,1,0,0,0,0,1</span><br><span class="line">1,1,1,1,1,1,1,1,1</span><br></pre></td></tr></table></figure></div></p>
 <a id="more"></a>
 <p>0表示道路，1表示墙。</p>
@@ -115,7 +115,7 @@
   </entry>
   <entry>
     <title>图的基本算法（BFS和DFS）</title>
-    <url>/blog/2019/04/02/lanqiao/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%EF%BC%88BFS%E5%92%8CDFS%EF%BC%89/</url>
+    <url>/2019/04/02/lanqiao/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%EF%BC%88BFS%E5%92%8CDFS%EF%BC%89/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>图是一种灵活的数据结构，一般作为一种模型用来定义对象之间的关系或联系。对象由顶点（V）表示，而对象之间的关系或者关联则通过图的边（E）来表示。<br>图可以分为有向图和无向图，一般用G=(V,E)来表示图。经常用邻接矩阵或者邻接表来描述一副图。<br>在图的基本算法中，最初需要接触的就是图的遍历算法，根据访问节点的顺序，可分为广度优先搜索（BFS）和深度优先搜索（DFS）。<br><a id="more"></a></p>
 <h4 id="广度优先搜索（BFS）"><a href="#广度优先搜索（BFS）" class="headerlink" title="广度优先搜索（BFS）"></a>广度优先搜索（BFS）</h4><p>广度优先搜索在进一步遍历图中顶点之前，先访问当前顶点的所有邻接结点。</p>
 <ol>
@@ -190,7 +190,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——审美课</title>
-    <url>/blog/2019/03/29/lanqiao/%E5%AE%A1%E7%BE%8E%E8%AF%BE%20/</url>
+    <url>/2019/03/29/lanqiao/%E5%AE%A1%E7%BE%8E%E8%AF%BE%20/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>《审美的历程》课上有n位学生，帅老师展示了m幅画，其中有些是梵高的作品，另外的都出自五岁小朋友之手。老师请同学们分辨哪些画的作者是梵高，但是老师自己并没有答案，因为这些画看上去都像是小朋友画的……老师只想知道，有多少对同学给出的答案完全相反，这样他就可以用这个数据去揭穿披着皇帝新衣的抽象艺术了（支持帅老师^_^）。</p>
 <p>答案完全相反是指对每一幅画的判断都相反。<br><a id="more"></a></p>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行两个数n和m，表示学生数和图画数；</p>
@@ -223,7 +223,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——剪邮票</title>
-    <url>/blog/2019/03/18/lanqiao/%E5%89%AA%E9%82%AE%E7%A5%A8/</url>
+    <url>/2019/03/18/lanqiao/%E5%89%AA%E9%82%AE%E7%A5%A8/</url>
     <content><![CDATA[<h3 id="方格填数"><a href="#方格填数" class="headerlink" title="方格填数"></a>方格填数</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>如图1, 有12张连在一起的12生肖的邮票。<br>现在你要从中剪下5张来，要求必须是连着的。<br>（仅仅连接一个角不算相连）<br>比如，【图2.jpg】，【图3.jpg】中，粉红色所示部分就是合格的剪取。</p>
 <p>请你计算，一共有多少种不同的剪取方法。<br><a id="more"></a><br>请填写表示方案数目的整数。<br>注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字。</p>
 <p><a href="https://user-gold-cdn.xitu.io/2019/3/18/1699117c7bf4c580?w=799&amp;h=512&amp;f=png&amp;s=23225" data-fancybox="group" data-caption class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/3/18/1699117c7bf4c580?w=799&amp;h=512&amp;f=png&amp;s=23225" alt title></a></p>
@@ -245,7 +245,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——方格填数</title>
-    <url>/blog/2019/03/16/lanqiao/%E6%96%B9%E6%A0%BC%E5%A1%AB%E6%95%B0/</url>
+    <url>/2019/03/16/lanqiao/%E6%96%B9%E6%A0%BC%E5%A1%AB%E6%95%B0/</url>
     <content><![CDATA[<h3 id="方格填数"><a href="#方格填数" class="headerlink" title="方格填数"></a>方格填数</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>如下图的10个格子</p>
 <p>填入0~9的数字。要求：连续的两个数字不能相邻。<br>（左右、上下、对角都算相邻）</p>
 <p>一共有多少种可能的填数方案？<br><a id="more"></a><br><a href="https://user-gold-cdn.xitu.io/2019/3/16/169856f67996611a?w=687&amp;h=472&amp;f=png&amp;s=21699" data-fancybox="group" data-caption="图" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/3/16/169856f67996611a?w=687&amp;h=472&amp;f=png&amp;s=21699" alt="图" title="图"></a><br>请填写表示方案数目的整数。<br>注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字。</p>
@@ -269,7 +269,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——凑算式</title>
-    <url>/blog/2019/03/15/lanqiao/%E5%87%91%E7%AE%97%E5%BC%8F/</url>
+    <url>/2019/03/15/lanqiao/%E5%87%91%E7%AE%97%E5%BC%8F/</url>
     <content><![CDATA[<h3 id="凑算式"><a href="#凑算式" class="headerlink" title="凑算式"></a>凑算式</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><script type="math/tex; mode=display">A + \frac{B}{C} +\frac{DEF}{GHI}  = 10</script><p>（如果显示有问题，可以参见【图1】）</p>
 <p>这个算式中A~I代表1~9的数字，不同的字母代表不同的数字。</p>
 <p>比如：<br>6+8/3+952/714 就是一种解法，<br>5+3/1+972/486 是另一种解法。</p>
@@ -295,7 +295,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——数独排列</title>
-    <url>/blog/2019/03/14/lanqiao/%E6%95%B0%E7%8B%AC%E6%8E%92%E5%88%97/</url>
+    <url>/2019/03/14/lanqiao/%E6%95%B0%E7%8B%AC%E6%8E%92%E5%88%97/</url>
     <content><![CDATA[<h3 id="数字排列"><a href="#数字排列" class="headerlink" title="数字排列"></a>数字排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>你一定听说过“数独”游戏。<br>如【图1.png】，玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个同色九宫内的数字均含1-9，不重复。</p>
 <p>数独的答案都是唯一的，所以，多个解也称为无解。</p>
 <p>本图的数字据说是芬兰数学家花了3个月的时间设计出来的较难的题目。但对会使用计算机编程的你来说，恐怕易如反掌了。<br><a id="more"></a></p>
@@ -320,7 +320,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——数字排列（今有7对数字）</title>
-    <url>/blog/2019/03/13/lanqiao/%E6%95%B0%E5%AD%97%E6%8E%92%E5%88%97/</url>
+    <url>/2019/03/13/lanqiao/%E6%95%B0%E5%AD%97%E6%8E%92%E5%88%97/</url>
     <content><![CDATA[<h3 id="数字排列"><a href="#数字排列" class="headerlink" title="数字排列"></a>数字排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>今有7对数字：两个1，两个2，两个3，…两个7，把它们排成一行。<br>要求，两个1间有1个其它数字，两个2间有2个其它数字，以此类推，两个7之间有7个其它数字。如下就是一个符合要求的排列：</p>
 <p>17126425374635</p>
 <p>当然，如果把它倒过来，也是符合要求的。</p>
@@ -359,7 +359,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——完美的代价</title>
-    <url>/blog/2019/02/27/lanqiao/%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7/</url>
+    <url>/2019/02/27/lanqiao/%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%A3%E4%BB%B7/</url>
     <content><![CDATA[<h3 id="完美的代价"><a href="#完美的代价" class="headerlink" title="完美的代价"></a>完美的代价</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>回文串，是一种特殊的字符串，它从左往右读和从右往左读是一样的。小龙龙认为回文串才是完美的。现在给你一个串，它不一定是回文的，请你计算最少的交换次数使得该串变成一个完美的回文串。</p>
 <p>交换的定义是：交换两个相邻的字符<br><a id="more"></a><br>&emsp;&emsp;例如mamad</p>
 <p>&emsp;&emsp;第一次交换 ad : mamda</p>
@@ -383,7 +383,7 @@
   </entry>
   <entry>
     <title>快速排序</title>
-    <url>/blog/2019/02/27/DataStructure/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
+    <url>/2019/02/27/DataStructure/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h3 id="快速排序的定义"><a href="#快速排序的定义" class="headerlink" title="快速排序的定义"></a>快速排序的定义</h3><p>快速排序是交换排序的一种，它的基本思想是：通过一趟排序，把序列中的数组分割为2部分，如果是升序的话，右半边的所有元素都大于左半元素。然后用此方法，把每一部分在分为两个子部分，进行同样的操作。直到排序完成。这个算法是通过递归来完成的。</p>
 <a id="more"></a>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
@@ -407,7 +407,7 @@
   </entry>
   <entry>
     <title>冒泡排序及其优化方法</title>
-    <url>/blog/2019/02/26/DataStructure/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/</url>
+    <url>/2019/02/26/DataStructure/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h3 id="冒泡排序的思想"><a href="#冒泡排序的思想" class="headerlink" title="冒泡排序的思想"></a>冒泡排序的思想</h3><p> 不停的比较相邻的两个元素，如果不符合预期，就交换两个元素，否则继续比较。如果升序排序时，就是不停的把最大元素放于序列最后。<br> <a id="more"></a></p>
 <h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4> <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">c</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//冒泡排序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;  			<span class="comment">//确定排序趟数</span></span><br><span class="line">	 	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n-i<span class="number">-1</span>;j++)&#123;       <span class="comment">//比较的次数 </span></span><br><span class="line">	 		<span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">	 			<span class="keyword">int</span> temp = arr[j];</span><br><span class="line">	 			arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">	 			arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">			 &#125;	</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <h3 id="优化1"><a href="#优化1" class="headerlink" title="优化1"></a>优化1</h3><p> 经过第n趟后，如果数组已经有序，就不往后执行。定义一个flag，如果有一趟没有进行排序，给flag赋一个值。然后终止这个方法。针对连片有序，整体无序情况。</p>
@@ -429,7 +429,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——数的读法</title>
-    <url>/blog/2019/02/20/lanqiao/%E6%95%B0%E7%9A%84%E8%AF%BB%E6%B3%95/</url>
+    <url>/2019/02/20/lanqiao/%E6%95%B0%E7%9A%84%E8%AF%BB%E6%B3%95/</url>
     <content><![CDATA[<h3 id="数的读法"><a href="#数的读法" class="headerlink" title="数的读法"></a>数的读法</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>Tom教授正在给研究生讲授一门关于基因的课程，有一件事情让他颇为头疼：一条染色体上有成千上万个碱基对，它们从0开始编号，到几百万，几千万，甚至上亿。</p>
 <p>比如说，在对学生讲解第1234567009号位置上的碱基时，光看着数字是很难准确的念出来的。所以，他迫切地需要一个系统，然后当他输入1234567009时，会给出相应的念法：<br><a id="more"></a></p>
 <p>&emsp;&emsp;<strong>十二亿三千四百五十六万七千零九</strong></p>
@@ -454,7 +454,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——Sine之舞</title>
-    <url>/blog/2019/02/18/lanqiao/Sine%E4%B9%8B%E8%88%9E/</url>
+    <url>/2019/02/18/lanqiao/Sine%E4%B9%8B%E8%88%9E/</url>
     <content><![CDATA[<h3 id="Sine之舞"><a href="#Sine之舞" class="headerlink" title="Sine之舞"></a>Sine之舞</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>最近FJ为他的奶牛们开设了数学分析课，FJ知道若要学好这门课，必须有一个好的三角函数基本功。所以他准备和奶牛们做一个“Sine之舞”的游戏，寓教于乐，提高奶牛们的计算能力。<br>不妨设:</p>
 <p>&emsp;&emsp;<script type="math/tex">An=sin(1–sin(2+sin(3–sin(4+...sin(n))...)</script></p>
 <p>&emsp;&emsp;<script type="math/tex">Sn=(...(A1+n)A2+n-1)A3+...+2)An+1</script><br><a id="more"></a><br>FJ想让奶牛们计算Sn的值，请你帮助FJ打印出Sn的完整表达式，以方便奶牛们做题。</p>
@@ -476,7 +476,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——FJ的字符串</title>
-    <url>/blog/2019/02/17/lanqiao/%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%AF%95%E9%A2%98%E2%80%94%E2%80%94FJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <url>/2019/02/17/lanqiao/%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%AF%95%E9%A2%98%E2%80%94%E2%80%94FJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h3 id="FJ的字符串"><a href="#FJ的字符串" class="headerlink" title="FJ的字符串"></a>FJ的字符串</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>FJ在沙盘上写了这样一些字符串：</p>
 <p>A1 = “A”</p>
 <p>A2 = “ABA”</p>
@@ -516,7 +516,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——芯片测试</title>
-    <url>/blog/2019/02/16/lanqiao/%E8%8A%AF%E7%89%87%E6%B5%8B%E8%AF%95/</url>
+    <url>/2019/02/16/lanqiao/%E8%8A%AF%E7%89%87%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h3 id="芯片测试"><a href="#芯片测试" class="headerlink" title="芯片测试"></a>芯片测试</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>有n（2≤n≤20）块芯片，有好有坏，已知好芯片比坏芯片多。</p>
 <p>每个芯片都能用来测试其他芯片。用好芯片测试其他芯片时，能正确给出被测试芯片是好还是坏。而用坏芯片测试其他芯片时，会随机给出好或是坏的测试结果（即此结果与被测试芯片实际的好坏无关）。<br><a id="more"></a><br>给出所有芯片的测试结果，问哪些芯片是好芯片。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入数据第一行为一个整数n，表示芯片个数。</p>
@@ -539,7 +539,7 @@
   </entry>
   <entry>
     <title>Hexo博客使用bat脚本自动创建、部署、编辑和免密码部署</title>
-    <url>/blog/2019/02/16/Hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%92%8C%E5%85%8D%E5%AF%86%E7%A0%81%E9%83%A8%E7%BD%B2/</url>
+    <url>/2019/02/16/Hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%92%8C%E5%85%8D%E5%AF%86%E7%A0%81%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>每次写博客都要新建一个.md文件，然后把博客内存复制进去。然后执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code> ，接着还要输入账号密码，这已经比较麻烦了，然后，你在博客预览的时候如果发现有些小错误，还要进行部署和输入密码一系列操作，很浪费时间。</p>
 <p>所以，我就在windows下用bat脚本搭建了一个自动化部署的操作，解决了每次都要输入的重复操作。</p>
 <p><strong>脚本包括四部分：新建博客，调试，部署，查找并编辑。</strong><br><a id="more"></a></p>
@@ -575,7 +575,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题 —— 龟兔赛跑预测</title>
-    <url>/blog/2019/02/16/lanqiao/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91%E9%A2%84%E6%B5%8B/</url>
+    <url>/2019/02/16/lanqiao/%E9%BE%9F%E5%85%94%E8%B5%9B%E8%B7%91%E9%A2%84%E6%B5%8B/</url>
     <content><![CDATA[<h3 id="龟兔赛跑预测"><a href="#龟兔赛跑预测" class="headerlink" title="龟兔赛跑预测"></a>龟兔赛跑预测</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>话说这个世界上有各种各样的兔子和乌龟，但是 研究发现，所有的兔子和乌龟都有一个共同的特点——喜欢赛跑。于是世界上各个角落都不断在发生着乌龟和兔子的比赛，小华对此很感兴趣，于是决定研究不同兔 子和乌龟的赛跑。他发现，兔子虽然跑比乌龟快，但它们有众所周知的毛病——骄傲且懒惰，于是在与乌龟的比赛中，一旦任一秒结束后兔子发现自己领先t米或以 上，它们就会停下来休息s秒。对于不同的兔子，t，s的数值是不同的，但是所有的乌龟却是一致——它们不到终点决不停止。<br><a id="more"></a><br>然而有些比赛相当漫长，全程观看会耗费大量时间，而小华发现只要在每场比赛开始后记录下兔子和乌龟的数据——兔子的速度v1（表示每秒兔子能跑v1 米），乌龟的速度v2，以及兔子对应的t，s值，以及赛道的长度l——就能预测出比赛的结果。但是小华很懒，不想通过手工计算推测出比赛的结果，于是他找 到了你——清华大学计算机系的高才生——请求帮助，请你写一个程序，对于输入的一场比赛的数据v1，v2，t，s，l，预测该场比赛的结果。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入只有一行，包含用空格隔开的五个正整数v1，v2，t，s，l，其中(v1,v2&lt; =100;t&lt; =300;s&lt; =10;l&lt; =10000且为v1,v2的公倍数)  </p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出包含两行，第一行输出比赛结果——一个大写字母“T”或“R”或“D”，分别表示乌龟获胜，兔子获胜，或者两者同时到达终点。</p>
@@ -595,7 +595,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题 —— 回形取数</title>
-    <url>/blog/2019/02/15/lanqiao/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/</url>
+    <url>/2019/02/15/lanqiao/%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/</url>
     <content><![CDATA[<h3 id="回形取数"><a href="#回形取数" class="headerlink" title="回形取数"></a>回形取数</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。<br><a id="more"></a></p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 </p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 </p>
@@ -620,7 +620,7 @@
   </entry>
   <entry>
     <title>算法入门 —— 报时助手</title>
-    <url>/blog/2019/02/15/lanqiao/basic8/</url>
+    <url>/2019/02/15/lanqiao/basic8/</url>
     <content><![CDATA[<h3 id="报时助手"><a href="#报时助手" class="headerlink" title="报时助手"></a>报时助手</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>&emsp;&emsp;给定当前的时间，请用英文的读法将它读出来。<br>时间用时h和分m表示，在英文的读法中，读一个时间的方法是：如果m为0，则将时读出来，然后加上“o’clock”，如3:00读作“three o’clock”。如果m不为0，则将时读出来，然后将分读出来，如5:30读作“five thirty”。<br><a id="more"></a><br>&emsp;&emsp;时和分的读法使用的是英文数字的读法，其中0~20读作：0:zero, 1: one, 2:two, 3:three, 4:four, 5:five, 6:six, 7:seven, 8:eight, 9:nine, 10:ten, 11:eleven, 12:twelve, 13:thirteen, 14:fourteen,15:fifteen, 16:sixteen, 17:seventeen, 18:eighteen, 19:nineteen, 20:twenty。30读作thirty，40读作forty，50读作fifty。</p>
 <p>&emsp;&emsp;对于大于20小于60的数字，首先读整十的数，然后再加上个位数。如31首先读30再加1的读法，读作“thirty one”。按上面的规则21:54读作“twenty one fifty four”，9:07读作“nine seven”，0:15读作“zero fifteen”。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入包含两个非负整数h和m，表示时间的时和分。非零的数字前没有前导0。h小于24，m小于60。</p>
@@ -641,7 +641,7 @@
   </entry>
   <entry>
     <title>算法入门 —— 2N皇后问题</title>
-    <url>/blog/2019/02/14/lanqiao/basic7/</url>
+    <url>/2019/02/14/lanqiao/basic7/</url>
     <content><![CDATA[<h3 id="2n皇后问题"><a href="#2n皇后问题" class="headerlink" title="2n皇后问题"></a>2n皇后问题</h3><blockquote>
 <p><strong>这个题目是经典题目N皇后的延伸，如果您对N皇后还不太了解，请<a href="https://www.you3xuan.top/2019/02/14/lanqiao/basic6/" target="_blank" rel="noopener">点击这</a>。</strong></p>
 </blockquote>
@@ -692,7 +692,7 @@
   </entry>
   <entry>
     <title>算法入门 —— N皇后问题</title>
-    <url>/blog/2019/02/14/lanqiao/basic6/</url>
+    <url>/2019/02/14/lanqiao/basic6/</url>
     <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>&emsp;&emsp;在N*N的方格棋盘放置了N个皇后，使得它们不相互攻击（即任意2个皇后不允许处在同一排，同一列，也不允许处在与棋盘边框成45角的斜线上。<br>你的任务是，对于给定的N，求出有多少种合法的放置方法。</p>
 <a id="more"></a>
 <p>&emsp;&emsp;如图所示，这是个4*4棋盘皇后的放置方法：</p>
@@ -720,7 +720,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——基础练习16</title>
-    <url>/blog/2019/02/13/lanqiao/basic5/</url>
+    <url>/2019/02/13/lanqiao/basic5/</url>
     <content><![CDATA[<h3 id="1、Huffuman树"><a href="#1、Huffuman树" class="headerlink" title="1、Huffuman树"></a>1、Huffuman树</h3><a id="more"></a>
 <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　Huffman树在编码中有着广泛的应用。在这里，我们只关心Huffman树的构造过程。<br>　　给出一列数{pi}={p0, p1, …, pn-1}，用这列数构造Huffman树的过程如下：<br><br>　　1. 找到{pi}中最小的两个数，设为pa和pb，将pa和pb从{pi}中删除掉，然后将它们的和加入到{pi}中。这个过程的费用记为pa +pb。<br><br>　　2. 重复步骤1，直到{pi}中只剩下一个数。<br><br>　　在上面的操作过程中，把所有的费用相加，就得到了构造Huffman树的总费用。<br><br>　　本题任务：对于给定的一个数列，现在请你求出用该数列构造Huffman树的总费用。</p>
 <p>　　例如，对于数列{pi}={5, 3, 8, 2, 9}，Huffman树的构造过程如下：<br><br>　　1. 找到{5, 3, 8, 2,<br> 9}中最小的两个数，分别是2和3，从{pi}中删除它们并将和5加入，得到{5, 8, 9, 5}，费用为5。<br><br>　　2. 找到{5, 8, 9,5}中最小的两个数，分别是5和5，从{pi}中删除它们并将和10加入，得到{8, 9, 10}，费用为10。<br><br>　　3. 找到{8, 9, 10}中最小的两个数，分别是8和9，从{pi}中删除它们并将和17加入，得到{10, 17}，费用为17。<br><br>　　4. 找到{10, 17}中最小的两个数，分别是10和17，从{pi}中删除它们并将和27加入，得到{27}，费用为27。<br><br>　　5. 现在，数列中只剩下一个数27，构造过程结束，总费用为5+10+17+27=59。</p>
@@ -759,7 +759,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——基础练习11-15</title>
-    <url>/blog/2019/01/27/lanqiao/basic4/</url>
+    <url>/2019/01/27/lanqiao/basic4/</url>
     <content><![CDATA[<h3 id="1、字母图形"><a href="#1、字母图形" class="headerlink" title="1、字母图形"></a>1、字母图形</h3><h3 id="2、01字串"><a href="#2、01字串" class="headerlink" title="2、01字串"></a>2、01字串</h3><h3 id="3、闰年判断"><a href="#3、闰年判断" class="headerlink" title="3、闰年判断"></a>3、闰年判断</h3><h3 id="4、阶乘计算"><a href="#4、阶乘计算" class="headerlink" title="4、阶乘计算"></a>4、阶乘计算</h3><h3 id="5、高精度加法"><a href="#5、高精度加法" class="headerlink" title="5、高精度加法"></a>5、高精度加法</h3><a id="more"></a>
 <h3 id="1、字母图形-1"><a href="#1、字母图形-1" class="headerlink" title="1、字母图形"></a>1、字母图形</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>利用字母可以组成一些美丽的图形，下面给出了一个例子：</p>
 <p>ABCDEFG</p>
@@ -837,7 +837,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——基础练习6-10</title>
-    <url>/blog/2019/01/26/lanqiao/basic3/</url>
+    <url>/2019/01/26/lanqiao/basic3/</url>
     <content><![CDATA[<h3 id="1、-回文数"><a href="#1、-回文数" class="headerlink" title="1、 回文数"></a>1、 回文数</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　按从小到大的顺序输出满足条件的四位十进制数。<br><a id="more"></a></p>
 <h4 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h4><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">c</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">int</span> a = i;</span><br><span class="line">	t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i)&#123;</span><br><span class="line">		t = i % <span class="number">10</span>  + t * <span class="number">10</span>;</span><br><span class="line">		i = i / <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(t == a)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1000</span>;i&lt;<span class="number">10000</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(fun(i))&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -889,7 +889,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——基础练习1-5</title>
-    <url>/blog/2019/01/26/lanqiao/basic2/</url>
+    <url>/2019/01/26/lanqiao/basic2/</url>
     <content><![CDATA[<h3 id="1、数列排序"><a href="#1、数列排序" class="headerlink" title="1、数列排序"></a>1、数列排序</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　给定一个长度为n的数列，将这个数列按从小到大的顺序排列。1&lt;=n&lt;=200</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>　　第一行为一个整数n。<br>　　第二行包含n个整数，为待排序的数，每个整数的绝对值小于10000。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>　　输出一行，按从小到大的顺序输出排序后的数列。<br><br><a id="more"></a><br>代码如下：<br><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">c</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[],<span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;length;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">array</span>[i]&gt;<span class="built_in">array</span>[j])&#123;</span><br><span class="line">				<span class="keyword">int</span> t = <span class="built_in">array</span>[i];</span><br><span class="line">				<span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</span><br><span class="line">				<span class="built_in">array</span>[j] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">array</span>[n];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;<span class="built_in">array</span>[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(<span class="built_in">array</span>,n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
@@ -935,7 +935,7 @@
   </entry>
   <entry>
     <title>蓝桥杯试题——基础篇</title>
-    <url>/blog/2019/01/24/lanqiao/basic/</url>
+    <url>/2019/01/24/lanqiao/basic/</url>
     <content><![CDATA[<h2 id="1、-A-B问题"><a href="#1、-A-B问题" class="headerlink" title="1、 A+B问题"></a>1、 A+B问题</h2><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>输入A、B，输出A+B。</p>
 <h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>输入的第一行包括两个整数，由空格分隔，分别表示A、B。</p>
 <h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>输出一行，包括一个整数，表示A+B的值。<br><a id="more"></a><br>代码：<br><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">c</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
@@ -970,7 +970,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(四)——字符串的模式匹配</title>
-    <url>/blog/2019/01/24/DataStructure/dataStructure7/</url>
+    <url>/2019/01/24/DataStructure/dataStructure7/</url>
     <content><![CDATA[<h2 id="1、字符串匹配的用处"><a href="#1、字符串匹配的用处" class="headerlink" title="1、字符串匹配的用处"></a>1、字符串匹配的用处</h2><p>&emsp;&emsp;在进行字符串操作，经常会出现定位操作，比如寻找字符串p是否在字符串s中，存在则返回p在s中第一个字符出现的下标。我们把串s称为主串，把串p称为模式串。一些语言中也内置了这个函数，比如C语言中头文件string.h中<code>strstr()</code>方法，Java中的<code>indexOf()</code>方法。本篇文章用3种方法来讲解这个算法的实现。<br><a id="more"></a></p>
 <h2 id="2、匹配方法："><a href="#2、匹配方法：" class="headerlink" title="2、匹配方法："></a>2、匹配方法：</h2><h3 id="2-1-朴素的模式匹配："><a href="#2-1-朴素的模式匹配：" class="headerlink" title="2.1 朴素的模式匹配："></a>2.1 朴素的模式匹配：</h3><p>&emsp;&emsp;又称(Brute Force)，其实就是暴力破解的意思。具体思路是同时遍历主串和模式串，先比较<code>s</code>和<code>p</code>的第一个字符，如果相等继续比较第二个字符，如果不相等，<code>s</code>从第二个字符开始比较<code>p</code>的第一个字符。如果相等，继续往下比较，如果不相等，<code>s</code>从第三个字符开始比较<code>p</code>的第一个字符，以此类推，直到模式串第一次匹配完毕终止。</p>
 <p>&emsp;&emsp;用<code>i</code>表示主串s下标，用<code>j</code>表示模式串p下标。字符相等时就<code>i++; j++;</code>,不相等是就 <code>i = i - j + 1; j=0;</code> 如图所示：</p>
@@ -1014,7 +1014,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(四)——串</title>
-    <url>/blog/2019/01/22/DataStructure/dataStructure6/</url>
+    <url>/2019/01/22/DataStructure/dataStructure6/</url>
     <content><![CDATA[<h2 id="1、什么是串"><a href="#1、什么是串" class="headerlink" title="1、什么是串"></a>1、什么是串</h2><p>&emsp;&emsp;串又称字符串，是比较常见的一个数据结构，它由0或多个字符构成，一般定义为<code>s=&quot;abcdegf&quot;</code>。字符的个数称为串的长度。长度为0的串为空串，记为<code>s=&quot;&quot;</code>，由空格组成的串为空格串，空格也是字符，记为<code>s=&quot;   &quot;</code>。<br><a id="more"></a><br>&emsp;&emsp;目前，随着科学技术的发展，非数值处理的情况越来越多，学好字符串的处理变得尤为重要，本文将介绍字符串处理的几个基本方法。</p>
 <h2 id="2、串的顺序存储"><a href="#2、串的顺序存储" class="headerlink" title="2、串的顺序存储"></a>2、串的顺序存储</h2><p>&emsp;&emsp;在串的顺序存储结构中，用一组地址连续的空间，即数组来存储字符串中的字符，串中的每一个字符占据一个空间，如图所示：</p>
 <p><a href="https://user-gold-cdn.xitu.io/2019/1/21/168707058eb1c18b?w=536&amp;h=169&amp;f=png&amp;s=3645" data-fancybox="group" data-caption="串的顺序存储" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/1/21/168707058eb1c18b?w=536&amp;h=169&amp;f=png&amp;s=3645" alt="串的顺序存储" title="串的顺序存储"></a></p>
@@ -1044,7 +1044,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(三)——队列</title>
-    <url>/blog/2019/01/20/DataStructure/dataStructure5/</url>
+    <url>/2019/01/20/DataStructure/dataStructure5/</url>
     <content><![CDATA[<p><a href="https://upload-images.jianshu.io/upload_images/2514354-291d7c1bbdc8c0ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-fancybox="group" data-caption="风景图" class="fancybox"><img src="https://upload-images.jianshu.io/upload_images/2514354-291d7c1bbdc8c0ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="风景图" title="风景图"></a></p>
 <h2 id="1、什么是队列"><a href="#1、什么是队列" class="headerlink" title="1、什么是队列"></a>1、什么是队列</h2><p>&emsp;&emsp;队列是一个先进先出的线性表，它只允许在一端进行插入，在另一端进行删除操作。允许删除的称为队头，允许插入的称为队尾，分别由队头指针和队尾指针来维护队列。</p>
 <p>&emsp;&emsp;队头指针指向第一个元素。当有元素出队（删除）时，队头指针向后移动一位，指向下一个元素。</p>
@@ -1094,7 +1094,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(三)——栈</title>
-    <url>/blog/2019/01/19/DataStructure/dataStructure4/</url>
+    <url>/2019/01/19/DataStructure/dataStructure4/</url>
     <content><![CDATA[<p><a href="https://user-gold-cdn.xitu.io/2019/1/19/16866662a51c78aa?w=635&amp;h=310&amp;f=png&amp;s=230107" data-fancybox="group" data-caption="图片" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/1/19/16866662a51c78aa?w=635&amp;h=310&amp;f=png&amp;s=230107" alt="图片" title="图片"></a></p>
 <h2 id="1、什么是栈"><a href="#1、什么是栈" class="headerlink" title="1、什么是栈"></a>1、什么是栈</h2><p>&emsp;&emsp;栈是一个先进后出的线性表，仅允许在栈的一端进行插入和删除操作。栈中允许插入删除的一端叫做栈顶，另一端叫做栈底。元素的删除叫做出栈，元素的插入叫做入栈。栈满时不能入栈，栈空时不能出栈。</p>
 <p>&emsp;&emsp;栈通过一个栈顶指针来执行各种操作，入栈时栈顶指针上移，出栈时栈顶指针下移。如图所示：<br><a id="more"></a><br><a href="https://user-gold-cdn.xitu.io/2019/1/19/16864931d1ae802f?w=453&amp;h=462&amp;f=png&amp;s=13490" data-fancybox="group" data-caption="栈" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/1/19/16864931d1ae802f?w=453&amp;h=462&amp;f=png&amp;s=13490" alt="栈" title="栈"></a><br>&emsp;&emsp;栈的常见操作：</p>
@@ -1141,7 +1141,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(二)——线性表2</title>
-    <url>/blog/2019/01/18/DataStructure/dataStructure3/</url>
+    <url>/2019/01/18/DataStructure/dataStructure3/</url>
     <content><![CDATA[<p><a href="https://user-gold-cdn.xitu.io/2019/1/17/1685abcec4e28f67?w=652&amp;h=349&amp;f=png&amp;s=376020" data-fancybox="group" data-caption="风景图" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/1/17/1685abcec4e28f67?w=652&amp;h=349&amp;f=png&amp;s=376020" alt="风景图" title="风景图"></a></p>
 <blockquote>
 <p>作者个人博客   <a href="https://www.you3xuan.top/" target="_blank" rel="noopener">https://www.you3xuan.top/</a> 查看原文。</p>
@@ -1215,7 +1215,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(二)——线性表1</title>
-    <url>/blog/2019/01/17/DataStructure/dataStructure2/</url>
+    <url>/2019/01/17/DataStructure/dataStructure2/</url>
     <content><![CDATA[<p><a href="https://user-gold-cdn.xitu.io/2019/1/16/16856baec5b0a7dd?w=892&amp;h=445&amp;f=png&amp;s=730563" data-fancybox="group" data-caption="风景图" class="fancybox"><img src="https://user-gold-cdn.xitu.io/2019/1/16/16856baec5b0a7dd?w=892&amp;h=445&amp;f=png&amp;s=730563" alt="风景图" title="风景图"></a></p>
 <h2 id="1、线性表的定义和特征"><a href="#1、线性表的定义和特征" class="headerlink" title="1、线性表的定义和特征"></a>1、线性表的定义和特征</h2><h4 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h4><p>&emsp;&emsp;线性表是具有<strong>相同类型元素</strong>组成的一个线性序列。元素的个数即为元素的长度，元素为0时称为空表。如下：</p>
 <p><center>(A,B,C,D,E,F,G)</center><br>&emsp;&emsp;这就表示一个线性表。</p>
@@ -1272,7 +1272,7 @@
   </entry>
   <entry>
     <title>漫谈数据结构(一)—— 概述</title>
-    <url>/blog/2019/01/16/DataStructure/dataStructure1/</url>
+    <url>/2019/01/16/DataStructure/dataStructure1/</url>
     <content><![CDATA[<p><a href="https://upload-images.jianshu.io/upload_images/2514354-8a33232654a654cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-fancybox="group" data-caption="风景图" class="fancybox"><img src="https://upload-images.jianshu.io/upload_images/2514354-8a33232654a654cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="风景图" title="风景图"></a></p>
 <h2 id="1、为什么要学习数据结构？"><a href="#1、为什么要学习数据结构？" class="headerlink" title="1、为什么要学习数据结构？"></a>1、为什么要学习数据结构？</h2><p>&emsp; &emsp;数据结构是是计算机专业最重要的基础之一，它是大学计算机专业的必修课，也是程序员提高自己的重要知识结构。对于学生而言，它对你以后考研和面试都用很重要的帮助。对于程序员而言，它能拓宽人的学习深度，决定了你日后能到达怎样的高度，更能体现人的学习素养，对日后的工作面试有很大的用途。<br><a id="more"></a></p>
 <p>&emsp; &emsp;本教程主要介绍数据结构的常见用法，为了兼容更多人群，所有以C语言为主要的编程语言。如果您C语言基础不过关，请自行Google。其次，语言只是描述程序的一种形式，万变不离其中，掌握一种也就很容易掌握另外一种。</p>
@@ -1386,7 +1386,7 @@
   </entry>
   <entry>
     <title>LeetCode 6(ZigZag Conversion)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode6/</url>
+    <url>/2018/12/16/LeetCode/leetcode6/</url>
     <content><![CDATA[<h3 id="ZigZag-Conversion（ZigZag转换）"><a href="#ZigZag-Conversion（ZigZag转换）" class="headerlink" title="ZigZag Conversion（ZigZag转换）"></a>ZigZag Conversion（ZigZag转换）</h3><h4 id="1、题目描述："><a href="#1、题目描述：" class="headerlink" title="1、题目描述："></a>1、题目描述：</h4><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<br><a id="more"></a><br>P &emsp;&emsp; &emsp;A   &emsp;&emsp;&emsp;H &emsp; &emsp;  &emsp;N<br>A &emsp;P &emsp; L&emsp; S&emsp;   I&emsp; &emsp;I &emsp;    G<br>Y &emsp;&emsp;&emsp; I  &emsp;&emsp;&emsp; R<br>And then read line by line: “PAHNAPLSIIGYIR”</p>
 <p>Write the code that will take a string and make this conversion given a number of rows:</p>
 <p>string convert(string s, int numRows);<br>Example 1:</p>
@@ -1411,7 +1411,7 @@
   </entry>
   <entry>
     <title>LeetCode 5(Longest Palindromic Substring)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode5/</url>
+    <url>/2018/12/16/LeetCode/leetcode5/</url>
     <content><![CDATA[<h3 id="Longest-Palindromic-Substring（最大回文字符串）"><a href="#Longest-Palindromic-Substring（最大回文字符串）" class="headerlink" title="Longest Palindromic Substring（最大回文字符串）"></a>Longest Palindromic Substring（最大回文字符串）</h3><h4 id="1、题目描述："><a href="#1、题目描述：" class="headerlink" title="1、题目描述："></a>1、题目描述：</h4><p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br><a id="more"></a></p>
 <p>Example 1:</p>
 <p>Input: “babad”<br>Output: “bab”<br>Note: “aba” is also a valid answer.<br>Example 2:</p>
@@ -1445,7 +1445,7 @@
   </entry>
   <entry>
     <title>LeetCode 4(Median of Two Sorted Arrays)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode4/</url>
+    <url>/2018/12/16/LeetCode/leetcode4/</url>
     <content><![CDATA[<h3 id="Median-of-Two-Sorted-Arrays"><a href="#Median-of-Two-Sorted-Arrays" class="headerlink" title="Median of Two Sorted Arrays"></a>Median of Two Sorted Arrays</h3><h5 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h5><p>There are two sorted arrays nums1 and nums2 of size m and n respectively.<br>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).<br>You may assume nums1 and nums2 cannot be both empty.</p>
 <p>描述：两个已经排序好的数组，数组不是空，求中位数。要求算法的时间复杂度是O(long(m+n))。<br><a id="more"></a></p>
 <h5 id="分析"><a href="#分析" class="headerlink" title="分析:"></a>分析:</h5><p>1、如果不看时间复杂度的话，可以使用暴力方法实现：把两个数组拼接，然后重新排序，寻找中位数，较为简单，使用Java实现。<br>2、要是考虑复杂度的话，较为困难，后面会用C语言具体分析。</p>
@@ -1497,7 +1497,7 @@
   </entry>
   <entry>
     <title>LeetCode 3(Longest Substring)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode3/</url>
+    <url>/2018/12/16/LeetCode/leetcode3/</url>
     <content><![CDATA[<h3 id="Longest-Substring-Without-Repeating-Characters"><a href="#Longest-Substring-Without-Repeating-Characters" class="headerlink" title="Longest Substring Without Repeating Characters"></a>Longest Substring Without Repeating Characters</h3><div class="note info">
             <p>题目描述 </p>
           </div>
@@ -1629,7 +1629,7 @@
   </entry>
   <entry>
     <title>LeetCode 2(Add Two Numbers)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode2/</url>
+    <url>/2018/12/16/LeetCode/leetcode2/</url>
     <content><![CDATA[<h3 id="Add-Two-Numbers"><a href="#Add-Two-Numbers" class="headerlink" title="Add Two Numbers"></a>Add Two Numbers</h3><div class="note info">
             <p>题目描述 </p>
           </div>
@@ -1659,7 +1659,7 @@
   </entry>
   <entry>
     <title>LeetCode 1(Two Sum)</title>
-    <url>/blog/2018/12/16/LeetCode/leetcode1/</url>
+    <url>/2018/12/16/LeetCode/leetcode1/</url>
     <content><![CDATA[<h3 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h3><div class="note info">
             <p>题目描述 (md partial supported) </p>
           </div>
@@ -1688,7 +1688,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2018/12/16/hello-world/</url>
+    <url>/2018/12/16/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">bash</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>

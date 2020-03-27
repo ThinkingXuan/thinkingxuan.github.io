@@ -20,7 +20,7 @@
 <p>　不会出现循环等待资源现象。</p>
 <p>思路<strong>C</strong>.采用银行家算法</p>
 <p>　   因为在分配时，保证了系统处于安全状态。</p>
-<h3 id="13、给定段表如下："><a href="#13、给定段表如下：" class="headerlink" title="13、给定段表如下："></a>13、给定段表如下：</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/Z(4WXLIMXHL" data-fancybox="group" data-caption class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/Z(4WXLIMXHL" alt title></a>J]3H{2TF`4R.png)</p>
+<h3 id="13、给定段表如下："><a href="#13、给定段表如下：" class="headerlink" title="13、给定段表如下："></a>13、给定段表如下：</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/Z(4WXLIMXHL" data-fancybox="group" data-caption class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/Z(4WXLIMXHL" alt title></a>J]3H%7B2TF%604R.png)</p>
 <p>给定地址为段号和位移：1）[1，10] 、2）[2，150] 、 3）[4，40]，试求出对应的内存物理地址。</p>
 <p>答：<br>1）[1，10] 对应的内存物理地址是2310<br>2）[2，150] 对应的内存物理地址是越界<br>3）[4，40] 缺段中断</p>
 <h3 id="14、操作系统的基本特性是-并发性、共享性、不确定性和虚拟性。"><a href="#14、操作系统的基本特性是-并发性、共享性、不确定性和虚拟性。" class="headerlink" title="14、操作系统的基本特性是_ 并发性、共享性、不确定性和虚拟性。"></a>14、操作系统的基本特性是_ 并发性、<strong>共享性</strong>、不确定性和虚拟性。</h3><h3 id="15、常用的死锁解除方法有两种，一是资源剥夺-法，另一个是进程撤销法。"><a href="#15、常用的死锁解除方法有两种，一是资源剥夺-法，另一个是进程撤销法。" class="headerlink" title="15、常用的死锁解除方法有两种，一是资源剥夺_法，另一个是进程撤销法。"></a>15、常用的死锁解除方法有两种，一是<strong>资源剥夺_法</strong>，另一个是<strong>进程撤销法</strong>。</h3><h3 id="16、文件常见的物理结构有连续文件，串联文件和索引-文件。"><a href="#16、文件常见的物理结构有连续文件，串联文件和索引-文件。" class="headerlink" title="16、文件常见的物理结构有连续文件，串联文件和索引_文件。"></a>16、文件常见的物理结构有连续文件，<strong>串联</strong>文件和<strong>索引</strong>_文件。</h3><h3 id="17、从资源分配的角度，设备可以分为独占、共享和虚拟设备。"><a href="#17、从资源分配的角度，设备可以分为独占、共享和虚拟设备。" class="headerlink" title="17、从资源分配的角度，设备可以分为独占、共享和虚拟设备。"></a>17、从资源分配的角度，设备可以分为<strong>独占</strong>、<strong>共享</strong>和<strong>虚拟</strong>设备。</h3><h3 id="18、单处理机系统中，可并行的是D-。"><a href="#18、单处理机系统中，可并行的是D-。" class="headerlink" title="18、单处理机系统中，可并行的是D_。"></a>18、单处理机系统中，可并行的是D<strong>_</strong>。</h3><p>I 进程与进程   II 处理机与设备    III 处理机与通道    IV 设备与设备<br>A．I、II 和III B． I、II 和IV<br>C．I、III 和IV D． II、III 和IV</p>
@@ -140,8 +140,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>阶乘取数</tag>
         <tag>算法</tag>
+        <tag>阶乘取数</tag>
       </tags>
   </entry>
   <entry>
@@ -838,8 +838,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>深度优先搜索</tag>
         <tag>N皇后</tag>
+        <tag>深度优先搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -1131,8 +1131,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -1162,8 +1162,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1212,8 +1212,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1259,8 +1259,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1333,8 +1333,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1390,8 +1390,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1504,8 +1504,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据结构</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>

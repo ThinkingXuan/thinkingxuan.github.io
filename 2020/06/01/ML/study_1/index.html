@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>机器学习1 | 旋哥的博客</title><meta name="description" content="机器学习1"><meta name="keywords" content="ML,机器学习"><meta name="author" content="you xuan"><meta name="copyright" content="you xuan"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/image/avatar.jpg"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="机器学习1"><meta name="twitter:description" content="机器学习1"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png"><meta property="og:type" content="article"><meta property="og:title" content="机器学习1"><meta property="og:url" content="https://you3xuan.gitee.io/2020/06/01/ML/study_1/"><meta property="og:site_name" content="旋哥的博客"><meta property="og:description" content="机器学习1"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://you3xuan.gitee.io/2020/06/01/ML/study_1/"><link rel="next" title="操作系统试题4" href="https://you3xuan.gitee.io/2020/03/28/OS/操作系统4/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  isHome: false,
+  isPost: true
+  
+}</script></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">旋哥的博客</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-link"></i><span> 留言板</span></a></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">49</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">26</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">8</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-link"></i><span> 留言板</span></a></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><div class="sidebar-toc__content"><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#第一章-机器学习的基本概念"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">第一章 机器学习的基本概念</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#1-机器学习方法的流程"><span class="toc_mobile_items-number">1.1.</span> <span class="toc_mobile_items-text">1.机器学习方法的流程</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#2-输入空间和输出空间"><span class="toc_mobile_items-number">1.2.</span> <span class="toc_mobile_items-text">2.输入空间和输出空间</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#3-特征空间"><span class="toc_mobile_items-number">1.3.</span> <span class="toc_mobile_items-text">3.特征空间</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#4-假设空间"><span class="toc_mobile_items-number">1.4.</span> <span class="toc_mobile_items-text">4.假设空间</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#第二章-机器学习方法的三要素"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">第二章 机器学习方法的三要素</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#1-模型"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text">1.模型</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#2-策略"><span class="toc_mobile_items-number">2.2.</span> <span class="toc_mobile_items-text">2.策略</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#损失函数"><span class="toc_mobile_items-number">2.2.1.</span> <span class="toc_mobile_items-text">损失函数</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#经验风险-vs-风险函数"><span class="toc_mobile_items-number">2.2.2.</span> <span class="toc_mobile_items-text">经验风险 vs 风险函数</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#结构风险"><span class="toc_mobile_items-number">2.2.3.</span> <span class="toc_mobile_items-text">结构风险</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#正则化项"><span class="toc_mobile_items-number">2.2.4.</span> <span class="toc_mobile_items-text">正则化项</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#范数"><span class="toc_mobile_items-number">2.2.5.</span> <span class="toc_mobile_items-text">范数</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-机器学习的基本概念"><span class="toc-number">1.</span> <span class="toc-text">第一章 机器学习的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-机器学习方法的流程"><span class="toc-number">1.1.</span> <span class="toc-text">1.机器学习方法的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-输入空间和输出空间"><span class="toc-number">1.2.</span> <span class="toc-text">2.输入空间和输出空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-特征空间"><span class="toc-number">1.3.</span> <span class="toc-text">3.特征空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-假设空间"><span class="toc-number">1.4.</span> <span class="toc-text">4.假设空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-机器学习方法的三要素"><span class="toc-number">2.</span> <span class="toc-text">第二章 机器学习方法的三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-模型"><span class="toc-number">2.1.</span> <span class="toc-text">1.模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-策略"><span class="toc-number">2.2.</span> <span class="toc-text">2.策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#损失函数"><span class="toc-number">2.2.1.</span> <span class="toc-text">损失函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#经验风险-vs-风险函数"><span class="toc-number">2.2.2.</span> <span class="toc-text">经验风险 vs 风险函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构风险"><span class="toc-number">2.2.3.</span> <span class="toc-text">结构风险</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正则化项"><span class="toc-number">2.2.4.</span> <span class="toc-text">正则化项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#范数"><span class="toc-number">2.2.5.</span> <span class="toc-text">范数</span></a></li></ol></li></ol></li></ol></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png)"><div id="post-info"><div id="post-title"><div class="posttitle">机器学习1</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-06-01<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-06-01</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/ML/">ML</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>阅读量:</span><span id="busuanzi_value_page_pv"></span><span class="post-meta__separator">|</span><i class="fa fa-comments-o post-meta__icon fa-fw" aria-hidden="true"></i><span>评论数:</span><a href="/2020/06/01/ML/study_1/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/06/01/ML/study_1/" itemprop="commentCount"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="第一章-机器学习的基本概念"><a href="#第一章-机器学习的基本概念" class="headerlink" title="第一章 机器学习的基本概念"></a>第一章 机器学习的基本概念</h2><h3 id="1-机器学习方法的流程"><a href="#1-机器学习方法的流程" class="headerlink" title="1.机器学习方法的流程"></a>1.机器学习方法的流程</h3><p>以有监督学习方法为例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" data-fancybox="group" data-caption="image-20200601145043823" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" alt="image-20200601145043823" title="image-20200601145043823"></a></p>
+<h3 id="2-输入空间和输出空间"><a href="#2-输入空间和输出空间" class="headerlink" title="2.输入空间和输出空间"></a>2.输入空间和输出空间</h3><p>输入空间（Input Space）: 所有可能的输入集合</p>
+<p>输出空间（Output Space）： 所有可能的输出集合</p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145910851.png" data-fancybox="group" data-caption="image-20200601145910851" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145910851.png" alt="image-20200601145910851" title="image-20200601145910851"></a></p>
+<p>左图：父亲身高为输入空间，儿子身高为输出空间</p>
+<p>右图：除Survived特征外，其他都为输入空间，是一个多维的。Survived为输出空间。</p>
+<ul>
+<li>输入空间和输出空间可以是有限元素的集合，也可以是整个欧式空间</li>
+<li>输入空间和输出空间可以是连续值集合，也可以是离散值集合</li>
+<li>输入空间和输出空间可以是同一个空间，也可以是不同的空间</li>
+<li>通常输出空间会比输入空间小</li>
+</ul>
+<h3 id="3-特征空间"><a href="#3-特征空间" class="headerlink" title="3.特征空间"></a>3.特征空间</h3><p><strong>特征（Feature）</strong>:  即属性。每个输入实例的各个组成部分（属性）称作原始特征，基于原始特征还可以拓展出更多的衍生特征。</p>
+<p><strong>特征向量（Feature Vector）</strong>：由多个特征组成的集合。</p>
+<p><strong>特征空间（Feature Space）</strong>:  将特征向量存在的空间称作特征空间。</p>
+<p>例：<a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601151409203.png" data-fancybox="group" data-caption="image-20200601151409203" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601151409203.png" alt="image-20200601151409203" title="image-20200601151409203"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601170344843.png" data-fancybox="group" data-caption="image-20200601170344843" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601170344843.png" alt="image-20200601170344843" title="image-20200601170344843"></a></p>
+<p><strong>特征空间为特征向量的所有取值。</strong></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601171207052.png" data-fancybox="group" data-caption="image-20200601171207052" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601171207052.png" alt="image-20200601171207052" title="image-20200601171207052"></a></p>
+<p><strong>C_level为Fare的衍生特征。</strong></p>
+<p>总结：</p>
+<ul>
+<li>特征空间中每一维都对应了一个特征（属性）</li>
+<li>特征空间可以和输入空间相同，也可以不同（比如有衍生特征时）</li>
+<li>需将实例从输入空间映射到特征空间（比如有衍生特征时）</li>
+<li>模型实际上是定义于特征空间之上的</li>
+</ul>
+<h3 id="4-假设空间"><a href="#4-假设空间" class="headerlink" title="4.假设空间"></a>4.假设空间</h3><p>假设空间（Hypothesis Space）: 由输入空间到输出空间的映射的集合。</p>
+<p>其他定义：<a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601194855182.png" data-fancybox="group" data-caption="image-20200601194855182" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601194855182.png" alt="image-20200601194855182" title="image-20200601194855182"></a></p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195404863.png" data-fancybox="group" data-caption="image-20200601195404863" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195404863.png" alt="image-20200601195404863" title="image-20200601195404863"></a></p>
+<p><strong>针对每一种可能的输入，都能找到一个映射，对应了输出空间的每个输出。如下</strong></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195735349.png" data-fancybox="group" data-caption="image-20200601195735349" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195735349.png" alt="image-20200601195735349" title="image-20200601195735349"></a></p>
+<p>算一个总共可能出现的假设hi个数：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200040913.png" data-fancybox="group" data-caption="image-20200601200040913" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200040913.png" alt="image-20200601200040913" title="image-20200601200040913"></a></p>
+<p>其中M为输出空间中每个取值的个数。举例如下：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200311818.png" data-fancybox="group" data-caption="image-20200601200311818" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200311818.png" alt="image-20200601200311818" title="image-20200601200311818"></a></p>
+<h2 id="第二章-机器学习方法的三要素"><a href="#第二章-机器学习方法的三要素" class="headerlink" title="第二章 机器学习方法的三要素"></a>第二章 机器学习方法的三要素</h2><p>机器学习方法通常都是由模型、策略和算法三部分构成：<strong>方法= 模型+策略+算法</strong></p>
+<p>模型：输入空间到输出空间的映射关系。学习过程即为从假设空间中搜索适合当前数据的假设。</p>
+<p>策略：从假设空间众多的假设中选择到最优的模型的学习标准或准则。</p>
+<p>算法：学习模型的具体的计算方法，通常是求最优化问题。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201110483.png" data-fancybox="group" data-caption="image-20200601201110483" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201110483.png" alt="image-20200601201110483" title="image-20200601201110483"></a></p>
+<h3 id="1-模型"><a href="#1-模型" class="headerlink" title="1.模型"></a>1.模型</h3><p><strong>模型：</strong>输入空间到输出空间的映射关系。学习过程即为从假设空间中搜索适合当前数据的假设。</p>
+<p>分析当前需要解决的问题，确定模型。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201347652.png" data-fancybox="group" data-caption="image-20200601201347652" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201347652.png" alt="image-20200601201347652" title="image-20200601201347652"></a></p>
+<h3 id="2-策略"><a href="#2-策略" class="headerlink" title="2.策略"></a>2.策略</h3><p><strong>策略：</strong>从假设空间众多的假设中选择到最优的模型的学习标准或准则。</p>
+<p>要从假设空间中选择一个最适合的模型出来，需要解决一下问题：</p>
+<ul>
+<li>评估某个模型对单个训练样本的效果</li>
+<li>评估某个模型对训练集的整体效果</li>
+<li>评估某个模型对包括训练集、预测集在内的所有数据的整体效果</li>
+</ul>
+<p>定义几个指标来衡量上述问题：</p>
+<ul>
+<li>损失函数：0-1损失函数、平方损失函数、绝对值损失函数、对数损失函数等</li>
+<li>风险函数：经验风险、期望风险、结构风险</li>
+</ul>
+<p>基本策略</p>
+<ul>
+<li>经验风险最小（EMR：<em>Empirical Risk Minimization</em>）</li>
+<li>结构风险最小  (SRM：<em>Structural Risk Minimization</em>)</li>
+</ul>
+<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><strong>损失函数</strong>（<em>Loss Function</em>）: 用来衡量预测结果和真实结果之间的差距，其值越小，代表预测结果和真实结果越一致。通常是一个非负实值函数。通过各种方式缩小损失函数的过程被称作<strong>优化</strong>。损失函数几座<code>L(Y，f(x))</code>。 <code>Y</code>:真实值   <code>f(x)</code>:模型预测取值</p>
+<p><strong>0-1损失函数（0-1 LF）:</strong> 预测值和实际值精确相等则 ”没有损失“为<strong>0</strong>，否则意味着”完全损失“，为<strong>1</strong>预测值和实际值精确相等有些过于严格，可以采用两者的差小于某个阈值的方式。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" data-fancybox="group" data-caption="image-20200601204416698" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" alt="image-20200601204416698" title="image-20200601204416698"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" data-fancybox="group" data-caption="image-20200601204308912" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" alt="image-20200601204308912" title="image-20200601204308912"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204559097.png" data-fancybox="group" data-caption="image-20200601204559097" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204559097.png" alt="image-20200601204559097" title="image-20200601204559097"></a></p>
+<p><strong>绝对值损失函数</strong>（<em>Absolute LF</em>）：预测结果与真实结果差的绝对值，简单易懂，但是计算不方便</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204838705.png" data-fancybox="group" data-caption="image-20200601204838705" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204838705.png" alt="image-20200601204838705" title="image-20200601204838705"></a></p>
+<p><strong>平方损失函数</strong>（<em>Quadratic LF</em>）：预测结果与真实结果差的平方。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205144765.png" data-fancybox="group" data-caption="image-20200601205144765" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205144765.png" alt="image-20200601205144765" title="image-20200601205144765"></a></p>
+<p>平方损失函数优势有：</p>
+<ul>
+<li>每个样本的误差都有正的，累加不会被抵消</li>
+<li>平方对于大误差的惩罚大于小误差</li>
+<li>数据计算简单、友好，倒数为一次函数</li>
+</ul>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" data-fancybox="group" data-caption="image-20200601205536049" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" alt="image-20200601205536049" title="image-20200601205536049"></a></p>
+<p>对数损失函数（Logarithmic LF）或对数似然损失函数（log-likehood loss function）: 对数函数具有单调性，在求最优化问题时，结果与原始目标一致。可以将乘法转换化为加法，简化计算：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" data-fancybox="group" data-caption="image-20200601205909808" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" alt="image-20200601205909808" title="image-20200601205909808"></a></p>
+<p><strong>指数损失函数</strong>（<em>Exponential LF</em>）：单调性、非负性的优良性质，使得越接近正确结果误差越小。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" data-fancybox="group" data-caption="image-20200601210138878" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" alt="image-20200601210138878" title="image-20200601210138878"></a></p>
+<p><strong>折页损失函数</strong>（<em>Linge LF</em>）:也称铰链损失，对于判断边界附近的点的惩罚力度较高，常用于SVM</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210307350.png" data-fancybox="group" data-caption="image-20200601210307350" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210307350.png" alt="image-20200601210307350" title="image-20200601210307350"></a></p>
+<p>总结：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210327202.png" data-fancybox="group" data-caption="image-20200601210327202" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210327202.png" alt="image-20200601210327202" title="image-20200601210327202"></a></p>
+<h4 id="经验风险-vs-风险函数"><a href="#经验风险-vs-风险函数" class="headerlink" title="经验风险 vs 风险函数"></a>经验风险 vs 风险函数</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601211304511.png" data-fancybox="group" data-caption="image-20200601211304511" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601211304511.png" alt="image-20200601211304511" title="image-20200601211304511"></a></p>
+<p>在样本较小时，仅关注经验风险，很容易导致过拟合。</p>
+<p><strong>过拟合</strong>：对当前数据预测效果很好，但是对新数据的预测比较差。</p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212241046.png" data-fancybox="group" data-caption="image-20200601212241046" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212241046.png" alt="image-20200601212241046" title="image-20200601212241046"></a></p>
+<p>如下图所示：样本集分为训练集合预测集，分别对训练集进行一次，二次，四次，六次模型构建，统计损失，然后在利用模型识别预测集，统计损失。由结果可知，四次和六次模型，发生了严重的过拟合。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212625401.png" data-fancybox="group" data-caption="image-20200601212625401" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212625401.png" alt="image-20200601212625401" title="image-20200601212625401"></a></p>
+<h4 id="结构风险"><a href="#结构风险" class="headerlink" title="结构风险"></a>结构风险</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601213414143.png" data-fancybox="group" data-caption="image-20200601213414143" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601213414143.png" alt="image-20200601213414143" title="image-20200601213414143"></a></p>
+<h4 id="正则化项"><a href="#正则化项" class="headerlink" title="正则化项"></a>正则化项</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214147463.png" data-fancybox="group" data-caption="image-20200601214147463" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214147463.png" alt="image-20200601214147463" title="image-20200601214147463"></a></p>
+<p>惩罚项中的累加函数代表参数的个数。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214753870.png" data-fancybox="group" data-caption="image-20200601214753870" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214753870.png" alt="image-20200601214753870" title="image-20200601214753870"></a></p>
+<h4 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214957122.png" data-fancybox="group" data-caption="image-20200601214957122" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214957122.png" alt="image-20200601214957122" title="image-20200601214957122"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601215032422.png" data-fancybox="group" data-caption="image-20200601215032422" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601215032422.png" alt="image-20200601215032422" title="image-20200601215032422"></a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">you xuan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://you3xuan.gitee.io/2020/06/01/ML/study_1/">https://you3xuan.gitee.io/2020/06/01/ML/study_1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://you3xuan.gitee.io">旋哥的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ML/">ML    </a><a class="post-meta__tags" href="/tags/机器学习/">机器学习    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/image/wechat_pay.png" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/image/alipay_pay.png" alt="支付宝"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2020/03/28/OS/操作系统4/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/default.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>操作系统试题4</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script><script>var notify = true == true ? true : false;
+var verify = true == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'VI8I4aQIETFPTh2mdDU2SHuC-gzGzoHsz',
+  appKey:'lTByyFatzIkn8Lmu2QWqhmPm',
+  placeholder:'留言记得在上面留下【邮箱】，方便收到回复通知。',
+  avatar:'monsterid',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang:'en',
+  recordIP: true
+});</script></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By you xuan</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="https://cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async></script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

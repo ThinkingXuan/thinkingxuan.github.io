@@ -1,6 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>机器学习1</title>
+    <url>/2020/06/01/ML/study_1/</url>
+    <content><![CDATA[<h2 id="第一章-机器学习的基本概念"><a href="#第一章-机器学习的基本概念" class="headerlink" title="第一章 机器学习的基本概念"></a>第一章 机器学习的基本概念</h2><h3 id="1-机器学习方法的流程"><a href="#1-机器学习方法的流程" class="headerlink" title="1.机器学习方法的流程"></a>1.机器学习方法的流程</h3><p>以有监督学习方法为例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" data-fancybox="group" data-caption="image-20200601145043823" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" alt="image-20200601145043823" title="image-20200601145043823"></a></p>
+<h3 id="2-输入空间和输出空间"><a href="#2-输入空间和输出空间" class="headerlink" title="2.输入空间和输出空间"></a>2.输入空间和输出空间</h3><p>输入空间（Input Space）: 所有可能的输入集合</p>
+<p>输出空间（Output Space）： 所有可能的输出集合</p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145910851.png" data-fancybox="group" data-caption="image-20200601145910851" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145910851.png" alt="image-20200601145910851" title="image-20200601145910851"></a></p>
+<p>左图：父亲身高为输入空间，儿子身高为输出空间</p>
+<p>右图：除Survived特征外，其他都为输入空间，是一个多维的。Survived为输出空间。</p>
+<ul>
+<li>输入空间和输出空间可以是有限元素的集合，也可以是整个欧式空间</li>
+<li>输入空间和输出空间可以是连续值集合，也可以是离散值集合</li>
+<li>输入空间和输出空间可以是同一个空间，也可以是不同的空间</li>
+<li>通常输出空间会比输入空间小</li>
+</ul>
+<h3 id="3-特征空间"><a href="#3-特征空间" class="headerlink" title="3.特征空间"></a>3.特征空间</h3><p><strong>特征（Feature）</strong>:  即属性。每个输入实例的各个组成部分（属性）称作原始特征，基于原始特征还可以拓展出更多的衍生特征。</p>
+<p><strong>特征向量（Feature Vector）</strong>：由多个特征组成的集合。</p>
+<p><strong>特征空间（Feature Space）</strong>:  将特征向量存在的空间称作特征空间。</p>
+<p>例：<a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601151409203.png" data-fancybox="group" data-caption="image-20200601151409203" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601151409203.png" alt="image-20200601151409203" title="image-20200601151409203"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601170344843.png" data-fancybox="group" data-caption="image-20200601170344843" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601170344843.png" alt="image-20200601170344843" title="image-20200601170344843"></a></p>
+<p><strong>特征空间为特征向量的所有取值。</strong></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601171207052.png" data-fancybox="group" data-caption="image-20200601171207052" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601171207052.png" alt="image-20200601171207052" title="image-20200601171207052"></a></p>
+<p><strong>C_level为Fare的衍生特征。</strong></p>
+<p>总结：</p>
+<ul>
+<li>特征空间中每一维都对应了一个特征（属性）</li>
+<li>特征空间可以和输入空间相同，也可以不同（比如有衍生特征时）</li>
+<li>需将实例从输入空间映射到特征空间（比如有衍生特征时）</li>
+<li>模型实际上是定义于特征空间之上的</li>
+</ul>
+<h3 id="4-假设空间"><a href="#4-假设空间" class="headerlink" title="4.假设空间"></a>4.假设空间</h3><p>假设空间（Hypothesis Space）: 由输入空间到输出空间的映射的集合。</p>
+<p>其他定义：<a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601194855182.png" data-fancybox="group" data-caption="image-20200601194855182" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601194855182.png" alt="image-20200601194855182" title="image-20200601194855182"></a></p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195404863.png" data-fancybox="group" data-caption="image-20200601195404863" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195404863.png" alt="image-20200601195404863" title="image-20200601195404863"></a></p>
+<p><strong>针对每一种可能的输入，都能找到一个映射，对应了输出空间的每个输出。如下</strong></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195735349.png" data-fancybox="group" data-caption="image-20200601195735349" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601195735349.png" alt="image-20200601195735349" title="image-20200601195735349"></a></p>
+<p>算一个总共可能出现的假设hi个数：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200040913.png" data-fancybox="group" data-caption="image-20200601200040913" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200040913.png" alt="image-20200601200040913" title="image-20200601200040913"></a></p>
+<p>其中M为输出空间中每个取值的个数。举例如下：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200311818.png" data-fancybox="group" data-caption="image-20200601200311818" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601200311818.png" alt="image-20200601200311818" title="image-20200601200311818"></a></p>
+<h2 id="第二章-机器学习方法的三要素"><a href="#第二章-机器学习方法的三要素" class="headerlink" title="第二章 机器学习方法的三要素"></a>第二章 机器学习方法的三要素</h2><p>机器学习方法通常都是由模型、策略和算法三部分构成：<strong>方法= 模型+策略+算法</strong></p>
+<p>模型：输入空间到输出空间的映射关系。学习过程即为从假设空间中搜索适合当前数据的假设。</p>
+<p>策略：从假设空间众多的假设中选择到最优的模型的学习标准或准则。</p>
+<p>算法：学习模型的具体的计算方法，通常是求最优化问题。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201110483.png" data-fancybox="group" data-caption="image-20200601201110483" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201110483.png" alt="image-20200601201110483" title="image-20200601201110483"></a></p>
+<h3 id="1-模型"><a href="#1-模型" class="headerlink" title="1.模型"></a>1.模型</h3><p><strong>模型：</strong>输入空间到输出空间的映射关系。学习过程即为从假设空间中搜索适合当前数据的假设。</p>
+<p>分析当前需要解决的问题，确定模型。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201347652.png" data-fancybox="group" data-caption="image-20200601201347652" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601201347652.png" alt="image-20200601201347652" title="image-20200601201347652"></a></p>
+<h3 id="2-策略"><a href="#2-策略" class="headerlink" title="2.策略"></a>2.策略</h3><p><strong>策略：</strong>从假设空间众多的假设中选择到最优的模型的学习标准或准则。</p>
+<p>要从假设空间中选择一个最适合的模型出来，需要解决一下问题：</p>
+<ul>
+<li>评估某个模型对单个训练样本的效果</li>
+<li>评估某个模型对训练集的整体效果</li>
+<li>评估某个模型对包括训练集、预测集在内的所有数据的整体效果</li>
+</ul>
+<p>定义几个指标来衡量上述问题：</p>
+<ul>
+<li>损失函数：0-1损失函数、平方损失函数、绝对值损失函数、对数损失函数等</li>
+<li>风险函数：经验风险、期望风险、结构风险</li>
+</ul>
+<p>基本策略</p>
+<ul>
+<li>经验风险最小（EMR：<em>Empirical Risk Minimization</em>）</li>
+<li>结构风险最小  (SRM：<em>Structural Risk Minimization</em>)</li>
+</ul>
+<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><strong>损失函数</strong>（<em>Loss Function</em>）: 用来衡量预测结果和真实结果之间的差距，其值越小，代表预测结果和真实结果越一致。通常是一个非负实值函数。通过各种方式缩小损失函数的过程被称作<strong>优化</strong>。损失函数几座<code>L(Y，f(x))</code>。 <code>Y</code>:真实值   <code>f(x)</code>:模型预测取值</p>
+<p><strong>0-1损失函数（0-1 LF）:</strong> 预测值和实际值精确相等则 ”没有损失“为<strong>0</strong>，否则意味着”完全损失“，为<strong>1</strong>预测值和实际值精确相等有些过于严格，可以采用两者的差小于某个阈值的方式。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" data-fancybox="group" data-caption="image-20200601204416698" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" alt="image-20200601204416698" title="image-20200601204416698"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" data-fancybox="group" data-caption="image-20200601204308912" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" alt="image-20200601204308912" title="image-20200601204308912"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204559097.png" data-fancybox="group" data-caption="image-20200601204559097" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204559097.png" alt="image-20200601204559097" title="image-20200601204559097"></a></p>
+<p><strong>绝对值损失函数</strong>（<em>Absolute LF</em>）：预测结果与真实结果差的绝对值，简单易懂，但是计算不方便</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204838705.png" data-fancybox="group" data-caption="image-20200601204838705" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204838705.png" alt="image-20200601204838705" title="image-20200601204838705"></a></p>
+<p><strong>平方损失函数</strong>（<em>Quadratic LF</em>）：预测结果与真实结果差的平方。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205144765.png" data-fancybox="group" data-caption="image-20200601205144765" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205144765.png" alt="image-20200601205144765" title="image-20200601205144765"></a></p>
+<p>平方损失函数优势有：</p>
+<ul>
+<li>每个样本的误差都有正的，累加不会被抵消</li>
+<li>平方对于大误差的惩罚大于小误差</li>
+<li>数据计算简单、友好，倒数为一次函数</li>
+</ul>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" data-fancybox="group" data-caption="image-20200601205536049" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" alt="image-20200601205536049" title="image-20200601205536049"></a></p>
+<p>对数损失函数（Logarithmic LF）或对数似然损失函数（log-likehood loss function）: 对数函数具有单调性，在求最优化问题时，结果与原始目标一致。可以将乘法转换化为加法，简化计算：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" data-fancybox="group" data-caption="image-20200601205909808" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" alt="image-20200601205909808" title="image-20200601205909808"></a></p>
+<p><strong>指数损失函数</strong>（<em>Exponential LF</em>）：单调性、非负性的优良性质，使得越接近正确结果误差越小。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" data-fancybox="group" data-caption="image-20200601210138878" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" alt="image-20200601210138878" title="image-20200601210138878"></a></p>
+<p><strong>折页损失函数</strong>（<em>Linge LF</em>）:也称铰链损失，对于判断边界附近的点的惩罚力度较高，常用于SVM</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210307350.png" data-fancybox="group" data-caption="image-20200601210307350" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210307350.png" alt="image-20200601210307350" title="image-20200601210307350"></a></p>
+<p>总结：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210327202.png" data-fancybox="group" data-caption="image-20200601210327202" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210327202.png" alt="image-20200601210327202" title="image-20200601210327202"></a></p>
+<h4 id="经验风险-vs-风险函数"><a href="#经验风险-vs-风险函数" class="headerlink" title="经验风险 vs 风险函数"></a>经验风险 vs 风险函数</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601211304511.png" data-fancybox="group" data-caption="image-20200601211304511" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601211304511.png" alt="image-20200601211304511" title="image-20200601211304511"></a></p>
+<p>在样本较小时，仅关注经验风险，很容易导致过拟合。</p>
+<p><strong>过拟合</strong>：对当前数据预测效果很好，但是对新数据的预测比较差。</p>
+<p>例：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212241046.png" data-fancybox="group" data-caption="image-20200601212241046" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212241046.png" alt="image-20200601212241046" title="image-20200601212241046"></a></p>
+<p>如下图所示：样本集分为训练集合预测集，分别对训练集进行一次，二次，四次，六次模型构建，统计损失，然后在利用模型识别预测集，统计损失。由结果可知，四次和六次模型，发生了严重的过拟合。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212625401.png" data-fancybox="group" data-caption="image-20200601212625401" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601212625401.png" alt="image-20200601212625401" title="image-20200601212625401"></a></p>
+<h4 id="结构风险"><a href="#结构风险" class="headerlink" title="结构风险"></a>结构风险</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601213414143.png" data-fancybox="group" data-caption="image-20200601213414143" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601213414143.png" alt="image-20200601213414143" title="image-20200601213414143"></a></p>
+<h4 id="正则化项"><a href="#正则化项" class="headerlink" title="正则化项"></a>正则化项</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214147463.png" data-fancybox="group" data-caption="image-20200601214147463" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214147463.png" alt="image-20200601214147463" title="image-20200601214147463"></a></p>
+<p>惩罚项中的累加函数代表参数的个数。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214753870.png" data-fancybox="group" data-caption="image-20200601214753870" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214753870.png" alt="image-20200601214753870" title="image-20200601214753870"></a></p>
+<h4 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h4><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214957122.png" data-fancybox="group" data-caption="image-20200601214957122" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601214957122.png" alt="image-20200601214957122" title="image-20200601214957122"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601215032422.png" data-fancybox="group" data-caption="image-20200601215032422" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601215032422.png" alt="image-20200601215032422" title="image-20200601215032422"></a></p>
+]]></content>
+      <categories>
+        <category>ML</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统试题4</title>
+    <url>/2020/03/28/OS/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F4/</url>
+    <content><![CDATA[<h2 id="一．思考题"><a href="#一．思考题" class="headerlink" title="一．思考题"></a>一．思考题</h2><ol>
+<li><p><strong>什么是进程？计算机操作系统中为什么引入进程？</strong></p>
+<p>进程的定义：进程是一个可并发执行的具有独立功能的程序关于某个数据集合的一次执行过程，也是操作系统进行资源分配和保护的基本单位。引入进程的原因：一是刻画系统的动态性，发挥系统的并发性，提高资源利用率。二是解决共享性，正确描述程序的执行状态。</p>
+</li>
+<li><p><strong>进程最基本的状态有哪些？哪些事件可能引起不同状态之间的转换？</strong></p>
+<p>进程最基本的状态有三种：</p>
+<pre><code>    运行态：进程占有处理器正在运行。
+    就绪态：进程具备运行条件，等待系统分配处理器以便运行。
+    等待态：又称为阻塞态或睡眠态，指进程不具备运行条件，正在等待某个事件的完成。
+</code></pre><p>进程状态转换的具体原因：<br>运行态→等待态 等待使用资源或某事件发生，如等待外设传输、等待人工干预。<br>等待态→就绪态 资源得到满足或某事件已经发生，如外设传输结束；人工干预完成。<br>运行态→就绪态 运行时间片到，或出现有更高优先权进程。<br>就绪态→运行态 CPU 空闲时被调度选中一个就绪进程执行。</p>
+</li>
+<li><p><strong>叙述组成进程的基本要素，并说明它的作用。</strong></p>
+<p>每个进程有4 个要素组成：控制块、程序块、数据块和堆栈。<br>（1）进程控制块 每一个进程都将捆绑一个进程控制块，用来存储进程的标志信息、现场信息和控制信息。进        程创建时建立进程控制块，进程撤销时回收进程控制块，它与进程一一对应。<br>（2）进程程序块 即被执行的程序，规定了进程一次运行应完成的功能。通常它是纯代码，作为一种系统资源               可被多个进程共享。</p>
+<p>（3）进程数据块 即程序运行时加工处理对象，包括全局变量、局部变量和常量等的存放区以及开辟的工作        区，常常为一个进程专用。<br>（4）系统/用户堆栈 每一个进程都将捆绑一个系统/用户堆栈，用来存储进程的标志信息、现场信息和控制信        息。进程创建时建立进程控制块，进程撤销时回收进程控制块，它与进程一一对应。</p>
+</li>
+<li><p><strong>什么是进程的上下文？简述其主要内容。</strong></p>
+<p>操作系统中把进程物理实体和支持进程运行的环境合称为进程上下文（ processcontext）。<br>它包括三个组成部分：<br>（1）用户级上下文（user-level context）。 由用户进程的程序块、用户数据块（含共享数据块）和用户堆栈组成的进程地址空间。<br>（2）系统级上下文（system-level context）。包括进程控制块、内存管理信息、进程环境块，以及系统堆栈等组成的进程地址空间。<br>（3）寄存器上下文（register context）。由程序状态字寄存器、各类控制寄存器、地址寄存器、通用寄存器、用户栈指针等组成。</p>
+</li>
+<li><p><strong>试从调度、并发性、拥有资源和系统开销四个方面对传统进程和线程进行比较。</strong></p>
+<p>|          | 线程                                                         | 进程                                                         |<br>| :———- | :—————————————————————————————- | :—————————————————————————————- |<br>| 调度     | 是操作系统中的基本调度和分派<br>单位，具有唯一的标识符和线程控<br>制块。 | 进程具有独立的虚地址空间，以进<br>程为单位进行任务调度，系统必须<br>交换地址空间，切换时间长。 |<br>| 并发性   | 同一进程的多个线程可在一个/多<br>个处理器上并发或并行地执行 | 许多多任务操作系统限制用户能<br>拥有的最大进程数目，这对许多并<br>发应用来说是不够的。 |<br>| 拥有资源 | 同一进程的所有线程共享但不拥<br>有进程的状态和资源，且驻留在进<br>程的同一个主存地址空间中，可以<br>访问相同的数据，通信和同步的实<br>现十分方便。 | 是系统中资源分配和保护的基本<br>单位，也是系统调度的独立单位。<br>每个进程都可以各自独立的速度<br>在CPU 上推进。 |<br>| 系统开销 | 作为系统调度和分派的基本单位，<br>会被频繁地调度和切换。同一进程<br>中的多线程共享同一地址空间，能<br>使线程快速切换。 | 对多个进程的管理（创建、调度、<br>终止等）系统开销大，如响应客户<br>请求建立一个新的服务进程的服<br>务器应用中，创建的开销比较显<br>著。 |</p>
+</li>
+<li><p><strong>什么是内核级线程、用户级线程和混合式线程？对它们进行比较。</strong></p>
+<p>内核级线程    线程管理的所有工作由操作系统内核来做。<br>优点：（1）在多处理器上，内核能够同时调度同一进程中多个线程并行执行；（2）若其中的一个线程被阻塞了，内核能调度同一进程的其它线程占有处理器并运行，也可以运行其它进程中的线程。（3）由于内核线程仅有很小的数据结构和堆栈，KLT 的切换比较快，内核自身也可以用多线程技术实现，从而，能提高系统的执行速度和效率。</p>
+<p>缺点：应用程序线程在用户态运行，而线程调度和管理在内核实现，在同一进程中，控制权从一个线程传送到另一个线程时需要用户态——内核态——用户态的模式切换，系统开销较大。</p>
+<p>用户级线程    线程管理的全部工作都由应用程序来做，在用户空间内实现，内核是不知道线程的存在的。<br>优点：（1）线程切换不需要内核特权方式。（2）按应用特定需要允许进程选择调度算法。<br>缺点：（1）在传统的基于进程操作系统中，大多数系统调用将阻塞进程。（2）在纯ULT 中，多线程应用不能利用多重处理的优点。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统试题3</title>
     <url>/2020/03/27/OS/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3/</url>
     <content><![CDATA[<h2 id="一．思考题"><a href="#一．思考题" class="headerlink" title="一．思考题"></a>一．思考题</h2><ol>
@@ -9,10 +160,8 @@
 </li>
 <li><p><strong>操作系统要为用户提供哪些基本和共性的服务？</strong></p>
 <p>答：操作系统提供给程序和用户的共性服务大致有：</p>
+<p> (1) 创建程序  (2) 执行程序  (3) 数据I/O   (4) 信息存取  (5) 通信服务  (6) 错误检测和处理</p>
 </li>
-</ol>
-<p>​         (1) 创建程序  (2) 执行程序  (3) 数据I/O   (4) 信息存取  (5) 通信服务  (6) 错误检测和处理</p>
-<ol>
 <li><p><strong>试叙述系统调用的实现原理。</strong><br>答（p28）系统调用的实现有以下几点：⑴编写系统调用处理程序 ⑵设计一张系统调用<br>入口地址表，每个入口地址都指向一个系统调用的处理程序，有的系统还包含系统调用<br>自带参数的个数 ⑶陷入处理机制，需开辟现场保护，以保存发生系统调用时的处理器<br>现场。</p>
 </li>
 <li><p><strong>试叙述系统调用与过程调用的主要区别。</strong><br>答（p29）⑴调用形式不同 ⑵被调用代码的位置不同 ⑶提供方式不同 ⑷调用的实现不<br>同</p>
@@ -874,8 +1023,8 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>N皇后</tag>
         <tag>深度优先搜索</tag>
+        <tag>N皇后</tag>
       </tags>
   </entry>
   <entry>

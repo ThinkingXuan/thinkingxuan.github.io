@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>机器学习2 | 旋哥的博客</title><meta name="description" content="机器学习2"><meta name="keywords" content="ML,机器学习"><meta name="author" content="you xuan"><meta name="copyright" content="you xuan"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/image/avatar.jpg"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="机器学习2"><meta name="twitter:description" content="机器学习2"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/threewhiteceramicpotgreen-leaf-plantsnear-open.jpg"><meta property="og:type" content="article"><meta property="og:title" content="机器学习2"><meta property="og:url" content="https://you3xuan.gitee.io/2020/06/03/ML/study_2/"><meta property="og:site_name" content="旋哥的博客"><meta property="og:description" content="机器学习2"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/threewhiteceramicpotgreen-leaf-plantsnear-open.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://you3xuan.gitee.io/2020/06/03/ML/study_2/"><link rel="next" title="机器学习1" href="https://you3xuan.gitee.io/2020/06/01/ML/study_1/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  isHome: false,
+  isPost: true
+  
+}</script></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">旋哥的博客</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-link"></i><span> 留言板</span></a></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">50</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">26</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">8</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-heartbeat" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-link"></i><span> 留言板</span></a></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><div class="sidebar-toc__content"><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#模型的选择"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">模型的选择</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#误差"><span class="toc_mobile_items-number">1.1.</span> <span class="toc_mobile_items-text">误差</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#欠拟合和过拟合"><span class="toc_mobile_items-number">1.2.</span> <span class="toc_mobile_items-text">欠拟合和过拟合</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#模型选择"><span class="toc_mobile_items-number">1.3.</span> <span class="toc_mobile_items-text">模型选择</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#模型的评估方法"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">模型的评估方法</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#评估思路"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text">评估思路</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#留出法"><span class="toc_mobile_items-number">2.2.</span> <span class="toc_mobile_items-text">留出法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#交叉验验证法"><span class="toc_mobile_items-number">2.3.</span> <span class="toc_mobile_items-text">交叉验验证法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#留一法"><span class="toc_mobile_items-number">2.4.</span> <span class="toc_mobile_items-text">留一法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#自助法"><span class="toc_mobile_items-number">2.5.</span> <span class="toc_mobile_items-text">自助法</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#几种方法的使用场景"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">几种方法的使用场景</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#性能度量"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">性能度量</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#分类算法的性能度量"><span class="toc_mobile_items-number">4.1.</span> <span class="toc_mobile_items-text">分类算法的性能度量</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#聚类算法的性能度量"><span class="toc_mobile_items-number">4.2.</span> <span class="toc_mobile_items-text">聚类算法的性能度量</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#比较检验"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">比较检验</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#模型比较"><span class="toc_mobile_items-number">5.1.</span> <span class="toc_mobile_items-text">模型比较</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#掷硬币"><span class="toc_mobile_items-number">5.2.</span> <span class="toc_mobile_items-text">掷硬币</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#假设检验"><span class="toc_mobile_items-number">5.3.</span> <span class="toc_mobile_items-text">假设检验</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#假设检验步骤"><span class="toc_mobile_items-number">5.4.</span> <span class="toc_mobile_items-text">假设检验步骤</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#假设检验的例子：二项式检验"><span class="toc_mobile_items-number">5.5.</span> <span class="toc_mobile_items-text">假设检验的例子：二项式检验</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#假设检验的例子：T检验"><span class="toc_mobile_items-number">5.6.</span> <span class="toc_mobile_items-text">假设检验的例子：T检验</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#假设检验在模型比较中的应用"><span class="toc_mobile_items-number">5.7.</span> <span class="toc_mobile_items-text">假设检验在模型比较中的应用</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#偏差、方差与噪声"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">偏差、方差与噪声</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#泛化误差组成推导"><span class="toc_mobile_items-number">7.</span> <span class="toc_mobile_items-text">泛化误差组成推导</span></a></li></ol></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的选择"><span class="toc-number">1.</span> <span class="toc-text">模型的选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#误差"><span class="toc-number">1.1.</span> <span class="toc-text">误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#欠拟合和过拟合"><span class="toc-number">1.2.</span> <span class="toc-text">欠拟合和过拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型选择"><span class="toc-number">1.3.</span> <span class="toc-text">模型选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的评估方法"><span class="toc-number">2.</span> <span class="toc-text">模型的评估方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#评估思路"><span class="toc-number">2.1.</span> <span class="toc-text">评估思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留出法"><span class="toc-number">2.2.</span> <span class="toc-text">留出法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交叉验验证法"><span class="toc-number">2.3.</span> <span class="toc-text">交叉验验证法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留一法"><span class="toc-number">2.4.</span> <span class="toc-text">留一法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自助法"><span class="toc-number">2.5.</span> <span class="toc-text">自助法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几种方法的使用场景"><span class="toc-number">3.</span> <span class="toc-text">几种方法的使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能度量"><span class="toc-number">4.</span> <span class="toc-text">性能度量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类算法的性能度量"><span class="toc-number">4.1.</span> <span class="toc-text">分类算法的性能度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚类算法的性能度量"><span class="toc-number">4.2.</span> <span class="toc-text">聚类算法的性能度量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较检验"><span class="toc-number">5.</span> <span class="toc-text">比较检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型比较"><span class="toc-number">5.1.</span> <span class="toc-text">模型比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#掷硬币"><span class="toc-number">5.2.</span> <span class="toc-text">掷硬币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设检验"><span class="toc-number">5.3.</span> <span class="toc-text">假设检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设检验步骤"><span class="toc-number">5.4.</span> <span class="toc-text">假设检验步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设检验的例子：二项式检验"><span class="toc-number">5.5.</span> <span class="toc-text">假设检验的例子：二项式检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设检验的例子：T检验"><span class="toc-number">5.6.</span> <span class="toc-text">假设检验的例子：T检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#假设检验在模型比较中的应用"><span class="toc-number">5.7.</span> <span class="toc-text">假设检验在模型比较中的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#偏差、方差与噪声"><span class="toc-number">6.</span> <span class="toc-text">偏差、方差与噪声</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛化误差组成推导"><span class="toc-number">7.</span> <span class="toc-text">泛化误差组成推导</span></a></li></ol></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/threewhiteceramicpotgreen-leaf-plantsnear-open.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">机器学习2</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-06-03<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-06-03</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/ML/">ML</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>阅读量:</span><span id="busuanzi_value_page_pv"></span><span class="post-meta__separator">|</span><i class="fa fa-comments-o post-meta__icon fa-fw" aria-hidden="true"></i><span>评论数:</span><a href="/2020/06/03/ML/study_2/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/06/03/ML/study_2/" itemprop="commentCount"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="模型的选择"><a href="#模型的选择" class="headerlink" title="模型的选择"></a>模型的选择</h2><h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p><strong>误差</strong>（<em>Error</em>）: 是模型的预测输出值与真实值之间的差异。</p>
+<p><strong>训练</strong>（<em>Training</em>）: 通过已知的样本数据进行学习，从而得到模型的过程。</p>
+<p><strong>训练误差</strong>（<em>Training Error</em>）: 模型作用于训练集时的误差。</p>
+<p><strong>泛化</strong>（<em>Generalize</em>）: 由具体的、个别的扩大为一般的，即从特殊到一般，称为泛化。对机器学习的模型来讲，泛化是指模型作用于新的样本数据（非训练集）。</p>
+<p><strong>泛化误差</strong>（<em>Generalization Error</em>）:  模型作用于新的样本数据时的误差。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602170425755.png" data-fancybox="group" data-caption="image-20200602170425755" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602170425755.png" alt="image-20200602170425755" title="image-20200602170425755"></a></p>
+<h3 id="欠拟合和过拟合"><a href="#欠拟合和过拟合" class="headerlink" title="欠拟合和过拟合"></a>欠拟合和过拟合</h3><p><strong>模型容量</strong>（<em>Model Capacity</em>） :  是指其拟合各种模型的能力。</p>
+<p><strong>过拟合</strong>（<em>Overfitting</em>）:  是某个模型在训练集上表现良好，但是在新样本上表现差。模型将训练集的特征学习的太好，导致一些非常普遍规律被模型接纳和体现，从而在训练集上表现好，但是对于新样本表现差。反之则称为<strong>欠拟合</strong>（<em>Underfitting</em>）,即模型对训练集的一般性质学习较差，模型作用于训练集时表现不好。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602171625317.png" data-fancybox="group" data-caption="image-20200602171625317" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602171625317.png" alt="image-20200602171625317" title="image-20200602171625317"></a></p>
+<h3 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h3><p><strong>模型选择</strong>（<em>Model Selection</em>）:  针对某个具体的任务，通常会有多种模型可供选择，对同一个模型也会有多组参数，可以通过分析、评估模型的泛化误差，选择模型泛化误差最小的模型。</p>
+<p><a href="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200602172326836.png" data-fancybox="group" data-caption="image-20200602172326836" class="fancybox"><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200602172326836.png" alt="image-20200602172326836" title="image-20200602172326836"></a></p>
+<h2 id="模型的评估方法"><a href="#模型的评估方法" class="headerlink" title="模型的评估方法"></a>模型的评估方法</h2><h3 id="评估思路"><a href="#评估思路" class="headerlink" title="评估思路"></a>评估思路</h3><p>通过实验测试，对模型的泛化误差进行评估，选出泛化误差最小的模型。待测数据集全集未知，使用测试集进行泛化测试，测试误差（Testing Error）即为泛化误差的近似。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602173004574.png" data-fancybox="group" data-caption="image-20200602173004574" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602173004574.png" alt="image-20200602173004574" title="image-20200602173004574"></a></p>
+<ul>
+<li>测试集和训练集尽可能的互斥</li>
+<li>测试集和训练集独立同分布（独立：事件之间没有依赖关系，同分布：测试集合训练集最好分布一致）</li>
+</ul>
+<h3 id="留出法"><a href="#留出法" class="headerlink" title="留出法"></a>留出法</h3><p><strong>留出法</strong>（<em>Hold-out</em>）:  将已知数据集分成两个互斥的部分，其中一部分用来训练模型，另一部分用来测试模型，评估其误差，作为泛化误差的估计。</p>
+<ul>
+<li>两个数据集的划分要尽可能的保持数据分布一致性，避免因数据划分过程引入人为的误差</li>
+</ul>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603113603280.png" data-fancybox="group" data-caption="image-20200603113603280" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603113603280.png" alt="image-20200603113603280" title="image-20200603113603280"></a></p>
+<ul>
+<li>数据分割存在多种形式会导致不同的训练集、测试集划分，单次留出法结果往往存在偶然性，其<br>稳定性较差,通常会进行若干次随机划分、重复实验评估取平均值作为评估结果</li>
+<li>数据集拆分成两部分，每部分的规模设置会影响评估结果，测试、训练的比例通常为7:3、8:2等</li>
+</ul>
+<h3 id="交叉验验证法"><a href="#交叉验验证法" class="headerlink" title="交叉验验证法"></a>交叉验验证法</h3><p><strong>交叉验证法</strong>( <em>Cross Validation</em>) : 将数据集划分<code>k</code>个大小相似的互斥的数据子集，子集数据尽可能保证数据分布的一致性(分层采样) ，每次从中选取一个数据集作为测试集，其余用作训练集，可以进行<code>k</code>次训练和测试，得到评估均值。该验证方法也称作<em>k</em>折交叉验证( <em>k-fold Cross Validation</em>)。使用不同的划分,重复<code>p</code>次,称为<code>p</code>次<code>k</code>折交叉验证。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114627914.png" data-fancybox="group" data-caption="image-20200603114627914" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114627914.png" alt="image-20200603114627914" title="image-20200603114627914"></a></p>
+<h3 id="留一法"><a href="#留一法" class="headerlink" title="留一法"></a>留一法</h3><p><strong>留一法</strong>( <em>Leave- One- Out, LOO</em>) :是<code>k</code>折交叉验证的特殊形式，将数据集分成两个,其中一个数据集记录条数为1 ,作为测试集使用，其余记录作为训练集训练模型。 训练出的模型和使用全部数据集训练得到的模型接近,其评估结果比较准确。缺点是当数据集较大时，训练次数和计算规模较大。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114924622.png" data-fancybox="group" data-caption="image-20200603114924622" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114924622.png" alt="image-20200603114924622" title="image-20200603114924622"></a></p>
+<h3 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h3><p><strong>自助法</strong>( <em>Bootstrapping</em>) : 是一种产生样本的抽样方法，其实质是有放回的随机抽样。即从已知数据集中随机抽取一条记录，然后将该记录放入测试集同时放回原数据集,继续下一次抽样, 直到测试集中的数据条数满足要求。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603115226450.png" data-fancybox="group" data-caption="image-20200603115226450" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603115226450.png" alt="image-20200603115226450" title="image-20200603115226450"></a></p>
+<h2 id="几种方法的使用场景"><a href="#几种方法的使用场景" class="headerlink" title="几种方法的使用场景"></a>几种方法的使用场景</h2><p><strong>留出法:</strong></p>
+<ul>
+<li>实现简单、方便，在一定程度上能评估泛化误差</li>
+<li>测试集和训练集分开，缓解了过拟合</li>
+<li>一次划分，评估结果偶然性</li>
+<li>数据被拆分后，用于训练、测试的数据更少了</li>
+</ul>
+<p><strong>交叉验证法(留一法) :</strong></p>
+<ul>
+<li>k可以根据实际情况设置，充分利用了所有样本</li>
+<li>多次划分，评估结果相对稳定</li>
+<li>计算比较繁琐，需要进行k次训练和评估\</li>
+</ul>
+<p><strong>自助法:</strong></p>
+<ul>
+<li>样本量较小时可以通过自助法产生多个自助样本集,且有约36 8%的测试样本</li>
+<li>对于总体的理论分布没有要求</li>
+<li>无放回抽样引入了额外的偏差</li>
+</ul>
+<p><strong>几种方法的选择:</strong></p>
+<ul>
+<li><p>已知数据集数量充足时，通常采用留出法或者k折交叉验证法</p>
+</li>
+<li><p>对于已知数据集较小且难以有效划分训练集/测试集的时候，采用自助法</p>
+</li>
+<li><p>对于已知数据集较小且可以有效划分训练集/测试集的时候，采用留一法</p>
+</li>
+</ul>
+<h2 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h2><p><strong>性能度量</strong>( <em>Performance Measure</em>) : 评价模型泛化能力的标准。对于不同的模型，有不同的评价标准，不同的评价标准将导致不同的评价结果。模型的好坏是相对的，取决于对于当前任务需求的完成情况。回归模型的性能度量通常选用<strong>均方误差</strong>( <em>Mean Squared Error</em> )。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120230421.png" data-fancybox="group" data-caption="image-20200603120230421" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120230421.png" alt="image-20200603120230421" title="image-20200603120230421"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120435928.png" data-fancybox="group" data-caption="image-20200603120435928" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120435928.png" alt="image-20200603120435928" title="image-20200603120435928"></a></p>
+<h3 id="分类算法的性能度量"><a href="#分类算法的性能度量" class="headerlink" title="分类算法的性能度量"></a>分类算法的性能度量</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120906307.png" data-fancybox="group" data-caption="image-20200603120906307" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120906307.png" alt="image-20200603120906307" title="image-20200603120906307"></a> </p>
+<h3 id="聚类算法的性能度量"><a href="#聚类算法的性能度量" class="headerlink" title="聚类算法的性能度量"></a>聚类算法的性能度量</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143231323.png" data-fancybox="group" data-caption="image-20200603143231323" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143231323.png" alt="image-20200603143231323" title="image-20200603143231323"></a></p>
+<h2 id="比较检验"><a href="#比较检验" class="headerlink" title="比较检验"></a>比较检验</h2><h3 id="模型比较"><a href="#模型比较" class="headerlink" title="模型比较"></a>模型比较</h3><p>选择合适的评估方法和相应的性能度量，计算出性能度量后直接比较。<br>存在以下问题:</p>
+<ul>
+<li>模型评估得到的是测试集上的性能，并非严格意义上的泛化性能，两者并不完全相同</li>
+<li>测试集上的性能与样本选取关系很大，不同的划分,测试结果会不同，比较缺乏稳定性</li>
+<li>很多模型本身有随机性，即使参数和数据集相同，其运行结果也存在差异</li>
+</ul>
+<p>把上述问题按照统计学的知识描述一下 :<br>已知两个模型<code>f1</code>和<code>f2</code>，两者的泛化性能在测试集上的表现不同，<code>f1</code> 好于<code>f2</code>，请检验在统计意义上<code>f1</code>是否好于<code>f2</code>这个把握有多大?</p>
+<h3 id="掷硬币"><a href="#掷硬币" class="headerlink" title="掷硬币"></a>掷硬币</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143940607.png" data-fancybox="group" data-caption="image-20200603143940607" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143940607.png" alt="image-20200603143940607" title="image-20200603143940607"></a></p>
+<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p><strong>统计假设检验</strong>( <em>Hypothesis Test</em>) : 事先对总体的参数或者分布做一个假设,然后基于已有的样本数据去判断这个假设是否合理。即样本和总体假设之间的不同是纯属机会变异(因为随机性误差导致的不同)， 还是两者确实不同。常用的假设检验方法有t检验法、x2检验法(卡方检验)、F-检验法等。</p>
+<p>基本思想:</p>
+<ul>
+<li>从样本推断整体</li>
+<li>通过反正法推断假设是否成立</li>
+<li>小概率事件在一次试验中基本不会发生</li>
+<li>不轻易拒绝原假设</li>
+<li>通过显著性水平定义小概率事件不可能发生的概率</li>
+<li>全称命题只能被否定而不能被证明</li>
+</ul>
+<h3 id="假设检验步骤"><a href="#假设检验步骤" class="headerlink" title="假设检验步骤"></a>假设检验步骤</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150229043.png" data-fancybox="group" data-caption="image-20200603150229043" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150229043.png" alt="image-20200603150229043" title="image-20200603150229043"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150326129.png" data-fancybox="group" data-caption="image-20200603150326129" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150326129.png" alt="image-20200603150326129" title="image-20200603150326129"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150354943.png" data-fancybox="group" data-caption="image-20200603150354943" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150354943.png" alt="image-20200603150354943" title="image-20200603150354943"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150509176.png" data-fancybox="group" data-caption="image-20200603150509176" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150509176.png" alt="image-20200603150509176" title="image-20200603150509176"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150559264.png" data-fancybox="group" data-caption="image-20200603150559264" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150559264.png" alt="image-20200603150559264" title="image-20200603150559264"></a></p>
+<h3 id="假设检验的例子：二项式检验"><a href="#假设检验的例子：二项式检验" class="headerlink" title="假设检验的例子：二项式检验"></a>假设检验的例子：二项式检验</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603151406209.png" data-fancybox="group" data-caption="image-20200603151406209" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603151406209.png" alt="image-20200603151406209" title="image-20200603151406209"></a></p>
+<h3 id="假设检验的例子：T检验"><a href="#假设检验的例子：T检验" class="headerlink" title="假设检验的例子：T检验"></a>假设检验的例子：T检验</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152024378.png" data-fancybox="group" data-caption="image-20200603152024378" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152024378.png" alt="image-20200603152024378" title="image-20200603152024378"></a></p>
+<p>查表：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152057460.png" data-fancybox="group" data-caption="image-20200603152057460" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152057460.png" alt="image-20200603152057460" title="image-20200603152057460"></a></p>
+<p>结论：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152132422.png" data-fancybox="group" data-caption="image-20200603152132422" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152132422.png" alt="image-20200603152132422" title="image-20200603152132422"></a></p>
+<h3 id="假设检验在模型比较中的应用"><a href="#假设检验在模型比较中的应用" class="headerlink" title="假设检验在模型比较中的应用"></a>假设检验在模型比较中的应用</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152249593.png" data-fancybox="group" data-caption="image-20200603152249593" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152249593.png" alt="image-20200603152249593" title="image-20200603152249593"></a></p>
+<h2 id="偏差、方差与噪声"><a href="#偏差、方差与噪声" class="headerlink" title="偏差、方差与噪声"></a>偏差、方差与噪声</h2><p><strong>偏差</strong>( <em>Bias</em>) : 描述的是根据样本拟合出的模型的输出预测结果的期望与样本真实结果的差距,即在样本上拟合的好不好。<br><strong>方差</strong>( <em>Variance</em>) : 模型每一-次输出结果 与模型输出期望之间的误差,即模型的稳定性。<br><strong>噪声</strong>( <em>Noise</em>) : 为真实标记与数据集中的实际标记间的偏差。通常由多种因素综合影响造<br>成，不可去除。</p>
+<p><strong>偏差</strong>度量了学习算法的<strong>期望</strong>预测与真实结果的偏离程度,刻画了学习算法本身的拟合能力。<br><strong>方差</strong>度量了同样大小的训练集的变动所导致的学习性能的变化,即刻画了数据扰动所造成的影响。<br><strong>噪声</strong>表达了在当前任务.上任何学习算法所能达到的期望泛化误差的下界,即刻画了学习问题本身的难度。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153648596.png" data-fancybox="group" data-caption="image-20200603153648596" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153648596.png" alt="image-20200603153648596" title="image-20200603153648596"></a></p>
+<p><strong>偏差</strong>体现的是拟合程度优劣, 通常模型越复杂,偏差越小。当偏差较大时,即预期输出和实际结果偏离较大，称之为欠拟合。<br><strong>方差</strong>体现的是模型的稳定程度。通常模型越简单,方差越小。当方差较大时,模型不稳定,即对一-些新数据的预测不稳定。偏差小，方差大的情况即为过拟合。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153951858.png" data-fancybox="group" data-caption="image-20200603153951858" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153951858.png" alt="image-20200603153951858" title="image-20200603153951858"></a></p>
+<h2 id="泛化误差组成推导"><a href="#泛化误差组成推导" class="headerlink" title="泛化误差组成推导"></a>泛化误差组成推导</h2><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153402197.png" data-fancybox="group" data-caption="image-20200603153402197" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153402197.png" alt="image-20200603153402197" title="image-20200603153402197"></a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">you xuan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://you3xuan.gitee.io/2020/06/03/ML/study_2/">https://you3xuan.gitee.io/2020/06/03/ML/study_2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://you3xuan.gitee.io">旋哥的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ML/">ML    </a><a class="post-meta__tags" href="/tags/机器学习/">机器学习    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/threewhiteceramicpotgreen-leaf-plantsnear-open.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/image/wechat_pay.png" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/image/alipay_pay.png" alt="支付宝"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2020/06/01/ML/study_1/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>机器学习1</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/06/01/ML/study_1/" title="机器学习1"><img class="relatedPosts_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601145043823.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-06-01</div><div class="relatedPosts_title">机器学习1</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script><script>var notify = true == true ? true : false;
+var verify = true == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'VI8I4aQIETFPTh2mdDU2SHuC-gzGzoHsz',
+  appKey:'lTByyFatzIkn8Lmu2QWqhmPm',
+  placeholder:'留言记得在上面留下【邮箱】，方便收到回复通知。',
+  avatar:'monsterid',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang:'en',
+  recordIP: true
+});</script></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By you xuan</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script async src="https://cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async></script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

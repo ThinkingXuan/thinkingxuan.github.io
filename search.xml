@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>机器学习2</title>
+    <url>/2020/06/03/ML/study_2/</url>
+    <content><![CDATA[<h2 id="模型的选择"><a href="#模型的选择" class="headerlink" title="模型的选择"></a>模型的选择</h2><h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p><strong>误差</strong>（<em>Error</em>）: 是模型的预测输出值与真实值之间的差异。</p>
+<p><strong>训练</strong>（<em>Training</em>）: 通过已知的样本数据进行学习，从而得到模型的过程。</p>
+<p><strong>训练误差</strong>（<em>Training Error</em>）: 模型作用于训练集时的误差。</p>
+<p><strong>泛化</strong>（<em>Generalize</em>）: 由具体的、个别的扩大为一般的，即从特殊到一般，称为泛化。对机器学习的模型来讲，泛化是指模型作用于新的样本数据（非训练集）。</p>
+<p><strong>泛化误差</strong>（<em>Generalization Error</em>）:  模型作用于新的样本数据时的误差。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602170425755.png" data-fancybox="group" data-caption="image-20200602170425755" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602170425755.png" alt="image-20200602170425755" title="image-20200602170425755"></a></p>
+<h3 id="欠拟合和过拟合"><a href="#欠拟合和过拟合" class="headerlink" title="欠拟合和过拟合"></a>欠拟合和过拟合</h3><p><strong>模型容量</strong>（<em>Model Capacity</em>） :  是指其拟合各种模型的能力。</p>
+<p><strong>过拟合</strong>（<em>Overfitting</em>）:  是某个模型在训练集上表现良好，但是在新样本上表现差。模型将训练集的特征学习的太好，导致一些非常普遍规律被模型接纳和体现，从而在训练集上表现好，但是对于新样本表现差。反之则称为<strong>欠拟合</strong>（<em>Underfitting</em>）,即模型对训练集的一般性质学习较差，模型作用于训练集时表现不好。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602171625317.png" data-fancybox="group" data-caption="image-20200602171625317" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602171625317.png" alt="image-20200602171625317" title="image-20200602171625317"></a></p>
+<h3 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h3><p><strong>模型选择</strong>（<em>Model Selection</em>）:  针对某个具体的任务，通常会有多种模型可供选择，对同一个模型也会有多组参数，可以通过分析、评估模型的泛化误差，选择模型泛化误差最小的模型。</p>
+<p><a href="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200602172326836.png" data-fancybox="group" data-caption="image-20200602172326836" class="fancybox"><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200602172326836.png" alt="image-20200602172326836" title="image-20200602172326836"></a></p>
+<h2 id="模型的评估方法"><a href="#模型的评估方法" class="headerlink" title="模型的评估方法"></a>模型的评估方法</h2><h3 id="评估思路"><a href="#评估思路" class="headerlink" title="评估思路"></a>评估思路</h3><p>通过实验测试，对模型的泛化误差进行评估，选出泛化误差最小的模型。待测数据集全集未知，使用测试集进行泛化测试，测试误差（Testing Error）即为泛化误差的近似。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602173004574.png" data-fancybox="group" data-caption="image-20200602173004574" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200602173004574.png" alt="image-20200602173004574" title="image-20200602173004574"></a></p>
+<ul>
+<li>测试集和训练集尽可能的互斥</li>
+<li>测试集和训练集独立同分布（独立：事件之间没有依赖关系，同分布：测试集合训练集最好分布一致）</li>
+</ul>
+<h3 id="留出法"><a href="#留出法" class="headerlink" title="留出法"></a>留出法</h3><p><strong>留出法</strong>（<em>Hold-out</em>）:  将已知数据集分成两个互斥的部分，其中一部分用来训练模型，另一部分用来测试模型，评估其误差，作为泛化误差的估计。</p>
+<ul>
+<li>两个数据集的划分要尽可能的保持数据分布一致性，避免因数据划分过程引入人为的误差</li>
+</ul>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603113603280.png" data-fancybox="group" data-caption="image-20200603113603280" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603113603280.png" alt="image-20200603113603280" title="image-20200603113603280"></a></p>
+<ul>
+<li>数据分割存在多种形式会导致不同的训练集、测试集划分，单次留出法结果往往存在偶然性，其<br>稳定性较差,通常会进行若干次随机划分、重复实验评估取平均值作为评估结果</li>
+<li>数据集拆分成两部分，每部分的规模设置会影响评估结果，测试、训练的比例通常为7:3、8:2等</li>
+</ul>
+<h3 id="交叉验验证法"><a href="#交叉验验证法" class="headerlink" title="交叉验验证法"></a>交叉验验证法</h3><p><strong>交叉验证法</strong>( <em>Cross Validation</em>) : 将数据集划分<code>k</code>个大小相似的互斥的数据子集，子集数据尽可能保证数据分布的一致性(分层采样) ，每次从中选取一个数据集作为测试集，其余用作训练集，可以进行<code>k</code>次训练和测试，得到评估均值。该验证方法也称作<em>k</em>折交叉验证( <em>k-fold Cross Validation</em>)。使用不同的划分,重复<code>p</code>次,称为<code>p</code>次<code>k</code>折交叉验证。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114627914.png" data-fancybox="group" data-caption="image-20200603114627914" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114627914.png" alt="image-20200603114627914" title="image-20200603114627914"></a></p>
+<h3 id="留一法"><a href="#留一法" class="headerlink" title="留一法"></a>留一法</h3><p><strong>留一法</strong>( <em>Leave- One- Out, LOO</em>) :是<code>k</code>折交叉验证的特殊形式，将数据集分成两个,其中一个数据集记录条数为1 ,作为测试集使用，其余记录作为训练集训练模型。 训练出的模型和使用全部数据集训练得到的模型接近,其评估结果比较准确。缺点是当数据集较大时，训练次数和计算规模较大。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114924622.png" data-fancybox="group" data-caption="image-20200603114924622" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603114924622.png" alt="image-20200603114924622" title="image-20200603114924622"></a></p>
+<h3 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h3><p><strong>自助法</strong>( <em>Bootstrapping</em>) : 是一种产生样本的抽样方法，其实质是有放回的随机抽样。即从已知数据集中随机抽取一条记录，然后将该记录放入测试集同时放回原数据集,继续下一次抽样, 直到测试集中的数据条数满足要求。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603115226450.png" data-fancybox="group" data-caption="image-20200603115226450" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603115226450.png" alt="image-20200603115226450" title="image-20200603115226450"></a></p>
+<h2 id="几种方法的使用场景"><a href="#几种方法的使用场景" class="headerlink" title="几种方法的使用场景"></a>几种方法的使用场景</h2><p><strong>留出法:</strong></p>
+<ul>
+<li>实现简单、方便，在一定程度上能评估泛化误差</li>
+<li>测试集和训练集分开，缓解了过拟合</li>
+<li>一次划分，评估结果偶然性</li>
+<li>数据被拆分后，用于训练、测试的数据更少了</li>
+</ul>
+<p><strong>交叉验证法(留一法) :</strong></p>
+<ul>
+<li>k可以根据实际情况设置，充分利用了所有样本</li>
+<li>多次划分，评估结果相对稳定</li>
+<li>计算比较繁琐，需要进行k次训练和评估\</li>
+</ul>
+<p><strong>自助法:</strong></p>
+<ul>
+<li>样本量较小时可以通过自助法产生多个自助样本集,且有约36 8%的测试样本</li>
+<li>对于总体的理论分布没有要求</li>
+<li>无放回抽样引入了额外的偏差</li>
+</ul>
+<p><strong>几种方法的选择:</strong></p>
+<ul>
+<li><p>已知数据集数量充足时，通常采用留出法或者k折交叉验证法</p>
+</li>
+<li><p>对于已知数据集较小且难以有效划分训练集/测试集的时候，采用自助法</p>
+</li>
+<li><p>对于已知数据集较小且可以有效划分训练集/测试集的时候，采用留一法</p>
+</li>
+</ul>
+<h2 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h2><p><strong>性能度量</strong>( <em>Performance Measure</em>) : 评价模型泛化能力的标准。对于不同的模型，有不同的评价标准，不同的评价标准将导致不同的评价结果。模型的好坏是相对的，取决于对于当前任务需求的完成情况。回归模型的性能度量通常选用<strong>均方误差</strong>( <em>Mean Squared Error</em> )。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120230421.png" data-fancybox="group" data-caption="image-20200603120230421" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120230421.png" alt="image-20200603120230421" title="image-20200603120230421"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120435928.png" data-fancybox="group" data-caption="image-20200603120435928" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120435928.png" alt="image-20200603120435928" title="image-20200603120435928"></a></p>
+<h3 id="分类算法的性能度量"><a href="#分类算法的性能度量" class="headerlink" title="分类算法的性能度量"></a>分类算法的性能度量</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120906307.png" data-fancybox="group" data-caption="image-20200603120906307" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603120906307.png" alt="image-20200603120906307" title="image-20200603120906307"></a> </p>
+<h3 id="聚类算法的性能度量"><a href="#聚类算法的性能度量" class="headerlink" title="聚类算法的性能度量"></a>聚类算法的性能度量</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143231323.png" data-fancybox="group" data-caption="image-20200603143231323" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143231323.png" alt="image-20200603143231323" title="image-20200603143231323"></a></p>
+<h2 id="比较检验"><a href="#比较检验" class="headerlink" title="比较检验"></a>比较检验</h2><h3 id="模型比较"><a href="#模型比较" class="headerlink" title="模型比较"></a>模型比较</h3><p>选择合适的评估方法和相应的性能度量，计算出性能度量后直接比较。<br>存在以下问题:</p>
+<ul>
+<li>模型评估得到的是测试集上的性能，并非严格意义上的泛化性能，两者并不完全相同</li>
+<li>测试集上的性能与样本选取关系很大，不同的划分,测试结果会不同，比较缺乏稳定性</li>
+<li>很多模型本身有随机性，即使参数和数据集相同，其运行结果也存在差异</li>
+</ul>
+<p>把上述问题按照统计学的知识描述一下 :<br>已知两个模型<code>f1</code>和<code>f2</code>，两者的泛化性能在测试集上的表现不同，<code>f1</code> 好于<code>f2</code>，请检验在统计意义上<code>f1</code>是否好于<code>f2</code>这个把握有多大?</p>
+<h3 id="掷硬币"><a href="#掷硬币" class="headerlink" title="掷硬币"></a>掷硬币</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143940607.png" data-fancybox="group" data-caption="image-20200603143940607" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603143940607.png" alt="image-20200603143940607" title="image-20200603143940607"></a></p>
+<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p><strong>统计假设检验</strong>( <em>Hypothesis Test</em>) : 事先对总体的参数或者分布做一个假设,然后基于已有的样本数据去判断这个假设是否合理。即样本和总体假设之间的不同是纯属机会变异(因为随机性误差导致的不同)， 还是两者确实不同。常用的假设检验方法有t检验法、x2检验法(卡方检验)、F-检验法等。</p>
+<p>基本思想:</p>
+<ul>
+<li>从样本推断整体</li>
+<li>通过反正法推断假设是否成立</li>
+<li>小概率事件在一次试验中基本不会发生</li>
+<li>不轻易拒绝原假设</li>
+<li>通过显著性水平定义小概率事件不可能发生的概率</li>
+<li>全称命题只能被否定而不能被证明</li>
+</ul>
+<h3 id="假设检验步骤"><a href="#假设检验步骤" class="headerlink" title="假设检验步骤"></a>假设检验步骤</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150229043.png" data-fancybox="group" data-caption="image-20200603150229043" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150229043.png" alt="image-20200603150229043" title="image-20200603150229043"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150326129.png" data-fancybox="group" data-caption="image-20200603150326129" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150326129.png" alt="image-20200603150326129" title="image-20200603150326129"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150354943.png" data-fancybox="group" data-caption="image-20200603150354943" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150354943.png" alt="image-20200603150354943" title="image-20200603150354943"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150509176.png" data-fancybox="group" data-caption="image-20200603150509176" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150509176.png" alt="image-20200603150509176" title="image-20200603150509176"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150559264.png" data-fancybox="group" data-caption="image-20200603150559264" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603150559264.png" alt="image-20200603150559264" title="image-20200603150559264"></a></p>
+<h3 id="假设检验的例子：二项式检验"><a href="#假设检验的例子：二项式检验" class="headerlink" title="假设检验的例子：二项式检验"></a>假设检验的例子：二项式检验</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603151406209.png" data-fancybox="group" data-caption="image-20200603151406209" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603151406209.png" alt="image-20200603151406209" title="image-20200603151406209"></a></p>
+<h3 id="假设检验的例子：T检验"><a href="#假设检验的例子：T检验" class="headerlink" title="假设检验的例子：T检验"></a>假设检验的例子：T检验</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152024378.png" data-fancybox="group" data-caption="image-20200603152024378" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152024378.png" alt="image-20200603152024378" title="image-20200603152024378"></a></p>
+<p>查表：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152057460.png" data-fancybox="group" data-caption="image-20200603152057460" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152057460.png" alt="image-20200603152057460" title="image-20200603152057460"></a></p>
+<p>结论：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152132422.png" data-fancybox="group" data-caption="image-20200603152132422" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152132422.png" alt="image-20200603152132422" title="image-20200603152132422"></a></p>
+<h3 id="假设检验在模型比较中的应用"><a href="#假设检验在模型比较中的应用" class="headerlink" title="假设检验在模型比较中的应用"></a>假设检验在模型比较中的应用</h3><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152249593.png" data-fancybox="group" data-caption="image-20200603152249593" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603152249593.png" alt="image-20200603152249593" title="image-20200603152249593"></a></p>
+<h2 id="偏差、方差与噪声"><a href="#偏差、方差与噪声" class="headerlink" title="偏差、方差与噪声"></a>偏差、方差与噪声</h2><p><strong>偏差</strong>( <em>Bias</em>) : 描述的是根据样本拟合出的模型的输出预测结果的期望与样本真实结果的差距,即在样本上拟合的好不好。<br><strong>方差</strong>( <em>Variance</em>) : 模型每一-次输出结果 与模型输出期望之间的误差,即模型的稳定性。<br><strong>噪声</strong>( <em>Noise</em>) : 为真实标记与数据集中的实际标记间的偏差。通常由多种因素综合影响造<br>成，不可去除。</p>
+<p><strong>偏差</strong>度量了学习算法的<strong>期望</strong>预测与真实结果的偏离程度,刻画了学习算法本身的拟合能力。<br><strong>方差</strong>度量了同样大小的训练集的变动所导致的学习性能的变化,即刻画了数据扰动所造成的影响。<br><strong>噪声</strong>表达了在当前任务.上任何学习算法所能达到的期望泛化误差的下界,即刻画了学习问题本身的难度。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153648596.png" data-fancybox="group" data-caption="image-20200603153648596" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153648596.png" alt="image-20200603153648596" title="image-20200603153648596"></a></p>
+<p><strong>偏差</strong>体现的是拟合程度优劣, 通常模型越复杂,偏差越小。当偏差较大时,即预期输出和实际结果偏离较大，称之为欠拟合。<br><strong>方差</strong>体现的是模型的稳定程度。通常模型越简单,方差越小。当方差较大时,模型不稳定,即对一-些新数据的预测不稳定。偏差小，方差大的情况即为过拟合。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153951858.png" data-fancybox="group" data-caption="image-20200603153951858" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153951858.png" alt="image-20200603153951858" title="image-20200603153951858"></a></p>
+<h2 id="泛化误差组成推导"><a href="#泛化误差组成推导" class="headerlink" title="泛化误差组成推导"></a>泛化误差组成推导</h2><p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153402197.png" data-fancybox="group" data-caption="image-20200603153402197" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200603153402197.png" alt="image-20200603153402197" title="image-20200603153402197"></a></p>
+]]></content>
+      <categories>
+        <category>ML</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习1</title>
     <url>/2020/06/01/ML/study_1/</url>
     <content><![CDATA[<h2 id="第一章-机器学习的基本概念"><a href="#第一章-机器学习的基本概念" class="headerlink" title="第一章 机器学习的基本概念"></a>第一章 机器学习的基本概念</h2><h3 id="1-机器学习方法的流程"><a href="#1-机器学习方法的流程" class="headerlink" title="1.机器学习方法的流程"></a>1.机器学习方法的流程</h3><p>以有监督学习方法为例：</p>
@@ -59,15 +172,15 @@
 </ul>
 <p>定义几个指标来衡量上述问题：</p>
 <ul>
-<li>损失函数：0-1损失函数、平方损失函数、绝对值损失函数、对数损失函数等</li>
+<li>损失函数：0-1损失函数、平方损失函数、绝对值损失函数、对数损失函数、指数损失函数、折页损失函数等</li>
 <li>风险函数：经验风险、期望风险、结构风险</li>
 </ul>
 <p>基本策略</p>
 <ul>
-<li>经验风险最小（EMR：<em>Empirical Risk Minimization</em>）</li>
+<li>经验风险最小（ERM：<em>Empirical Risk Minimization</em>）</li>
 <li>结构风险最小  (SRM：<em>Structural Risk Minimization</em>)</li>
 </ul>
-<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><strong>损失函数</strong>（<em>Loss Function</em>）: 用来衡量预测结果和真实结果之间的差距，其值越小，代表预测结果和真实结果越一致。通常是一个非负实值函数。通过各种方式缩小损失函数的过程被称作<strong>优化</strong>。损失函数几座<code>L(Y，f(x))</code>。 <code>Y</code>:真实值   <code>f(x)</code>:模型预测取值</p>
+<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p><strong>损失函数</strong>（<em>Loss Function</em>）: 用来衡量预测结果和真实结果之间的差距，其值越小，代表预测结果和真实结果越一致。通常是一个非负实值函数。通过各种方式缩小损失函数的过程被称作<strong>优化</strong>。损失函数记做<code>L(Y，f(x))</code>。 <code>Y</code>:真实值   <code>f(x)</code>:模型预测取值</p>
 <p><strong>0-1损失函数（0-1 LF）:</strong> 预测值和实际值精确相等则 ”没有损失“为<strong>0</strong>，否则意味着”完全损失“，为<strong>1</strong>预测值和实际值精确相等有些过于严格，可以采用两者的差小于某个阈值的方式。</p>
 <p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" data-fancybox="group" data-caption="image-20200601204416698" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204416698.png" alt="image-20200601204416698" title="image-20200601204416698"></a></p>
 <p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" data-fancybox="group" data-caption="image-20200601204308912" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601204308912.png" alt="image-20200601204308912" title="image-20200601204308912"></a></p>
@@ -80,10 +193,10 @@
 <ul>
 <li>每个样本的误差都有正的，累加不会被抵消</li>
 <li>平方对于大误差的惩罚大于小误差</li>
-<li>数据计算简单、友好，倒数为一次函数</li>
+<li>数据计算简单、友好，导数为一次函数</li>
 </ul>
 <p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" data-fancybox="group" data-caption="image-20200601205536049" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205536049.png" alt="image-20200601205536049" title="image-20200601205536049"></a></p>
-<p>对数损失函数（Logarithmic LF）或对数似然损失函数（log-likehood loss function）: 对数函数具有单调性，在求最优化问题时，结果与原始目标一致。可以将乘法转换化为加法，简化计算：</p>
+<p><strong>对数损失函数</strong>（<em>Logarithmic LF</em>）或<strong>对数似然损失函数</strong>（<em>log-likehood loss function</em>）: 对数函数具有单调性，在求最优化问题时，结果与原始目标一致。可以将乘法转换化为加法，简化计算：</p>
 <p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" data-fancybox="group" data-caption="image-20200601205909808" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601205909808.png" alt="image-20200601205909808" title="image-20200601205909808"></a></p>
 <p><strong>指数损失函数</strong>（<em>Exponential LF</em>）：单调性、非负性的优良性质，使得越接近正确结果误差越小。</p>
 <p><a href="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" data-fancybox="group" data-caption="image-20200601210138878" class="fancybox"><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20200601210138878.png" alt="image-20200601210138878" title="image-20200601210138878"></a></p>
@@ -325,8 +438,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>阶乘取数</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1316,8 +1429,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
         <tag>字符串处理</tag>
       </tags>
   </entry>
@@ -1347,8 +1460,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1397,8 +1510,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1444,8 +1557,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1518,8 +1631,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1575,8 +1688,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1689,8 +1802,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
